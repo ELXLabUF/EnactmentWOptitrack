@@ -1,0 +1,23 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.0.1270)
+
+newmtl JoinedMaterial_#1
+kd 0.584314 0.584314 0.584314
+ka 0.584314 0.584314 0.584314
+ks 0.898039 0.898039 0.898039
+d 1
+illum 1
+map_kd LOG_DEFU.TGA
+bump LOG_NORM.TGA
+map_bump LOG_NORM.TGA
+
+newmtl JoinedMaterial_#3
+kd 0.584314 0.584314 0.584314
+ka 0.584314 0.584314 0.584314
+ks 0.898039 0.898039 0.898039
+d 1
+illum 1
+map_kd LOGCUT_D.TGA
+bump LOGCUT_N.TGA
+map_bump LOGCUT_N.TGA
+

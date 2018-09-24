@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Slide
+  - yellow
+  - red
+  - green
+  - beg_src
+  - mid_src
+  - end_src
+  - chara
+  - item
+  - backdrop
+  - Canvas
+  - border
+  - object_arrays
+  - record_screen
+  - play_screen
+  - title_input
+  - current_item
+  - record_button
+  - play_slide_button
+  - all_slides
+  - enactment_canvas
+  - pose_button
+  - instructions
+  - back_button
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Item
+  - Character
+  - Bones
+  - Controls
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Character
+    uniqueID: 141308313
+    locked: 0
+  - name: Bones
+    uniqueID: 850972293
+    locked: 0
+  - name: Controls
+    uniqueID: 1174631225
+    locked: 0

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<RigidBodyData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <objFilePath>C:\Users\Kumar\Desktop\3Dmodels\Well.obj</objFilePath>
+  <imgFilePath>ScreenShots/Well.png</imgFilePath>
+  <tx>0.06962956</tx>
+  <ty>-0.422967046</ty>
+  <tz>-0.00366383465</tz>
+  <rx>1.0248441E-06</rx>
+  <ry>0</ry>
+  <rz>0</rz>
+  <sx>0.0015</sx>
+  <sy>0.0015</sy>
+  <sz>0.0015</sz>
+  <physicalObjectId>2</physicalObjectId>
+</RigidBodyData>

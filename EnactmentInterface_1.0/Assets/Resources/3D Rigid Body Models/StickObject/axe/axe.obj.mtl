@@ -1,0 +1,31 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.0.1270)
+
+newmtl steel
+kd 0.811765 0.811765 0.858824
+ka 0.811765 0.811765 0.858824
+ks 0.443137 0.443137 0.47451
+d 1
+Ns 23
+illum 2
+map_kd OPENFOOT.JPG
+
+newmtl axeblade
+kd 0.811765 0.811765 0.858824
+ka 0.811765 0.811765 0.858824
+ks 0.443137 0.443137 0.47451
+d 1
+Ns 23
+illum 2
+map_kd AXEBLADE.JPG
+map_ks XBLADE_S.JPG
+bump XBLADE_B.JPG
+map_bump XBLADE_B.JPG
+
+newmtl %%%DEFAULT
+kd 0.3 0.3 0.3
+ka 0 0 0
+ks 0 0 0
+d 1
+illum 1
+

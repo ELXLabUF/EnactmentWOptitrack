@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<RigidBodyDirectory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RigidBodyData name="Car">
+    <objFilePath>C:/Users/kumar/Documents/GitHub/Dimify/Dimify/GraphicObjects/Objs/Car.obj</objFilePath>
+    <imgFilePath>C:/Users/kumar/Documents/GitHub/Dimify/Dimify/GraphicObjects/Screenshots/Car.png</imgFilePath>
+    <tx>0</tx>
+    <ty>0</ty>
+    <tz>0</tz>
+    <rx>0</rx>
+    <ry>180.000015</ry>
+    <rz>0</rz>
+    <sx>0.6120865</sx>
+    <sy>0.6120865</sy>
+    <sz>0.6120865</sz>
+    <physicalObjectId>0</physicalObjectId>
+    <materialIncluded>true</materialIncluded>
+  </RigidBodyData>
+  <RigidBodyData name="Spot">
+    <objFilePath>C:/Users/kumar/Documents/GitHub/Dimify/Dimify/GraphicObjects/Objs/Spot.obj</objFilePath>
+    <imgFilePath>C:/Users/kumar/Documents/GitHub/Dimify/Dimify/GraphicObjects/Screenshots/Spot.png</imgFilePath>
+    <tx>0</tx>
+    <ty>-0.06311801</ty>
+    <tz>-0.110626049</tz>
+    <rx>0</rx>
+    <ry>0</ry>
+    <rz>0</rz>
+    <sx>0.582102954</sx>
+    <sy>0.582102954</sy>
+    <sz>0.582102954</sz>
+    <physicalObjectId>0</physicalObjectId>
+    <materialIncluded>true</materialIncluded>
+  </RigidBodyData>
+  <RigidBodyData name="glasses2">
+    <objFilePath>D:/oldFiles/Dimify/GraphicObjects/Objs/glasses2.obj</objFilePath>
+    <imgFilePath>D:/oldFiles/Dimify/GraphicObjects/Screenshots/glasses2.png</imgFilePath>
+    <tx>0</tx>
+    <ty>0</ty>
+    <tz>0</tz>
+    <rx>0</rx>
+    <ry>0</ry>
+    <rz>0</rz>
+    <sx>0.1162164</sx>
+    <sy>0.1162164</sy>
+    <sz>0.1162164</sz>
+    <physicalObjectId>4</physicalObjectId>
+    <materialIncluded>false</materialIncluded>
+  </RigidBodyData>
+  <RigidBodyData name="glasses2">
+    <objFilePath>D:/oldFiles/Dimify/GraphicObjects/Objs/glasses2.obj</objFilePath>
+    <imgFilePath>D:/oldFiles/Dimify/GraphicObjects/Screenshots/glasses2.png</imgFilePath>
+    <tx>0</tx>
+    <ty>0</ty>
+    <tz>0</tz>
+    <rx>0</rx>
+    <ry>0</ry>
+    <rz>0</rz>
+    <sx>0.1162164</sx>
+    <sy>0.1162164</sy>
+    <sz>0.1162164</sz>
+    <physicalObjectId>1</physicalObjectId>
+    <materialIncluded>false</materialIncluded>
+  </RigidBodyData>
+</RigidBodyDirectory>

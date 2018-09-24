@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<RigidBodyDirectory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RigidBodyData name="glasses2">
+    <objFilePath>C:\Users\kumar\Documents\GitHub\Dimify\Dimify\3Dmodels\glasses2.obj</objFilePath>
+    <imgFilePath>C:/Users/kumar/Documents/GitHub/Dimify/Dimify/Assets/Dime/Screenshots/glasses2.png</imgFilePath>
+    <tx>0</tx>
+    <ty>0</ty>
+    <tz>0</tz>
+    <rx>0</rx>
+    <ry>0</ry>
+    <rz>0</rz>
+    <sx>0.116216369</sx>
+    <sy>0.116216369</sy>
+    <sz>0.116216369</sz>
+    <physicalObjectId>0</physicalObjectId>
+  </RigidBodyData>
+</RigidBodyDirectory>

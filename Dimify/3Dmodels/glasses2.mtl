@@ -1,0 +1,56 @@
+newmtl cover
+Kd 0.152941 0.152941 0.152941
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl cover_1_2
+Kd 0.152941 0.152941 0.152941
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl cover_2
+Kd 0.152941 0.152941 0.152941
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl glass
+Kd 0 0 1
+Ke 0 0 0
+Ka 1 1 1
+Ks 0.21 0.21 0.21
+Ns 1000
+Tr 0.8
+d 0.2
+Ni 0
+Tf 1 1 1
+map_Kd D:SOFTWARE/Objects/Untitled.png
+
+newmtl rod_2_3
+Kd 0.635294 0.635294 0.635294
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+

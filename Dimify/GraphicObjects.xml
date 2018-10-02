@@ -60,4 +60,19 @@
     <physicalObjectId>1</physicalObjectId>
     <materialIncluded>false</materialIncluded>
   </RigidBodyData>
+  <RigidBodyData name="glasses2">
+    <objFilePath>D:/EnactmentWOptitrack/Dimify/GraphicObjects/Objs/glasses2.obj</objFilePath>
+    <imgFilePath>D:/EnactmentWOptitrack/Dimify/GraphicObjects/Screenshots/glasses2.png</imgFilePath>
+    <tx>0</tx>
+    <ty>0</ty>
+    <tz>0</tz>
+    <rx>0</rx>
+    <ry>330</ry>
+    <rz>0</rz>
+    <sx>0.08</sx>
+    <sy>0.08</sy>
+    <sz>0.08</sz>
+    <physicalObjectId>4</physicalObjectId>
+    <materialIncluded>false</materialIncluded>
+  </RigidBodyData>
 </RigidBodyDirectory>

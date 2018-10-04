@@ -67,18 +67,21 @@ public class SlideData : MonoBehaviour {
     public void setChara(int ind)
     {
         charaIndex = ind;
+        PlayerPrefs.SetInt("characterID", ind);
         isChara = true;
     }
 
     public void setBackdrop(int ind)
     {
         backdropIndex = ind;
+        PlayerPrefs.SetInt("backdropID", ind);
         isBackdrop = true;
     }
 
     public void setItem(int ind)
     {
         itemIndex = ind;
+        PlayerPrefs.SetInt("objectID", ind);
         isItem = true;
     }
 

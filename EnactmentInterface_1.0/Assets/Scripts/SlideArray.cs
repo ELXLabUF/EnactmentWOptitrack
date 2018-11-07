@@ -66,7 +66,8 @@ public class SlideArray : MonoBehaviour
         for (int i = deletedID + 1; i < currentListID; i++)
         {
             slides[i].GetComponent<SlideSelectSlide>().moveLeft(); //subtracts one from slide's id
-            slides[i].GetComponent<SlideSelectSlide>().newPosition(buffer); //reset the slide's position   
+            slides[i].GetComponent<SlideSelectSlide>().newPosition(buffer); //reset the slide's position  
+            //slides[i].GetComponent<SlideSelectSlide>().new
         }
         currentListID--;
     }

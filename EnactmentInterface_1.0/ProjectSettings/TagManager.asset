@@ -28,6 +28,7 @@ TagManager:
   - pose_button
   - instructions
   - back_button
+  - torsoMarker
   layers:
   - Default
   - TransparentFX

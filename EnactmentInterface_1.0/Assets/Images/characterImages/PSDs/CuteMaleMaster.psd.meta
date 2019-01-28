@@ -1,0 +1,245 @@
+fileFormatVersion: 2
+guid: 95e67494e8ad9ef45bd978a15c865dd2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Head_L
+    21300002: Head_R
+    21300004: Torso_L
+    21300006: UpperArm_L
+    21300008: Tosrso_F
+    21300010: UpperArm_R
+    21300012: Torso_B
+    21300014: Torso_R
+    21300016: LowerArm_L
+    21300018: LowerArm_R
+    21300020: Leg_Front_L
+    21300022: Leg_Front_R
+    21300024: Leg_Left_L
+    21300026: Leg_Left_R
+    21300028: Head_F
+    21300030: Head_B
+    21300032: Leg_Right_L
+    21300034: Leg_Right_R
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Head_L
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1172
+        width: 578
+        height: 734
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head_R
+      rect:
+        serializedVersion: 2
+        x: 3193
+        y: 1167
+        width: 563
+        height: 730
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Torso_L
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 687
+        width: 275
+        height: 416
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UpperArm_L
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 924
+        width: 141
+        height: 104
+      alignment: 9
+      pivot: {x: .883240163, y: .80563885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tosrso_F
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 753
+        width: 341
+        height: 386
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UpperArm_R
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 970
+        width: 143
+        height: 104
+      alignment: 9
+      pivot: {x: .099891074, y: .820920527}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Torso_B
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 736
+        width: 321
+        height: 385
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Torso_R
+      rect:
+        serializedVersion: 2
+        x: 3323
+        y: 693
+        width: 265
+        height: 416
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LowerArm_L
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 724
+        width: 184
+        height: 180
+      alignment: 9
+      pivot: {x: .923242331, y: .879670858}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LowerArm_R
+      rect:
+        serializedVersion: 2
+        x: 1737
+        y: 659
+        width: 184
+        height: 179
+      alignment: 9
+      pivot: {x: .0767570138, y: .881792307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Leg_Front_L
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 385
+        width: 188
+        height: 349
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Leg_Front_R
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 369
+        width: 221
+        height: 365
+      alignment: 9
+      pivot: {x: .198757529, y: .892939329}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Leg_Left_L
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 302
+        width: 181
+        height: 286
+      alignment: 9
+      pivot: {x: .762346148, y: .928045332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Leg_Left_R
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 295
+        width: 217
+        height: 301
+      alignment: 9
+      pivot: {x: .654369712, y: .908913851}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head_F
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1146
+        width: 824
+        height: 764
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head_B
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 1136
+        width: 831
+        height: 776
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Leg_Right_L
+      rect:
+        serializedVersion: 2
+        x: 3256
+        y: 228
+        width: 218
+        height: 315
+      alignment: 9
+      pivot: {x: .276600122, y: .904924273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Leg_Right_R
+      rect:
+        serializedVersion: 2
+        x: 3507
+        y: 235
+        width: 199
+        height: 315
+      alignment: 9
+      pivot: {x: .188108519, y: .876160145}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

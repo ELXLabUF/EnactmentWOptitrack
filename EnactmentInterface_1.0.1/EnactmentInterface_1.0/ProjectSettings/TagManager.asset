@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Slide
+  - yellow
+  - red
+  - green
+  - beg_src
+  - mid_src
+  - end_src
+  - chara
+  - item
+  - backdrop
+  - Canvas
+  - border
+  - object_arrays
+  - record_screen
+  - play_screen
+  - title_input
+  - current_item
+  - record_button
+  - play_slide_button
+  - all_slides
+  - enactment_canvas
+  - pose_button
+  - instructions
+  - back_button
+  - chara_position
+  - obj_position
+  - enactment_check
+  - enactment_text
+  - playscreen_back_button
+  - play_story_button
+  - play_instruction
+  - play_title
+  - main_title
+  - beg_title
+  - mid_title
+  - end_title
+  - planning_button
+  - add_slide
+  - title
+  - object_selection
+  - all_canvases
+  - trash
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Item
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

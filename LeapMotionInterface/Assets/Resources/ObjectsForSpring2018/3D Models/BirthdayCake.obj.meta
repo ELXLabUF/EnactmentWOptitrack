@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: 4a93dcf80a3238c4ea49f01880f92085
+timeCreated: 1530891418
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Circle.001_Circle.006_Material.007
+    100004: Circle.002_Circle.005_Material.005
+    100006: Circle.002_Circle.005_Material.006
+    100008: Circle.003_Circle.007_Material.007
+    100010: Circle.004_Circle.008_Material.006
+    100012: Circle.004_Circle.008_Material.008
+    100014: Circle.005_Circle.009_Material.006
+    100016: Circle.005_Circle.009_Material.009
+    100018: Circle.006_Circle.010_Material.007
+    100020: Circle.007_Circle.011_Material.007
+    100022: Circle.008_Circle.012_Material.006
+    100024: Circle.008_Circle.012_Material.010
+    100026: Circle.009_Circle.013_Material.006
+    100028: Circle.009_Circle.013_Material.011
+    100030: Circle.010_Circle.014_Material.007
+    100032: Circle.011_Circle.015_Material.007
+    100034: Circle.012_Circle.016_Material.006
+    100036: Circle.012_Circle.016_Material.012
+    100038: Circle.013_Circle.017_Material.006
+    100040: Circle.013_Circle.017_Material.013
+    100042: Circle.014_Circle.018_Material.007
+    100044: Circle.015_Circle.019_Material.007
+    100046: Circle.016_Circle.020_Material.006
+    100048: Circle.016_Circle.020_Material.014
+    100050: Circle.017_Circle.021_Material.016
+    100052: Circle.018_Circle.022_Material.016
+    100054: Circle.019_Circle.023_Material.016
+    100056: Circle.020_Circle.024_Material.016
+    100058: Circle.021_Circle.025_Material.016
+    100060: Circle.022_Circle.026_Material.016
+    100062: Circle.023_Circle.027_Material.016
+    100064: Circle.024_Circle.028_Material.016
+    100066: Circle_Circle_Material.004
+    100068: Cylinder_Cylinder_Material.003
+    100070: Icosphere.001_Icosphere.001_Material.002
+    100072: Icosphere.001_Icosphere.001_Material.002_MeshPart0
+    100074: Icosphere.001_Icosphere.001_Material.002_MeshPart1
+    100076: Icosphere.001_Icosphere.001_Material.002_MeshPart2
+    100078: Icosphere.001_Icosphere.001_Material.002_MeshPart3
+    100080: Icosphere_Icosphere_Material.002
+    100082: Icosphere_Icosphere_Material.002_MeshPart0
+    100084: Icosphere_Icosphere_Material.002_MeshPart1
+    100086: Icosphere_Icosphere_Material.002_MeshPart2
+    100088: Icosphere_Icosphere_Material.002_MeshPart3
+    100090: Plane_Plane_Material.001
+    400000: //RootNode
+    400002: Circle.001_Circle.006_Material.007
+    400004: Circle.002_Circle.005_Material.005
+    400006: Circle.002_Circle.005_Material.006
+    400008: Circle.003_Circle.007_Material.007
+    400010: Circle.004_Circle.008_Material.006
+    400012: Circle.004_Circle.008_Material.008
+    400014: Circle.005_Circle.009_Material.006
+    400016: Circle.005_Circle.009_Material.009
+    400018: Circle.006_Circle.010_Material.007
+    400020: Circle.007_Circle.011_Material.007
+    400022: Circle.008_Circle.012_Material.006
+    400024: Circle.008_Circle.012_Material.010
+    400026: Circle.009_Circle.013_Material.006
+    400028: Circle.009_Circle.013_Material.011
+    400030: Circle.010_Circle.014_Material.007
+    400032: Circle.011_Circle.015_Material.007
+    400034: Circle.012_Circle.016_Material.006
+    400036: Circle.012_Circle.016_Material.012
+    400038: Circle.013_Circle.017_Material.006
+    400040: Circle.013_Circle.017_Material.013
+    400042: Circle.014_Circle.018_Material.007
+    400044: Circle.015_Circle.019_Material.007
+    400046: Circle.016_Circle.020_Material.006
+    400048: Circle.016_Circle.020_Material.014
+    400050: Circle.017_Circle.021_Material.016
+    400052: Circle.018_Circle.022_Material.016
+    400054: Circle.019_Circle.023_Material.016
+    400056: Circle.020_Circle.024_Material.016
+    400058: Circle.021_Circle.025_Material.016
+    400060: Circle.022_Circle.026_Material.016
+    400062: Circle.023_Circle.027_Material.016
+    400064: Circle.024_Circle.028_Material.016
+    400066: Circle_Circle_Material.004
+    400068: Cylinder_Cylinder_Material.003
+    400070: Icosphere.001_Icosphere.001_Material.002
+    400072: Icosphere.001_Icosphere.001_Material.002_MeshPart0
+    400074: Icosphere.001_Icosphere.001_Material.002_MeshPart1
+    400076: Icosphere.001_Icosphere.001_Material.002_MeshPart2
+    400078: Icosphere.001_Icosphere.001_Material.002_MeshPart3
+    400080: Icosphere_Icosphere_Material.002
+    400082: Icosphere_Icosphere_Material.002_MeshPart0
+    400084: Icosphere_Icosphere_Material.002_MeshPart1
+    400086: Icosphere_Icosphere_Material.002_MeshPart2
+    400088: Icosphere_Icosphere_Material.002_MeshPart3
+    400090: Plane_Plane_Material.001
+    2300000: Circle.001_Circle.006_Material.007
+    2300002: Circle.002_Circle.005_Material.005
+    2300004: Circle.002_Circle.005_Material.006
+    2300006: Circle.003_Circle.007_Material.007
+    2300008: Circle.004_Circle.008_Material.006
+    2300010: Circle.004_Circle.008_Material.008
+    2300012: Circle.005_Circle.009_Material.006
+    2300014: Circle.005_Circle.009_Material.009
+    2300016: Circle.006_Circle.010_Material.007
+    2300018: Circle.007_Circle.011_Material.007
+    2300020: Circle.008_Circle.012_Material.006
+    2300022: Circle.008_Circle.012_Material.010
+    2300024: Circle.009_Circle.013_Material.006
+    2300026: Circle.009_Circle.013_Material.011
+    2300028: Circle.010_Circle.014_Material.007
+    2300030: Circle.011_Circle.015_Material.007
+    2300032: Circle.012_Circle.016_Material.006
+    2300034: Circle.012_Circle.016_Material.012
+    2300036: Circle.013_Circle.017_Material.006
+    2300038: Circle.013_Circle.017_Material.013
+    2300040: Circle.014_Circle.018_Material.007
+    2300042: Circle.015_Circle.019_Material.007
+    2300044: Circle.016_Circle.020_Material.006
+    2300046: Circle.016_Circle.020_Material.014
+    2300048: Circle.017_Circle.021_Material.016
+    2300050: Circle.018_Circle.022_Material.016
+    2300052: Circle.019_Circle.023_Material.016
+    2300054: Circle.020_Circle.024_Material.016
+    2300056: Circle.021_Circle.025_Material.016
+    2300058: Circle.022_Circle.026_Material.016
+    2300060: Circle.023_Circle.027_Material.016
+    2300062: Circle.024_Circle.028_Material.016
+    2300064: Circle_Circle_Material.004
+    2300066: Cylinder_Cylinder_Material.003
+    2300068: Icosphere.001_Icosphere.001_Material.002_MeshPart0
+    2300070: Icosphere.001_Icosphere.001_Material.002_MeshPart1
+    2300072: Icosphere.001_Icosphere.001_Material.002_MeshPart2
+    2300074: Icosphere.001_Icosphere.001_Material.002_MeshPart3
+    2300076: Icosphere_Icosphere_Material.002_MeshPart0
+    2300078: Icosphere_Icosphere_Material.002_MeshPart1
+    2300080: Icosphere_Icosphere_Material.002_MeshPart2
+    2300082: Icosphere_Icosphere_Material.002_MeshPart3
+    2300084: Plane_Plane_Material.001
+    3300000: Circle.001_Circle.006_Material.007
+    3300002: Circle.002_Circle.005_Material.005
+    3300004: Circle.002_Circle.005_Material.006
+    3300006: Circle.003_Circle.007_Material.007
+    3300008: Circle.004_Circle.008_Material.006
+    3300010: Circle.004_Circle.008_Material.008
+    3300012: Circle.005_Circle.009_Material.006
+    3300014: Circle.005_Circle.009_Material.009
+    3300016: Circle.006_Circle.010_Material.007
+    3300018: Circle.007_Circle.011_Material.007
+    3300020: Circle.008_Circle.012_Material.006
+    3300022: Circle.008_Circle.012_Material.010
+    3300024: Circle.009_Circle.013_Material.006
+    3300026: Circle.009_Circle.013_Material.011
+    3300028: Circle.010_Circle.014_Material.007
+    3300030: Circle.011_Circle.015_Material.007
+    3300032: Circle.012_Circle.016_Material.006
+    3300034: Circle.012_Circle.016_Material.012
+    3300036: Circle.013_Circle.017_Material.006
+    3300038: Circle.013_Circle.017_Material.013
+    3300040: Circle.014_Circle.018_Material.007
+    3300042: Circle.015_Circle.019_Material.007
+    3300044: Circle.016_Circle.020_Material.006
+    3300046: Circle.016_Circle.020_Material.014
+    3300048: Circle.017_Circle.021_Material.016
+    3300050: Circle.018_Circle.022_Material.016
+    3300052: Circle.019_Circle.023_Material.016
+    3300054: Circle.020_Circle.024_Material.016
+    3300056: Circle.021_Circle.025_Material.016
+    3300058: Circle.022_Circle.026_Material.016
+    3300060: Circle.023_Circle.027_Material.016
+    3300062: Circle.024_Circle.028_Material.016
+    3300064: Circle_Circle_Material.004
+    3300066: Cylinder_Cylinder_Material.003
+    3300068: Icosphere.001_Icosphere.001_Material.002_MeshPart0
+    3300070: Icosphere.001_Icosphere.001_Material.002_MeshPart1
+    3300072: Icosphere.001_Icosphere.001_Material.002_MeshPart2
+    3300074: Icosphere.001_Icosphere.001_Material.002_MeshPart3
+    3300076: Icosphere_Icosphere_Material.002_MeshPart0
+    3300078: Icosphere_Icosphere_Material.002_MeshPart1
+    3300080: Icosphere_Icosphere_Material.002_MeshPart2
+    3300082: Icosphere_Icosphere_Material.002_MeshPart3
+    3300084: Plane_Plane_Material.001
+    4300000: Circle.001_Circle.006_Material.007
+    4300002: Circle.002_Circle.005_Material.005
+    4300004: Circle.002_Circle.005_Material.006
+    4300006: Circle.003_Circle.007_Material.007
+    4300008: Circle.004_Circle.008_Material.006
+    4300010: Circle.004_Circle.008_Material.008
+    4300012: Circle.005_Circle.009_Material.006
+    4300014: Circle.005_Circle.009_Material.009
+    4300016: Circle.006_Circle.010_Material.007
+    4300018: Circle.007_Circle.011_Material.007
+    4300020: Circle.008_Circle.012_Material.006
+    4300022: Circle.008_Circle.012_Material.010
+    4300024: Circle.009_Circle.013_Material.006
+    4300026: Circle.009_Circle.013_Material.011
+    4300028: Circle.010_Circle.014_Material.007
+    4300030: Circle.011_Circle.015_Material.007
+    4300032: Circle.012_Circle.016_Material.006
+    4300034: Circle.012_Circle.016_Material.012
+    4300036: Circle.013_Circle.017_Material.006
+    4300038: Circle.013_Circle.017_Material.013
+    4300040: Circle.014_Circle.018_Material.007
+    4300042: Circle.015_Circle.019_Material.007
+    4300044: Circle.016_Circle.020_Material.006
+    4300046: Circle.016_Circle.020_Material.014
+    4300048: Circle.017_Circle.021_Material.016
+    4300050: Circle.018_Circle.022_Material.016
+    4300052: Circle.019_Circle.023_Material.016
+    4300054: Circle.020_Circle.024_Material.016
+    4300056: Circle.021_Circle.025_Material.016
+    4300058: Circle.022_Circle.026_Material.016
+    4300060: Circle.023_Circle.027_Material.016
+    4300062: Circle.024_Circle.028_Material.016
+    4300064: Circle_Circle_Material.004
+    4300066: Cylinder_Cylinder_Material.003
+    4300068: Icosphere.001_Icosphere.001_Material.002_MeshPart0
+    4300070: Icosphere.001_Icosphere.001_Material.002_MeshPart1
+    4300072: Icosphere.001_Icosphere.001_Material.002_MeshPart2
+    4300074: Icosphere.001_Icosphere.001_Material.002_MeshPart3
+    4300076: Icosphere_Icosphere_Material.002_MeshPart0
+    4300078: Icosphere_Icosphere_Material.002_MeshPart1
+    4300080: Icosphere_Icosphere_Material.002_MeshPart2
+    4300082: Icosphere_Icosphere_Material.002_MeshPart3
+    4300084: Plane_Plane_Material.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.001_Circle.006_Material.007Mat
+    second: {fileID: 2100000, guid: 9358e48fe657b2547af2096d9576aeb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.002_Circle.005_Material.005Mat
+    second: {fileID: 2100000, guid: 88f02132a773ba045ba37c31cf7dffc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.002_Circle.005_Material.006Mat
+    second: {fileID: 2100000, guid: 0700c4875cda66048a54459ebca591a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.003_Circle.007_Material.007Mat
+    second: {fileID: 2100000, guid: 992ac67f56bfd4d4ea09ed22960cc509, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.004_Circle.008_Material.006Mat
+    second: {fileID: 2100000, guid: faf63b1e51b05a34b9f6f484fcc60768, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.004_Circle.008_Material.008Mat
+    second: {fileID: 2100000, guid: 6e545bd1b263ae84bb0b7ac5c8679f65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.005_Circle.009_Material.006Mat
+    second: {fileID: 2100000, guid: c9bcbca3ddf3c8e4f94e596b14815bb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.005_Circle.009_Material.009Mat
+    second: {fileID: 2100000, guid: e06b41c0362d5484f9bd674f054304cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.006_Circle.010_Material.007Mat
+    second: {fileID: 2100000, guid: 6dfa93ad7f84ef7499b4b5b027b380b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.007_Circle.011_Material.007Mat
+    second: {fileID: 2100000, guid: e4ec887dba412b8438095206f6cb5506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.008_Circle.012_Material.006Mat
+    second: {fileID: 2100000, guid: d2a20c40140a2984ea610c95ea8d684f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.008_Circle.012_Material.010Mat
+    second: {fileID: 2100000, guid: 7afab430ced8e56458d20c993ccc1828, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.009_Circle.013_Material.006Mat
+    second: {fileID: 2100000, guid: 35a73afa310f38940b6bd25bb96296ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.009_Circle.013_Material.011Mat
+    second: {fileID: 2100000, guid: abf7d4ce7713edb49a2f1722d20e5c54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.010_Circle.014_Material.007Mat
+    second: {fileID: 2100000, guid: 138a7ca625554d54e9c2ed84d7aaa666, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.011_Circle.015_Material.007Mat
+    second: {fileID: 2100000, guid: a4d22bd6725459d44a877ad4d5c4164b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.012_Circle.016_Material.006Mat
+    second: {fileID: 2100000, guid: 402c4ac8a567eea46a54ccc4948d5d7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.012_Circle.016_Material.012Mat
+    second: {fileID: 2100000, guid: c4f2947e89543b44aa9e5589de53811f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.013_Circle.017_Material.006Mat
+    second: {fileID: 2100000, guid: 3868715d29f7c1c40a2d85e6cf6820e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.013_Circle.017_Material.013Mat
+    second: {fileID: 2100000, guid: 265620e343c8afd4e90dda8b9e9635d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.014_Circle.018_Material.007Mat
+    second: {fileID: 2100000, guid: 6fbd3b986ebe30146a0ef913e7dafad3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.015_Circle.019_Material.007Mat
+    second: {fileID: 2100000, guid: b9d25ef1d2f53c342bb33155d80eb014, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.016_Circle.020_Material.006Mat
+    second: {fileID: 2100000, guid: 90ac30aae61cb964a9e50951438f7c1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.016_Circle.020_Material.014Mat
+    second: {fileID: 2100000, guid: 2f7344b2c2486fd41bc2bf55f54cc68b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.017_Circle.021_Material.016Mat
+    second: {fileID: 2100000, guid: 6aab298cec8a6a74ab7d4c36386955f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.018_Circle.022_Material.016Mat
+    second: {fileID: 2100000, guid: b1e4735661b0e894881697b051c2db3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.019_Circle.023_Material.016Mat
+    second: {fileID: 2100000, guid: c63a651b77170a0479afb9763d2a4134, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.020_Circle.024_Material.016Mat
+    second: {fileID: 2100000, guid: 81a92b49063187949a8ec132e8540473, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.021_Circle.025_Material.016Mat
+    second: {fileID: 2100000, guid: e7732f87435a55549b3219ea25417a1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.022_Circle.026_Material.016Mat
+    second: {fileID: 2100000, guid: d12fbb3c528d3c14f82d5b20ebaf2934, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.023_Circle.027_Material.016Mat
+    second: {fileID: 2100000, guid: 252d291eba3f0ac42b61316882271989, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle.024_Circle.028_Material.016Mat
+    second: {fileID: 2100000, guid: 5cbf8fea21c94f948b4977521721318e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Circle_Circle_Material.004Mat
+    second: {fileID: 2100000, guid: c325a77a18564ac4e8132ef4bf45210c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder_Cylinder_Material.003Mat
+    second: {fileID: 2100000, guid: 8fd9f5269be888741a9720a675997f1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Icosphere.001_Icosphere.001_Material.002Mat
+    second: {fileID: 2100000, guid: 4622a8bfa9fd5d843b9ffdf24d4df27f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Icosphere_Icosphere_Material.002Mat
+    second: {fileID: 2100000, guid: 9abfd7382e83acc48a995e0a85bded2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Plane_Material.001Mat
+    second: {fileID: 2100000, guid: 55163e014049c80428992faa6136ddfe, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

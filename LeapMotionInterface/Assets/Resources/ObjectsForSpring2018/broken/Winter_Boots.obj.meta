@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: e202ea0e953e2054f8a173e1dc44a1aa
+timeCreated: 1531720904
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Boots_Boots_Scene_Right_Boot_Main_Right_Boot
+    100002: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_004
+    100004: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_01
+    100006: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_010
+    100008: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_011
+    100010: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_012
+    100012: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_02
+    100014: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_03
+    100016: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_05
+    100018: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_06
+    100020: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_07
+    100022: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_08
+    100024: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_09
+    100026: Boots_Boots_Scene_Right_Boot_Right_Boot_Rope
+    100028: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_01
+    100030: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_010
+    100032: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_011
+    100034: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_012
+    100036: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_02
+    100038: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_03
+    100040: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_04
+    100042: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_05
+    100044: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_06
+    100046: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_07
+    100048: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_08
+    100050: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_09
+    100052: Left_Boot_Boots_Boots_Scene_Left_Boot_Rope
+    100054: Left_Boot_Main_Left_Boot_Boots_Boots_Scene
+    100056: //RootNode
+    400000: Boots_Boots_Scene_Right_Boot_Main_Right_Boot
+    400002: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_004
+    400004: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_01
+    400006: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_010
+    400008: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_011
+    400010: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_012
+    400012: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_02
+    400014: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_03
+    400016: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_05
+    400018: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_06
+    400020: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_07
+    400022: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_08
+    400024: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_09
+    400026: Boots_Boots_Scene_Right_Boot_Right_Boot_Rope
+    400028: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_01
+    400030: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_010
+    400032: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_011
+    400034: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_012
+    400036: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_02
+    400038: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_03
+    400040: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_04
+    400042: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_05
+    400044: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_06
+    400046: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_07
+    400048: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_08
+    400050: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_09
+    400052: Left_Boot_Boots_Boots_Scene_Left_Boot_Rope
+    400054: Left_Boot_Main_Left_Boot_Boots_Boots_Scene
+    400056: //RootNode
+    2300000: Boots_Boots_Scene_Right_Boot_Main_Right_Boot
+    2300002: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_004
+    2300004: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_01
+    2300006: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_010
+    2300008: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_011
+    2300010: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_012
+    2300012: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_02
+    2300014: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_03
+    2300016: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_05
+    2300018: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_06
+    2300020: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_07
+    2300022: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_08
+    2300024: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_09
+    2300026: Boots_Boots_Scene_Right_Boot_Right_Boot_Rope
+    2300028: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_01
+    2300030: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_010
+    2300032: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_011
+    2300034: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_012
+    2300036: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_02
+    2300038: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_03
+    2300040: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_04
+    2300042: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_05
+    2300044: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_06
+    2300046: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_07
+    2300048: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_08
+    2300050: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_09
+    2300052: Left_Boot_Boots_Boots_Scene_Left_Boot_Rope
+    2300054: Left_Boot_Main_Left_Boot_Boots_Boots_Scene
+    3300000: Boots_Boots_Scene_Right_Boot_Main_Right_Boot
+    3300002: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_004
+    3300004: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_01
+    3300006: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_010
+    3300008: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_011
+    3300010: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_012
+    3300012: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_02
+    3300014: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_03
+    3300016: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_05
+    3300018: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_06
+    3300020: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_07
+    3300022: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_08
+    3300024: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_09
+    3300026: Boots_Boots_Scene_Right_Boot_Right_Boot_Rope
+    3300028: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_01
+    3300030: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_010
+    3300032: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_011
+    3300034: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_012
+    3300036: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_02
+    3300038: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_03
+    3300040: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_04
+    3300042: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_05
+    3300044: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_06
+    3300046: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_07
+    3300048: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_08
+    3300050: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_09
+    3300052: Left_Boot_Boots_Boots_Scene_Left_Boot_Rope
+    3300054: Left_Boot_Main_Left_Boot_Boots_Boots_Scene
+    4300000: Boots_Boots_Scene_Right_Boot_Main_Right_Boot
+    4300002: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_004
+    4300004: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_01
+    4300006: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_010
+    4300008: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_011
+    4300010: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_012
+    4300012: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_02
+    4300014: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_03
+    4300016: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_05
+    4300018: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_06
+    4300020: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_07
+    4300022: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_08
+    4300024: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_09
+    4300026: Boots_Boots_Scene_Right_Boot_Right_Boot_Rope
+    4300028: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_01
+    4300030: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_010
+    4300032: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_011
+    4300034: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_012
+    4300036: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_02
+    4300038: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_03
+    4300040: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_04
+    4300042: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_05
+    4300044: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_06
+    4300046: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_07
+    4300048: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_08
+    4300050: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_09
+    4300052: Left_Boot_Boots_Boots_Scene_Left_Boot_Rope
+    4300054: Left_Boot_Main_Left_Boot_Boots_Boots_Scene
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Main_Right_BootMat
+    second: {fileID: 2100000, guid: 75e20d6df2e046942824cf4b155eebb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_004Mat
+    second: {fileID: 2100000, guid: 6e78bddf8eb379049b756bcea91a01a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_010Mat
+    second: {fileID: 2100000, guid: e8e6be8f24a292349b974726a1ddbfa7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_011Mat
+    second: {fileID: 2100000, guid: d71b745a60d990c47bf9d8796c1244f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_012Mat
+    second: {fileID: 2100000, guid: f02548add59b5b24495cb389b440490f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_01Mat
+    second: {fileID: 2100000, guid: 8787edf9d1e223846a60cdb2f1fd5c59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_02Mat
+    second: {fileID: 2100000, guid: c3611cbe9cc875d4b9b9180e032b7918, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_03Mat
+    second: {fileID: 2100000, guid: b4f35bd96ff8a324ca2720e41db0c768, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_05Mat
+    second: {fileID: 2100000, guid: 21a79b4ef62ce184c9770ac4a8afb7aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_06Mat
+    second: {fileID: 2100000, guid: 2c0e2d1b9488c334fb31327f713e1d61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_07Mat
+    second: {fileID: 2100000, guid: 7906d4fc7d225144da4045200c3323e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_08Mat
+    second: {fileID: 2100000, guid: ff1b555816f78f442ac6e5b0c79ae12f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_Knob_09Mat
+    second: {fileID: 2100000, guid: 7eb7b9ec9257a9e43a9f4aee78aea170, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boots_Boots_Scene_Right_Boot_Right_Boot_RopeMat
+    second: {fileID: 2100000, guid: 52f4d2f90219cd04899d300b801cfb84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_010Mat
+    second: {fileID: 2100000, guid: 508161393104b9e49b21ed1bed9df18f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_011Mat
+    second: {fileID: 2100000, guid: cd8c4c8cf536ff24281aa15a1be55bd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_012Mat
+    second: {fileID: 2100000, guid: ef5d358c10b50184f833040a58f5c4ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_01Mat
+    second: {fileID: 2100000, guid: 31607c767380b594cb1c1540b2d96f5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_02Mat
+    second: {fileID: 2100000, guid: a6b6f521b79269e4c95ddf9d753d7aa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_03Mat
+    second: {fileID: 2100000, guid: 1f47ba6473c63c849ab296feb743ac26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_04Mat
+    second: {fileID: 2100000, guid: 1c4e012e5776dce41a420a5a28b65997, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_05Mat
+    second: {fileID: 2100000, guid: a48cb3939a987334b9b7c4f08ee630f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_06Mat
+    second: {fileID: 2100000, guid: d3b47eb13cc3d1343b08d56e1c4e5eb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_07Mat
+    second: {fileID: 2100000, guid: c9ddefa51ca359643b156917f81300e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_08Mat
+    second: {fileID: 2100000, guid: fc405b79035392746b0bc252c2df6783, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_Knob_09Mat
+    second: {fileID: 2100000, guid: d47a79b3b534a53409a09f020536aaa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Boots_Boots_Scene_Left_Boot_RopeMat
+    second: {fileID: 2100000, guid: b7816698fd6e94d4d9da0510768da8f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Left_Boot_Main_Left_Boot_Boots_Boots_SceneMat
+    second: {fileID: 2100000, guid: c517e3b0925bfa54aaa5279be9e169ef, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,30 @@
+newmtl Material__269
+Ka 0 0 0
+Ns 9.77668
+Ks 0.898039 0.898039 0.898039
+Kd 0.714933 0.222336 0.114634
+map_Kd Material__269.jpg
+newmtl Standard_glass
+Ka 0 0 0
+Ns 34.4669
+Ks 1 1 1
+Kd 1 1 1
+map_Kd Standard_glass_1.jpg
+newmtl 1___Default10
+Ka 0 0 0
+Ns 9.20733
+Ks 0.972549 0.756863 0.572549
+Kd 0.87451 0.384314 0.0588235
+map_Kd 1___Default10_2.jpg
+newmtl 1___Default11
+Ka 0 0 0
+Ns 9.20733
+Ks 0.972549 0.756863 0.572549
+Kd 0.87451 0.384314 0.0588235
+map_Kd 1___Default11_3.jpg
+newmtl Red_wine
+Ka 0 0 0
+Ns 7.24274
+Ks 0.682353 0.439216 0.752941
+Kd 0.976471 0.654902 0.0196078
+map_Kd Red_wine_4.jpg

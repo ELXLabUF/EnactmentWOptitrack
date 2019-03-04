@@ -1,0 +1,382 @@
+fileFormatVersion: 2
+guid: 3a091cf42dc147344af3c680c16327c3
+timeCreated: 1530891359
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: _Rubik's_0
+    100002: _Rubik's_1
+    100004: _Rubik's_2
+    100006: _Rubik's_3
+    100008: _Rubik's_4
+    100010: _Rubik's_5
+    100012: _Rubik's_6
+    100014: _Rubik's_7
+    100016: _Rubik's_C
+    100018: Object01
+    100020: Object02
+    100022: Object03
+    100024: Object04
+    100026: Object05
+    100028: Object06
+    100030: Object07
+    100032: Object08
+    100034: Object09
+    100036: Object10
+    100038: Object11
+    100040: Object12
+    100042: Object13
+    100044: Object14
+    100046: Object15
+    100048: Object16
+    100050: Object17
+    100052: Object18
+    100054: Object19
+    100056: Object20
+    100058: Object21
+    100060: Object22
+    100062: Object23
+    100064: Object24
+    100066: Object25
+    100068: Object26
+    100070: Rubik's_10
+    100072: Rubik's_11
+    100074: Rubik's_12
+    100076: Rubik's_13
+    100078: Rubik's_14
+    100080: Rubik's_15
+    100082: Rubik's_C0
+    100084: Rubik's_C1
+    100086: Rubik's_C2
+    100088: Rubik's_C3
+    100090: Rubik's_C4
+    100092: Rubik's_C5
+    100094: Rubik's_C6
+    100096: Rubik's_C7
+    100098: Rubik's_C8
+    100100: Rubik's_C9
+    100102: Rubik's_Cu
+    100104: //RootNode
+    400000: _Rubik's_0
+    400002: _Rubik's_1
+    400004: _Rubik's_2
+    400006: _Rubik's_3
+    400008: _Rubik's_4
+    400010: _Rubik's_5
+    400012: _Rubik's_6
+    400014: _Rubik's_7
+    400016: _Rubik's_C
+    400018: Object01
+    400020: Object02
+    400022: Object03
+    400024: Object04
+    400026: Object05
+    400028: Object06
+    400030: Object07
+    400032: Object08
+    400034: Object09
+    400036: Object10
+    400038: Object11
+    400040: Object12
+    400042: Object13
+    400044: Object14
+    400046: Object15
+    400048: Object16
+    400050: Object17
+    400052: Object18
+    400054: Object19
+    400056: Object20
+    400058: Object21
+    400060: Object22
+    400062: Object23
+    400064: Object24
+    400066: Object25
+    400068: Object26
+    400070: Rubik's_10
+    400072: Rubik's_11
+    400074: Rubik's_12
+    400076: Rubik's_13
+    400078: Rubik's_14
+    400080: Rubik's_15
+    400082: Rubik's_C0
+    400084: Rubik's_C1
+    400086: Rubik's_C2
+    400088: Rubik's_C3
+    400090: Rubik's_C4
+    400092: Rubik's_C5
+    400094: Rubik's_C6
+    400096: Rubik's_C7
+    400098: Rubik's_C8
+    400100: Rubik's_C9
+    400102: Rubik's_Cu
+    400104: //RootNode
+    2300000: _Rubik's_0
+    2300002: _Rubik's_1
+    2300004: _Rubik's_2
+    2300006: _Rubik's_3
+    2300008: _Rubik's_4
+    2300010: _Rubik's_5
+    2300012: _Rubik's_6
+    2300014: _Rubik's_7
+    2300016: _Rubik's_C
+    2300018: Object01
+    2300020: Object02
+    2300022: Object03
+    2300024: Object04
+    2300026: Object05
+    2300028: Object06
+    2300030: Object07
+    2300032: Object08
+    2300034: Object09
+    2300036: Object10
+    2300038: Object11
+    2300040: Object12
+    2300042: Object13
+    2300044: Object14
+    2300046: Object15
+    2300048: Object16
+    2300050: Object17
+    2300052: Object18
+    2300054: Object19
+    2300056: Object20
+    2300058: Object21
+    2300060: Object22
+    2300062: Object23
+    2300064: Object24
+    2300066: Object25
+    2300068: Object26
+    2300070: Rubik's_10
+    2300072: Rubik's_11
+    2300074: Rubik's_12
+    2300076: Rubik's_13
+    2300078: Rubik's_14
+    2300080: Rubik's_15
+    2300082: Rubik's_C0
+    2300084: Rubik's_C1
+    2300086: Rubik's_C2
+    2300088: Rubik's_C3
+    2300090: Rubik's_C4
+    2300092: Rubik's_C5
+    2300094: Rubik's_C6
+    2300096: Rubik's_C7
+    2300098: Rubik's_C8
+    2300100: Rubik's_C9
+    2300102: Rubik's_Cu
+    3300000: _Rubik's_0
+    3300002: _Rubik's_1
+    3300004: _Rubik's_2
+    3300006: _Rubik's_3
+    3300008: _Rubik's_4
+    3300010: _Rubik's_5
+    3300012: _Rubik's_6
+    3300014: _Rubik's_7
+    3300016: _Rubik's_C
+    3300018: Object01
+    3300020: Object02
+    3300022: Object03
+    3300024: Object04
+    3300026: Object05
+    3300028: Object06
+    3300030: Object07
+    3300032: Object08
+    3300034: Object09
+    3300036: Object10
+    3300038: Object11
+    3300040: Object12
+    3300042: Object13
+    3300044: Object14
+    3300046: Object15
+    3300048: Object16
+    3300050: Object17
+    3300052: Object18
+    3300054: Object19
+    3300056: Object20
+    3300058: Object21
+    3300060: Object22
+    3300062: Object23
+    3300064: Object24
+    3300066: Object25
+    3300068: Object26
+    3300070: Rubik's_10
+    3300072: Rubik's_11
+    3300074: Rubik's_12
+    3300076: Rubik's_13
+    3300078: Rubik's_14
+    3300080: Rubik's_15
+    3300082: Rubik's_C0
+    3300084: Rubik's_C1
+    3300086: Rubik's_C2
+    3300088: Rubik's_C3
+    3300090: Rubik's_C4
+    3300092: Rubik's_C5
+    3300094: Rubik's_C6
+    3300096: Rubik's_C7
+    3300098: Rubik's_C8
+    3300100: Rubik's_C9
+    3300102: Rubik's_Cu
+    4300000: _Rubik's_C
+    4300002: Rubik's_Cu
+    4300004: Rubik's_C0
+    4300006: Rubik's_C1
+    4300008: Rubik's_C2
+    4300010: Rubik's_C3
+    4300012: Rubik's_C4
+    4300014: Rubik's_C5
+    4300016: _Rubik's_0
+    4300018: Rubik's_C6
+    4300020: _Rubik's_1
+    4300022: Rubik's_C7
+    4300024: _Rubik's_2
+    4300026: Rubik's_C8
+    4300028: Rubik's_C9
+    4300030: Rubik's_10
+    4300032: _Rubik's_3
+    4300034: _Rubik's_4
+    4300036: Rubik's_11
+    4300038: _Rubik's_5
+    4300040: Rubik's_12
+    4300042: Rubik's_13
+    4300044: Rubik's_14
+    4300046: _Rubik's_6
+    4300048: Rubik's_15
+    4300050: _Rubik's_7
+    4300052: Object01
+    4300054: Object02
+    4300056: Object03
+    4300058: Object04
+    4300060: Object05
+    4300062: Object06
+    4300064: Object07
+    4300066: Object08
+    4300068: Object09
+    4300070: Object10
+    4300072: Object11
+    4300074: Object12
+    4300076: Object13
+    4300078: Object14
+    4300080: Object15
+    4300082: Object16
+    4300084: Object17
+    4300086: Object18
+    4300088: Object19
+    4300090: Object20
+    4300092: Object21
+    4300094: Object22
+    4300096: Object23
+    4300098: Object24
+    4300100: Object25
+    4300102: Object26
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #31'
+    second: {fileID: 2100000, guid: 4be3cf535071eb04e92556b654f0f63f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #311'
+    second: {fileID: 2100000, guid: ea89b7d180db3ec428166398777d0705, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #312'
+    second: {fileID: 2100000, guid: b903293a676ca4e4882a2d8daeb12a04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #313'
+    second: {fileID: 2100000, guid: 42db5fc6beae57747880145eb23b6a6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #314'
+    second: {fileID: 2100000, guid: 39da4e30a5bc53c4eb06a3c42263c3d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #315'
+    second: {fileID: 2100000, guid: 3385bc9fd8712904fac132f6131486da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #316'
+    second: {fileID: 2100000, guid: acafd76c2170a844899f5e97f17546b2, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

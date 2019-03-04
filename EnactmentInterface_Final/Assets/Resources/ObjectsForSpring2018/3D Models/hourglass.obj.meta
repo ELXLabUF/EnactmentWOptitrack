@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: f5a762c64b36fd64bbbe41256ac73391
+timeCreated: 1530891429
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_ampulhetaVidroDentro
+    100002: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_areia_down
+    100004: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_nurbsToPoly1_POLY_MESH
+    100006: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly2
+    100008: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly3
+    100010: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly4
+    100012: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly5
+    100014: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly6
+    100016: areia_top_AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP
+    100018: //RootNode
+    400000: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_ampulhetaVidroDentro
+    400002: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_areia_down
+    400004: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_nurbsToPoly1_POLY_MESH
+    400006: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly2
+    400008: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly3
+    400010: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly4
+    400012: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly5
+    400014: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly6
+    400016: areia_top_AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP
+    400018: //RootNode
+    2300000: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_ampulhetaVidroDentro
+    2300002: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_areia_down
+    2300004: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_nurbsToPoly1_POLY_MESH
+    2300006: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly2
+    2300008: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly3
+    2300010: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly4
+    2300012: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly5
+    2300014: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly6
+    2300016: areia_top_AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP
+    3300000: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_ampulhetaVidroDentro
+    3300002: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_areia_down
+    3300004: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_nurbsToPoly1_POLY_MESH
+    3300006: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly2
+    3300008: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly3
+    3300010: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly4
+    3300012: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly5
+    3300014: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly6
+    3300016: areia_top_AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP
+    4300000: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_ampulhetaVidroDentro
+    4300002: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_areia_down
+    4300004: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_nurbsToPoly1_POLY_MESH
+    4300006: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly2
+    4300008: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly3
+    4300010: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly4
+    4300012: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly5
+    4300014: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly6
+    4300016: areia_top_AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly2Mat
+    second: {fileID: 2100000, guid: 21bee524df795714796db5f2135818fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly3Mat
+    second: {fileID: 2100000, guid: dc24f633e9985d945b4088f458c90872, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly4Mat
+    second: {fileID: 2100000, guid: e1d828a664ec85b45b83f716e8ade415, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly5Mat
+    second: {fileID: 2100000, guid: 71c8e86c95724cd4eb296bbe71bc3d58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_POLY_MESH_nurbsToPoly6Mat
+    second: {fileID: 2100000, guid: 8495979ad73434e40853a6c5031f6689, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_ampulhetaVidroDentroMat
+    second: {fileID: 2100000, guid: f5136d082cd36714096b8962921b4b8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_areia_downMat
+    second: {fileID: 2100000, guid: 39b6472f8635de24b9e4eb2a3320855f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRP_nurbsToPoly1_POLY_MESHMat
+    second: {fileID: 2100000, guid: 39496ff7fb7b98248a62e19303cc7e18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: areia_top_AmpulhetaGroup_masterAmpulheta_ctrl_HOURGLASS_MASTER_GRPMat
+    second: {fileID: 2100000, guid: a4cdee94e46a4b64dbc5763e68c34031, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

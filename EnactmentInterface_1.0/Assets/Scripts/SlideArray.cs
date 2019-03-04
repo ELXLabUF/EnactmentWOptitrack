@@ -37,7 +37,7 @@ public class SlideArray : MonoBehaviour
         return currentListID;
     }
 
-    public void addSlide()
+    public void addSlideAlone()
     {
         if (slideBase != null && currentListID < 5)
         {
@@ -45,7 +45,7 @@ public class SlideArray : MonoBehaviour
             //create new slide in scene
             GameObject newSlide = (GameObject)Instantiate(slideBase, transform.position, transform.rotation);
 
-           
+
             newSlide.GetComponent<SlideSelectSlide>().assignID(currentListID); //assign it's id
             newSlide.tag = thisTag; //give it the tag relevant to this array
             newSlide.transform.SetParent(this.transform); //set parent to this array
@@ -53,6 +53,56 @@ public class SlideArray : MonoBehaviour
             newSlide.GetComponent<SlideSelectSlide>().newPosition(buffer); //set slides position
             currentListID++; //add to this array's slide count
 
+        }
+
+        GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().addSlideHide();
+    }
+
+    public void addSlide()
+    {
+        
+        if (GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getCondition() == 2 || GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getTotal() == 0)
+        {
+            if (slideBase != null && currentListID < 5)
+            {
+
+                //create new slide in scene
+                GameObject newSlide = (GameObject)Instantiate(slideBase, transform.position, transform.rotation);
+
+
+                newSlide.GetComponent<SlideSelectSlide>().assignID(currentListID); //assign it's id
+                newSlide.tag = thisTag; //give it the tag relevant to this array
+                newSlide.transform.SetParent(this.transform); //set parent to this array
+
+                newSlide.GetComponent<SlideSelectSlide>().newPosition(buffer); //set slides position
+                currentListID++; //add to this array's slide count
+
+            }
+        }
+        else if(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getAddReady() == true)
+        {
+            
+
+            switch (thisTag)
+            {
+                case "green":
+                    GameObject.Find("SlideSections").GetComponent<SlideNumbering>().setAddWhich(0);
+                    break;
+                case "yellow":
+                    GameObject.Find("SlideSections").GetComponent<SlideNumbering>().setAddWhich(1);
+                    break;
+                case "red":
+                    GameObject.Find("SlideSections").GetComponent<SlideNumbering>().setAddWhich(2);
+                    break;
+                default:
+                    break;
+
+            }
+            GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().addSlidePop();
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().addingIncompletePop();
         }
 
     }
@@ -66,8 +116,7 @@ public class SlideArray : MonoBehaviour
         for (int i = deletedID + 1; i < currentListID; i++)
         {
             slides[i].GetComponent<SlideSelectSlide>().moveLeft(); //subtracts one from slide's id
-            slides[i].GetComponent<SlideSelectSlide>().newPosition(buffer); //reset the slide's position  
-            //slides[i].GetComponent<SlideSelectSlide>().new
+            slides[i].GetComponent<SlideSelectSlide>().newPosition(buffer); //reset the slide's position   
         }
         currentListID--;
     }

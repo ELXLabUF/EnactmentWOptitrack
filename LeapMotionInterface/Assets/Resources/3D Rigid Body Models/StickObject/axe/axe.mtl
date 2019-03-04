@@ -1,0 +1,31 @@
+# 3ds Max Wavefront OBJ Exporter v0.94b - (c)2007 guruware
+# File Created: 05.07.2008 16:47:29
+
+newmtl steel
+	Ns 22.6274
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.8118 0.8118 0.8627
+	Ks 0.4465 0.4465 0.4745
+	Ke 0.0000 0.0000 0.0000
+
+newmtl axeblade
+	Ns 22.6274
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.8118 0.8118 0.8627
+	Ks 0.4465 0.4465 0.4745
+	Ke 0.0000 0.0000 0.0000
+	map_Ka maps\axeblade.jpg
+	map_Kd maps\axeblade.jpg
+	map_Ks maps\xblade_s.jpg
+	map_bump maps\xblade_b.jpg
+	bump maps\xblade_b.jpg

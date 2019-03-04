@@ -20,6 +20,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BottomUp.unity
     guid: 6037231ca56cd57418ae48348d999664
-  - enabled: 1
-    path: Assets/Scenes/EnactmentScene.unity
-    guid: a0fbfd7b81114e8429e490712506dfb9

@@ -49,7 +49,13 @@ MonoBehaviour:
   numberText: {fileID: 1497835514673282, guid: 6939c6530d27afd46944f1ed13ee176b, type: 2}
   border: {fileID: 1273381957401520, guid: 02bcaba8f9213d049abf1bd583dcb730, type: 2}
   addSlideRight: {fileID: 21300000, guid: 6d70b5b1a4e4aa64ab1102bded1b64b6, type: 3}
-  selectBorder: {fileID: 21300000, guid: 5e9e5956afd4fb744937211ae9cadb07, type: 3}
+  selectBorder: {fileID: 21300000, guid: 780eae68595bc45419638c74b61e58ed, type: 3}
+  slideRecordIcon: {fileID: 1018751244815074, guid: b75438781e3590d4cb30ca2c6912b970,
+    type: 2}
+  slideWriteIcon: {fileID: 1018751244815074, guid: 77cabcc60f5a2df4486b9c42e13e9b42,
+    type: 2}
+  slideLockIcon: {fileID: 1018751244815074, guid: f6d830f373f859d44a54200eae3c14dd,
+    type: 2}
 --- !u!114 &114208789694385930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d05eebf25faf34f8eb179f68b13f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recordStop: {fileID: 21300000, guid: f18344719016fdf4fb0c0de6fcd13743, type: 3}
+  playSprite: {fileID: 21300000, guid: d3ec3f43711a1bd4aa336c2cd16e524a, type: 3}
 --- !u!114 &114368084141917900
 MonoBehaviour:
   m_ObjectHideFlags: 1

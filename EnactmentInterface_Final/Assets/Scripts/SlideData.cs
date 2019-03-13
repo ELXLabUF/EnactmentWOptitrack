@@ -41,6 +41,7 @@ public class SlideData : MonoBehaviour {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
 
+
     }
 
     // Update is called once per frame
@@ -565,12 +566,54 @@ public class SlideData : MonoBehaviour {
         Sprite backdrop = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ObjectArray>().Backdrops[backdropIndex].GetComponent<Backdrop>().backdrop;
         GameObject.Find("EnactmentBackdrop").GetComponent<SpriteRenderer>().sprite = backdrop;
 
+        //Niloofar: need to update these - create empty GameObjects and assign the relevant prefabs to them
+        //updateCharaPose(false);
+        ///updateCharaPos(true);
 
-        //updateItemPos();
-        updateCharaPose(false);
-        updateCharaPos(true);
+        updateItem();
+
+        updateCharacter();
 
         GameObject.Find("SceneInfo").GetComponent<Text>().text = sceneInfo;
+    }
+
+    public void updateCharacter()
+    {
+        if(GameObject.FindGameObjectsWithTag("current_chara").Length != 0)
+        {
+            GameObject[] currents;
+
+            currents = GameObject.FindGameObjectsWithTag("current_chara");
+
+            foreach (GameObject current in currents)
+            {
+                Destroy(current);
+            }
+        }
+
+        GameObject chara = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ObjectArray>().CharaPoseSets[charaIndex];
+        GameObject newChara = Instantiate(chara, chara.transform.position, chara.transform.rotation);
+        newChara.tag = "current_chara";
+    }
+
+    public void updateItem()
+    {
+        if (GameObject.FindGameObjectsWithTag("current_item").Length != 0)
+        {
+            GameObject[] currents;
+
+            currents = GameObject.FindGameObjectsWithTag("current_item");
+
+            foreach (GameObject current in currents)
+            {
+                Destroy(current);
+            }
+        }
+
+        GameObject item = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ObjectArray>().Items[itemIndex];
+        GameObject newItem = Instantiate(item, item.transform.position, item.transform.rotation);
+        newItem.transform.localScale = new Vector3(newItem.GetComponent<Item>().getScale(), newItem.GetComponent<Item>().getScale(), newItem.GetComponent<Item>().getScale());
+        newItem.tag = "current_item";
     }
 
     public void updateItemPos(bool repose)
@@ -600,20 +643,21 @@ public class SlideData : MonoBehaviour {
 
     public void updateCharaPose(bool repose)
     {
-        Sprite chara = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ObjectArray>().CharaPoseSets[charaIndex].GetComponent<CharaPoses>().poses[slidePose];
-
-        GameObject.Find("EnactmentCharacter").GetComponent<Image>().sprite = chara;
+        //Sprite chara = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ObjectArray>().CharaPoseSets[charaIndex].GetComponent<CharaPoses>().poses[slidePose];
+        //GameObject chara = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ObjectArray>().CharaPoseSets[charaIndex];
+        //GameObject.Find("EnactmentCharacter").GetComponent<Image>().sprite = chara;
         //GameObject.Find("EnactmentCharacter").transform.position = itempose.getCharaPos(charaIndex);
         updateItemPos(repose);
     }
 
     public void updateCharaPos(bool repose)
     {
-        Sprite chara = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ObjectArray>().CharaPoseSets[charaIndex].GetComponent<CharaPoses>().poses[slidePose];
-        ItemPoses itempose = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ItemPoses>();
-       
-        GameObject.Find("EnactmentCharacter").transform.localPosition = itempose.getCharaPos(charaPosition);
-        updateItemPos(repose);
+        //Sprite chara = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ObjectArray>().CharaPoseSets[charaIndex].GetComponent<CharaPoses>().poses[slidePose];
+        //ItemPoses itempose = GameObject.FindGameObjectWithTag("object_arrays").GetComponent<ItemPoses>();
+        
+
+        ///GameObject.Find("EnactmentCharacter").transform.localPosition = itempose.getCharaPos(charaPosition);
+        //updateItemPos(repose);
     }
 
     public void setPose(int sp)

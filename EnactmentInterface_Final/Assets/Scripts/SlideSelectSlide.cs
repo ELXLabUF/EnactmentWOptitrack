@@ -128,7 +128,7 @@ public class SlideSelectSlide : MonoBehaviour, IPointerClickHandler, IBeginDragH
 
         if (GetComponent<SlideData>().getLock() == false)
         {
-            this.transform.Find("SlideLocked(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 0);
+           // this.transform.Find("SlideLocked(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 0);
         }
         else
         {

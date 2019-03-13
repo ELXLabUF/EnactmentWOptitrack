@@ -620,7 +620,7 @@ public class SlideNumbering : MonoBehaviour
 
     public void updateEnactmentPose()
     {
-        getSelectedData().updateCharaPose(true);
+        //getSelectedData().updateCharaPose(true);
        
     }
 

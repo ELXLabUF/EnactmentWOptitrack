@@ -46,6 +46,7 @@ TagManager:
   - object_selection
   - all_canvases
   - trash
+  - current_chara
   layers:
   - Default
   - TransparentFX

@@ -47,6 +47,7 @@ TagManager:
   - all_canvases
   - trash
   - current_chara
+  - newCharacter
   layers:
   - Default
   - TransparentFX
@@ -57,7 +58,7 @@ TagManager:
   - 
   - 
   - Item
-  - 
+  - Ignore
   - 
   - 
   - 

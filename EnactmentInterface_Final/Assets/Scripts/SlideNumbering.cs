@@ -21,7 +21,7 @@ public class SlideNumbering : MonoBehaviour
     private bool donePlanning = false;
     private bool ready = false;
 
-    private int condition = 2; //0-bottom up, 1-hybrid, 2-top down
+    private int condition = 0; //0-bottom up, 1-hybrid, 2-top down
     
     // Use this for initialization
 

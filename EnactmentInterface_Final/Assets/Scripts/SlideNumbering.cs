@@ -21,8 +21,8 @@ public class SlideNumbering : MonoBehaviour
     private bool donePlanning = false;
     private bool ready = false;
 
-    private int condition = 0; //0-bottom up, 1-hybrid, 2-top down
-    
+    private int condition = 1; //0-bottom up, 1-hybrid, 2-top down
+    private bool sceneNotesOn = false; //whether we want to use scene notes
     // Use this for initialization
 
     public Sprite recordStop;
@@ -133,6 +133,18 @@ public class SlideNumbering : MonoBehaviour
 
                 break;
             case 1:
+                //Bottom up- record button is visible but not yet active, planning button goes away, play story button is visible but disabled
+                Destroy(GameObject.Find("NextSlide"));
+                Destroy(GameObject.Find("LastSlide"));
+                //GameObject.FindGameObjectWithTag("record_screen").GetComponent<Button>().interactable = false;
+                GameObject.FindGameObjectWithTag("record_screen").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
+                //GameObject.FindGameObjectWithTag("play_screen").GetComponent<Button>().interactable = false;
+                GameObject.FindGameObjectWithTag("play_screen").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
+                GameObject.FindGameObjectWithTag("planning_button").GetComponent<Button>().interactable = false;
+                GameObject.FindGameObjectWithTag("planning_button").GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                GameObject.FindGameObjectWithTag("planning_button").transform.SetAsFirstSibling();
+                GameObject.FindGameObjectWithTag("instructions").GetComponent<Text>().text = "Create Your Story";
+
                 break;
             case 2:
                 //Top down - record button and play story button goes away, planning button is visible but disabled
@@ -318,9 +330,84 @@ public class SlideNumbering : MonoBehaviour
                 break;
 
                 case 1:
-                    
 
-                    break;
+
+                if (!EmptySlide()) //no slides are empty
+                {
+                    SlideArray[] childrenSlides = GetComponentsInChildren<SlideArray>();
+
+                    for (int i = 0; i < childrenSlides.Length; i++)
+                    {
+                        SlideSelectSlide[] grandchildren = childrenSlides[i].GetComponentsInChildren<SlideSelectSlide>();
+
+                        for (int k = 0; k < grandchildren.Length; k++)
+                        {
+                            grandchildren[k].draggingOn();
+
+                        }
+                    }
+                }
+                else
+                {
+
+                    SlideArray[] childrenSlides = GetComponentsInChildren<SlideArray>();
+
+                    for (int i = 0; i < childrenSlides.Length; i++)
+                    {
+                        SlideSelectSlide[] grandchildren = childrenSlides[i].GetComponentsInChildren<SlideSelectSlide>();
+
+                        for (int k = 0; k < grandchildren.Length; k++)
+                        {
+                            //grandchildren[k].draggingOff();
+
+                        }
+                    }
+
+
+                }
+
+                if (getSelectedStatus() && !getSelectedData().getLock())
+                {
+                    if (getSelectedData().isFilled())
+                    {
+                        recordScreenReady = true;
+                        //GameObject.FindGameObjectWithTag("record_screen").GetComponent<Button>().interactable = true;
+                        GameObject.FindGameObjectWithTag("record_screen").GetComponent<Image>().color = new Color(.925f, 0, 0, 1);
+
+                    }
+                    else
+                    {
+                        recordScreenReady = false;
+                        GameObject.FindGameObjectWithTag("record_screen").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
+                    }
+                }
+                else
+                {
+                    //GameObject.FindGameObjectWithTag("record_screen").GetComponent<Button>().interactable = false;
+                    recordScreenReady = false;
+                    GameObject.FindGameObjectWithTag("record_screen").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
+                }
+
+
+                if (begSlides.Length > 0 && midSlides.Length > 0 && endSlides.Length > 0 && !EmptySlide() && titlesFilled())
+                {
+                    //GameObject.FindGameObjectWithTag("play_screen").GetComponent<Button>().interactable = true;
+                    GameObject.FindGameObjectWithTag("play_screen").GetComponent<Image>().color = new Color(.235f, .788f, .4f, 1);
+                    playReady = true;
+                }
+                else
+                {
+                    //GameObject.FindGameObjectWithTag("play_screen").GetComponent<Button>().interactable = false;
+                    playReady = false;
+                    GameObject.FindGameObjectWithTag("play_screen").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
+                }
+
+                if (begSlideCount >= 5) { GameObject.Find("AddBeg").GetComponent<Button>().interactable = false; }
+                if (midSlideCount >= 5) { GameObject.Find("AddMid").GetComponent<Button>().interactable = false; }
+                if (endSlideCount >= 5) { GameObject.Find("AddEnd").GetComponent<Button>().interactable = false; }
+
+
+                break;
                 case 2:
                     if (donePlanning)
                     {
@@ -1354,6 +1441,16 @@ public class SlideNumbering : MonoBehaviour
 
 
                 break;
+            case 1:
+                if (recordScreenReady)
+                {
+                    GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().toEnactment();
+                    updateEnactmentObjects();
+                    updateEnactmentPose();
+                }
+                else { GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().recordScenePop(); }
+
+                break;
             case 2:
                 GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().toEnactment();
                 updateEnactmentObjects();
@@ -1370,6 +1467,8 @@ public class SlideNumbering : MonoBehaviour
         {
             case 0:
                
+                break;
+            case 1:
                 break;
             case 2:
                 if (planningReady)

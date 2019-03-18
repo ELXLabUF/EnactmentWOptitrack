@@ -26,8 +26,9 @@ public class SlideSelectSlide : MonoBehaviour, IPointerClickHandler, IBeginDragH
     public Sprite selectBorder;
 
     public GameObject slideRecordIcon;
-    public GameObject slideWriteIcon;
+    //public GameObject slideWriteIcon;
     public GameObject slideLockIcon;
+    public GameObject slideTitle;
 
     private Sprite borderSprite;
     private string borderName;
@@ -82,17 +83,24 @@ public class SlideSelectSlide : MonoBehaviour, IPointerClickHandler, IBeginDragH
 
         GameObject newNumber = (GameObject)Instantiate(numberText, GetComponentInParent<Canvas>().transform);
         newNumber.transform.SetParent(this.transform);
-        newNumber.transform.localPosition = new Vector3(0, -75, 0);
+        newNumber.transform.localPosition = new Vector3(0, 60, 0);
 
-        GameObject newWriteIcon = (GameObject)Instantiate(slideWriteIcon, GetComponentInParent<Canvas>().transform);
-        newWriteIcon.transform.SetParent(this.transform);
-        newWriteIcon.transform.localPosition = new Vector3(25, -75, 0);
-        newWriteIcon.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        //GameObject newWriteIcon = (GameObject)Instantiate(slideWriteIcon, GetComponentInParent<Canvas>().transform);
+        //newWriteIcon.transform.SetParent(this.transform);
+        //newWriteIcon.transform.localPosition = new Vector3(25, -75, 0);
+        //newWriteIcon.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+
+        GameObject newSlideTitle = (GameObject)Instantiate(slideTitle, GetComponentInParent<Canvas>().transform);
+        newSlideTitle.transform.SetParent(this.transform);
+        newSlideTitle.transform.localPosition = new Vector3(0, -65, 0);
+        newSlideTitle.GetComponent<Image>().color = new Color(1, 1, 1, 1);
 
         GameObject newLockIcon = (GameObject)Instantiate(slideLockIcon, GetComponentInParent<Canvas>().transform);
         newLockIcon.transform.SetParent(this.transform);
         newLockIcon.transform.localPosition = new Vector3(75, 50, 0);
         newLockIcon.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+
+
 
         //the border prefab has no script, and is best found by its name, which varies by the tag
         switch (this.tag)
@@ -119,11 +127,11 @@ public class SlideSelectSlide : MonoBehaviour, IPointerClickHandler, IBeginDragH
 
         if (GetComponent<SlideData>().getSceneInfo() == "")
         {
-            this.transform.Find("SlideWritten(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 0);
+            //this.transform.Find("SlideWritten(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 0);
         }
         else
         {
-            this.transform.Find("SlideWritten(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            //this.transform.Find("SlideWritten(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 1);
         }
 
         if (GetComponent<SlideData>().getLock() == false)
@@ -132,7 +140,7 @@ public class SlideSelectSlide : MonoBehaviour, IPointerClickHandler, IBeginDragH
         }
         else
         {
-            this.transform.Find("SlideLocked(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            //this.transform.Find("SlideLocked(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 1);
         }
 
     }

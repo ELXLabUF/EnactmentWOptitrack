@@ -217,19 +217,19 @@ public class SlideNumbering : MonoBehaviour
 
             if (getSelectedData().getLock())
             {
-                GameObject.Find("WriteSlide").GetComponent<Button>().interactable = false;
-                GameObject.Find("WriteSlide").GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                //GameObject.Find("WriteSlide").GetComponent<Button>().interactable = false;
+                //GameObject.Find("WriteSlide").GetComponent<Image>().color = new Color(1, 1, 1, 0);
             }
             else
             {
-                GameObject.Find("WriteSlide").GetComponent<Button>().interactable = true;
-                GameObject.Find("WriteSlide").GetComponent<Image>().color = new Color(.232f, .918f, .235f, 1);
+                //GameObject.Find("WriteSlide").GetComponent<Button>().interactable = true;
+                //GameObject.Find("WriteSlide").GetComponent<Image>().color = new Color(.232f, .918f, .235f, 1);
             }
         }
         else
         {
-            GameObject.Find("WriteSlide").GetComponent<Button>().interactable = false;
-            GameObject.Find("WriteSlide").GetComponent<Image>().color = new Color(1,1,1,0);
+            //GameObject.Find("WriteSlide").GetComponent<Button>().interactable = false;
+            //GameObject.Find("WriteSlide").GetComponent<Image>().color = new Color(1,1,1,0);
         }
 
         switch (condition)

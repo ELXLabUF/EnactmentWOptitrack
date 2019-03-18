@@ -52,10 +52,9 @@ MonoBehaviour:
   selectBorder: {fileID: 21300000, guid: 780eae68595bc45419638c74b61e58ed, type: 3}
   slideRecordIcon: {fileID: 1018751244815074, guid: b75438781e3590d4cb30ca2c6912b970,
     type: 2}
-  slideWriteIcon: {fileID: 1018751244815074, guid: 77cabcc60f5a2df4486b9c42e13e9b42,
-    type: 2}
   slideLockIcon: {fileID: 1018751244815074, guid: f6d830f373f859d44a54200eae3c14dd,
     type: 2}
+  slideTitle: {fileID: 1176533405715708, guid: 81b9f404d4a978a49a99cafa77d4d4bf, type: 2}
 --- !u!114 &114208789694385930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,7 +148,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 1.69}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!222 &222419316935194726
 CanvasRenderer:

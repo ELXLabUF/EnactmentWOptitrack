@@ -509,7 +509,9 @@ public class SlideNumbering : MonoBehaviour
         
     }
 
-
+    //This is the function that checks for titles.
+    //1- changed tag of the title gameobjects that I wanted to remove (beg title, mide title, etc.)
+    //2- removed the gameobjects from scene.
     public bool titlesFilled()
     {
         GameObject[] allTitles = GameObject.FindGameObjectsWithTag("title");
@@ -1270,7 +1272,7 @@ public class SlideNumbering : MonoBehaviour
             {
                 writer.WriteLine("Middle " + i + ": ");
 
-
+    
             }
             writer.WriteLine(" ");
             writer.WriteLine("Ending Title: " + GameObject.Find("EndTitle").GetComponent<InputField>().text);

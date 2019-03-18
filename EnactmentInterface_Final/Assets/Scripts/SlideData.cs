@@ -362,6 +362,7 @@ public class SlideData : MonoBehaviour {
 
     }
 
+    //This is where to change 
     public bool isSlideEmpty()
     {
         if (isRecord == false || isItem == false || isBackdrop == false || isChara == false || sceneInfo == "")

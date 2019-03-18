@@ -38,7 +38,7 @@ public class ItemPreview : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     //once mouse enters object
     public void OnPointerEnter(PointerEventData data)
     {
-        Debug.Log("Help");
+        //Debug.Log("Help");
         previewImage.GetComponent<Image>().color = showColor;
         backImage.GetComponent<Image>().color = showBackColor;
         iconImage = gameObject.GetComponent<Image>().sprite;

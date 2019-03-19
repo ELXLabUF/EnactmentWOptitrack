@@ -28,16 +28,8 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         var rotationVector = this.gameObject.GetComponent<Transform>().rotation.eulerAngles;
-        //var rotationVector = ik.solver.rootNode.rotation.eulerAngles;
         rotationVector.y = GameObject.Find("Torso").transform.rotation.eulerAngles.y;
-        //rotationVector.y = GameObject.Find("Torso").transform.rotation.eulerAngles.y;
-        //ik.solver.rootNode.rotation = Quaternion.Euler(rotationVector);
-
         this.gameObject.GetComponent<Transform>().rotation = Quaternion.Euler(rotationVector);
-        //transformChara = this.gameObject.GetComponent<Transform>().rotation.eulerAngles;
-        //Debug.Log(transformChara.y);
-        //Debug.Log(GameObject.Find("Torso").transform.rotation.eulerAngles.y);
-        
 
     }
 }

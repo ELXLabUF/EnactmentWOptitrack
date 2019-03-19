@@ -48,6 +48,7 @@ TagManager:
   - trash
   - current_chara
   - newCharacter
+  - scene_title
   layers:
   - Default
   - TransparentFX

@@ -92,8 +92,10 @@ public class SlideSelectSlide : MonoBehaviour, IPointerClickHandler, IBeginDragH
 
         GameObject newSlideTitle = (GameObject)Instantiate(slideTitle, GetComponentInParent<Canvas>().transform);
         newSlideTitle.transform.SetParent(this.transform);
-        newSlideTitle.transform.localPosition = new Vector3(0, -65, 0);
+        newSlideTitle.transform.localPosition = new Vector3(0, -70, 0);
         newSlideTitle.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        newSlideTitle.tag = "scene_title";
+        
 
         GameObject newLockIcon = (GameObject)Instantiate(slideLockIcon, GetComponentInParent<Canvas>().transform);
         newLockIcon.transform.SetParent(this.transform);
@@ -123,25 +125,28 @@ public class SlideSelectSlide : MonoBehaviour, IPointerClickHandler, IBeginDragH
     // Update is called once per frame
     void Update()
     {
-        
-
-        if (GetComponent<SlideData>().getSceneInfo() == "")
+        if (GetComponent<SlideData>().getSceneInfo() != this.transform.Find("slideTitle(Clone)").GetComponent<InputField>().text || GetComponent<SlideData>().getSceneInfo() == null)
         {
+            GetComponent<SlideData>().setSceneInfo(this.transform.Find("slideTitle(Clone)").GetComponent<InputField>().text);
+        }
+
+        //   if (GetComponent<SlideData>().getSceneInfo() == "")
+        //{
             //this.transform.Find("SlideWritten(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 0);
-        }
-        else
-        {
+        //}
+        //else
+        //{
             //this.transform.Find("SlideWritten(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        }
+        //}
 
-        if (GetComponent<SlideData>().getLock() == false)
-        {
+        //if (GetComponent<SlideData>().getLock() == false)
+        //{
            // this.transform.Find("SlideLocked(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 0);
-        }
-        else
-        {
+        //}
+        //else
+        //{
             //this.transform.Find("SlideLocked(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        }
+        //}
 
     }
 

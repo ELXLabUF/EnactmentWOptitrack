@@ -1545,6 +1545,11 @@ public class SlideNumbering : MonoBehaviour
         GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().slideInputHide();
     }
 
+    public void setSceneTitle(string s)
+    {
+        getSelectedData().setSceneInfo(s);
+    }
+
     public void toPlayScreenButton()
     {
         if (playReady)

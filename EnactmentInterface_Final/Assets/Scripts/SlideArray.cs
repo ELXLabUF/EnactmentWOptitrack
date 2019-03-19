@@ -61,7 +61,7 @@ public class SlideArray : MonoBehaviour
     public void addSlide()
     {
         
-        if (GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getCondition() == 2 || GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getTotal() == 0)
+        if (GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getCondition() == 2 || GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getTotal() == 0 || GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getCondition() == 1)
         {
             if (slideBase != null && currentListID < 5)
             {
@@ -98,11 +98,11 @@ public class SlideArray : MonoBehaviour
                     break;
 
             }
-            GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().addSlidePop();
+            //GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().addSlidePop();
         }
         else
         {
-            GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().addingIncompletePop();
+            //GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().addingIncompletePop();
         }
 
     }

@@ -1535,8 +1535,9 @@ public class SlideNumbering : MonoBehaviour
 
     public void writeScene()
     {
-        GameObject.Find("InputSlideText").GetComponent<InputField>().text = getSelectedData().getSceneInfo();
-        GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().slideInputPop();
+        //GameObject.Find("InputSlideText").GetComponent<InputField>().text = getSelectedData().getSceneInfo();
+        //GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().slideInputPop();
+        //getSelectedData().setSceneInfo(GameObject.Find());
     }
 
     public void finishWriteScene()

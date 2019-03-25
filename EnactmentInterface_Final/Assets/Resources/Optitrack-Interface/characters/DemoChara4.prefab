@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4962422698972390}
   - component: {fileID: 95745062175860816}
+  - component: {fileID: 114426173254065272}
   m_Layer: 0
   m_Name: DemoChara4
   m_TagString: Untagged
@@ -51,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536240404698760}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.003000006, y: 0.806, z: -0.379}
+  m_LocalPosition: {x: 0, y: -0.38300002, z: -0.349}
   m_LocalScale: {x: 1.5972941, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4962422698972390}
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349348624495868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.189, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4115580641800308}
@@ -129,3 +130,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114426173254065272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349348624495868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691378649f708d14792c3beaa37f7326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconSprite: {fileID: 21300000, guid: 07ea7075cab59f64a949380b061461b8, type: 3}

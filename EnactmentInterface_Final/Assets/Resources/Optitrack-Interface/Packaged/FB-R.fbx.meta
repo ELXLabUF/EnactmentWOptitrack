@@ -199,11 +199,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert3
-    second: {fileID: 2100000, guid: 0732cc675c3b88d489beba10fdca0270, type: 2}
+    second: {fileID: 2100000, guid: 96462eded2e16dc46a09bfe53ff9bbad, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 0
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 4

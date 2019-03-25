@@ -7556,6 +7556,10 @@ Prefab:
       propertyPath: m_Name
       value: DemoPup
       objectReference: {fileID: 0}
+    - target: {fileID: 1349348624495868, guid: 500307f637a28fc438cc11b9d9da03e8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500307f637a28fc438cc11b9d9da03e8, type: 2}
   m_IsPrefabParent: 0

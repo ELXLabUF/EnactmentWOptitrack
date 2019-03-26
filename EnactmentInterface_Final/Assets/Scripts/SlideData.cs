@@ -11,10 +11,17 @@ public class SlideData : MonoBehaviour {
     private int charaIndex=0;
     private int backdropIndex=0;
     private int itemIndex=0;
-    private AudioSource slideAudio;
-
     private string sceneInfo = "";
-   
+
+    //recording variables
+    //private bool captureOptitrack;
+    private Vector4[] charaOptiPositions;
+    private Vector4[] objectOptiPositions;
+    private int currentFrame = 0;
+    private bool recordOptitrack = false;
+    private AudioSource slideAudio;
+    private bool playing = false;
+
 
     private int slidePose = 0;
     private bool isItem = false;
@@ -40,15 +47,32 @@ public class SlideData : MonoBehaviour {
 	void Start () {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
-
-
+        
     }
 
     // Update is called once per frame
     void Update () {
-       
+        if (!playing && GameObject.Find("CanvasManager").GetComponent<CanvasManagerBottomUp>().getWhichCanvas() == 1 && recordOptitrack && this.GetComponent<SlideSelectSlide>().getSelected() && isFilled())
+        {
+            Debug.Log("we started recording");
+            
+            //Vector3 charaPos = GameObject.Find("EnactmentCharacter").transform.position;
+            //Vector3 objectPos = itemposes.getItemPos(slidePose, false, charaPosition, objectPosition, slidePose);
 
+            //if (GameObject.FindGameObjectWithTag("current_item") != null)
+            //{
+            //    objectPos = GameObject.FindGameObjectWithTag("current_item").GetComponent<Transform>().localPosition;
+            //}
 
+            //charaLeapPositions[currentFrame] = new Vector4(charaPos.x, charaPos.y, charaPos.z, Time.deltaTime);
+            //objectLeapPositions[currentFrame] = new Vector4(objectPos.x, objectPos.y, objectPos.z, Time.deltaTime);
+            //currentFrame++;
+
+        }
+        else if (!playing && GameObject.Find("CanvasManager").GetComponent<CanvasManagerBottomUp>().getWhichCanvas() == 1 && !recordOptitrack && this.GetComponent<SlideSelectSlide>().getSelected() && isFilled())
+        {
+            Debug.Log("we are not recording");
+        }
     }
 
 
@@ -334,10 +358,28 @@ public class SlideData : MonoBehaviour {
 
     public void startRecord()
     {
-        
+
         slideAudio.clip = Microphone.Start(null, true, 600, 44100);
         Debug.Log("We have started");
         isRecording = true;
+
+        //if (captureOptitrack)
+        //{
+        recordOptitrack = true;
+
+        charaOptiPositions = new Vector4[60 * 10 * 60];
+        objectOptiPositions = new Vector4[60 * 10 * 60];
+        //}
+    }
+
+    public void setPlaying(bool set)
+    {
+        playing = set;
+    }
+
+    public bool getPlaying()
+    {
+        return playing;
     }
 
     public void endRecord()
@@ -355,12 +397,53 @@ public class SlideData : MonoBehaviour {
         slideAudio.clip.SetData(samples, 0);
 
         audioTime = samples.Length / freq;
-        //Debug.Log("We have stopped");
+        Debug.Log("We have stopped");
 
         isRecord = true;
         if (slideAudio.clip == null) { }//Debug.Log("uuhm"); }
 
+        //if (captureOptitrack)
+        //{
+        //    recordLeap = false;
+        //    Vector4[] newRecord = new Vector4[currentFrame];
+
+        //    for (int i = 0; i < currentFrame; i++)
+        //    {
+        //        newRecord[i] = charaOptiPositions[i];
+        //    }
+
+        //    charaOptiPositions = newRecord;
+
+        //    for (int z = 0; z < currentFrame; z++)
+        //    {
+        //        newRecord[z] = objectOptiPositions[z];
+        //    }
+
+        //    objectOptiPositions = newRecord;
+        //}
     }
+
+    //public void endRecord()
+    //{
+    //    isRecording = false;
+    //    int timeCut = Microphone.GetPosition(null);
+    //    Microphone.End(null);
+
+    //    float[] samples = new float[timeCut];
+    //    slideAudio.clip.GetData(samples, 0);
+
+
+    //    int freq = slideAudio.clip.frequency;
+    //    slideAudio.clip = AudioClip.Create("SlideSound", samples.Length, 1, freq, false);
+    //    slideAudio.clip.SetData(samples, 0);
+
+    //    audioTime = samples.Length / freq;
+    //    //Debug.Log("We have stopped");
+
+    //    isRecord = true;
+    //    if (slideAudio.clip == null) { }//Debug.Log("uuhm"); }
+
+    //}
 
     //This is where to change 
     public bool isSlideEmpty()

@@ -23,6 +23,7 @@ public class SlideNumbering : MonoBehaviour
 
     private int condition = 1; //0-bottom up, 1-hybrid, 2-top down
     private bool sceneNotesOn = false; //whether we want to use scene notes
+    private bool OptitrackCaptureOn = true;
     // Use this for initialization
 
     public Sprite recordStop;
@@ -1564,4 +1565,11 @@ public class SlideNumbering : MonoBehaviour
 
         }
     }
+
+    public bool getOptitrackCapture()
+    {
+        return OptitrackCaptureOn;
+    }
 }
+
+

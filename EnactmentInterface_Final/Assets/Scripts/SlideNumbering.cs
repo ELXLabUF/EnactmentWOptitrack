@@ -941,7 +941,7 @@ public class SlideNumbering : MonoBehaviour
         //int iterator = 1;
 
         if (saveFiles==true) {
-            participantName = "Participant" + GameObject.Find("InputID").GetComponent<InputField>().text;
+            participantName = "Participant" + GameObject.Find("InputParticipantID").GetComponent<InputField>().text + "_mode" + GameObject.Find("canvasManager").GetComponent<CanvasManagerBottomUp>().getEnactmentCondition();
             Directory.CreateDirectory(Application.dataPath + "/" + participantName);
            
         }

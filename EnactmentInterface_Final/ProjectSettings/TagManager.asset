@@ -49,6 +49,11 @@ TagManager:
   - current_chara
   - newCharacter
   - scene_title
+  - object_arrays_NoChara
+  - record_screen_NoChara
+  - planning_button_NoChara
+  - play_screen_NoChara
+  - enactment_check_NoChara
   layers:
   - Default
   - TransparentFX

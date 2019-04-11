@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class CanvasManagerBottomUp : MonoBehaviour {
 
+    public int enactmentCondition; // 0 = Cartoon enactment (transformed self) 1 = video enactment (non-transformed self)
     public Canvas enactmentCanvas;
     public Canvas timelineCanvas;
     public Canvas playCanvas;
     public Canvas endCanvas;
     public Canvas startCanvas;
-    private int whichCanvas = 0; // 0 - timeline, 1 - enactment, 2 - play, 3-end, 4-start
+    public Canvas videoTimelineCanvas;
+    public Canvas videoEnactmentCanvas;
+    public Canvas videoPlayCanvas;
+    private int whichCanvas = 0; // 0 - timeline, 1 - enactment, 2 - play, 3-end, 4-start, 5- videoTimeline, 6- videoEnactment, 7- videoPlay
+    //canvas 5,6,7 are for non-transformed self codition
 
     public CanvasGroup saveStoryPopUp;
     public CanvasGroup planningPopUp;
@@ -40,12 +45,13 @@ public class CanvasManagerBottomUp : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (whichCanvas == 4) {
-            if (GameObject.Find("InputID").GetComponent<InputField>().text == "")
+            if (GameObject.Find("InputParticipantID").GetComponent<InputField>().text == "" )
             {
                 GameObject.Find("StartApp").GetComponent<Button>().interactable = false;
             }
             else
             {
+                
                 GameObject.Find("StartApp").GetComponent<Button>().interactable = true;
             }
         }
@@ -54,46 +60,122 @@ public class CanvasManagerBottomUp : MonoBehaviour {
     //Go to enactment canvas
     public void toEnactment()
     {
-        
-        disableCanvas(timelineCanvas);
-        disableCanvas(playCanvas);
-        enableCanvas(enactmentCanvas);
-        disableCanvas(endCanvas);
-        disableCanvas(startCanvas);
-        whichCanvas = 1;
+        if (enactmentCondition != 0)
+        {
+            disableCanvas(videoTimelineCanvas);
+            disableCanvas(playCanvas);
+            disableCanvas(enactmentCanvas);
+            disableCanvas(endCanvas);
+            disableCanvas(startCanvas);
+            disableCanvas(timelineCanvas);
+            enableCanvas(videoEnactmentCanvas);
+            disableCanvas(videoPlayCanvas);
+            whichCanvas = 6;
+        }
+        else
+        {
+            disableCanvas(timelineCanvas);
+            disableCanvas(playCanvas);
+            enableCanvas(enactmentCanvas);
+            disableCanvas(endCanvas);
+            disableCanvas(startCanvas);
+            disableCanvas(timelineCanvas);
+            disableCanvas(videoEnactmentCanvas);
+            disableCanvas(videoPlayCanvas);
+            whichCanvas = 1;
+        }
+
     }
 
     //Go to timeline canvas
     public void toTimeline()
     {
-        enableCanvas(timelineCanvas);
-        disableCanvas(playCanvas);
-        disableCanvas(enactmentCanvas);
-        StopAllCoroutines();
-        disableCanvas(endCanvas);
-        disableCanvas(startCanvas);
-        whichCanvas = 0;
+        if (enactmentCondition != 0)
+        {
+            enableCanvas(videoTimelineCanvas);
+            disableCanvas(playCanvas);
+            disableCanvas(enactmentCanvas);
+            StopAllCoroutines();
+            disableCanvas(endCanvas);
+            disableCanvas(startCanvas);
+            disableCanvas(timelineCanvas);
+            disableCanvas(videoEnactmentCanvas);
+            disableCanvas(videoPlayCanvas);
+            whichCanvas = 5;
+        }
+        else
+        {
+            enableCanvas(timelineCanvas);
+            disableCanvas(playCanvas);
+            disableCanvas(enactmentCanvas);
+            StopAllCoroutines();
+            disableCanvas(endCanvas);
+            disableCanvas(startCanvas);
+            disableCanvas(videoTimelineCanvas);
+            disableCanvas(videoEnactmentCanvas);
+            disableCanvas(videoPlayCanvas);
+            whichCanvas = 0;
+        }
+
     }
 
     //Go to play canvas
     public void toPlay()
     {
-        disableCanvas(timelineCanvas);
-        enableCanvas(playCanvas);
-        disableCanvas(enactmentCanvas);
-        disableCanvas(endCanvas);
-        disableCanvas(startCanvas);
-        whichCanvas = 0;
+        if (enactmentCondition != 0)
+        {
+            disableCanvas(videoTimelineCanvas);
+            disableCanvas(playCanvas);
+            disableCanvas(enactmentCanvas);
+            disableCanvas(endCanvas);
+            disableCanvas(startCanvas);
+            disableCanvas(timelineCanvas);
+            disableCanvas(videoEnactmentCanvas);
+            enableCanvas(videoPlayCanvas);
+            whichCanvas = 7;
+        }
+        else
+        {
+            disableCanvas(timelineCanvas);
+            enableCanvas(playCanvas);
+            disableCanvas(enactmentCanvas);
+            disableCanvas(endCanvas);
+            disableCanvas(startCanvas);
+            disableCanvas(videoTimelineCanvas);
+            disableCanvas(videoEnactmentCanvas);
+            disableCanvas(videoPlayCanvas);
+            whichCanvas = 2;
+        }
+  
     }
 
     public void toStart()
     {
-        disableCanvas(timelineCanvas);
-        disableCanvas(playCanvas);
-        disableCanvas(enactmentCanvas);
-        disableCanvas(endCanvas);
-        enableCanvas(startCanvas);
-        whichCanvas = 4;
+        //if (enactmentCondition != 0)
+        //{
+        //    enableCanvas(videoTimelineCanvas);
+        //    disableCanvas(playCanvas);
+        //    disableCanvas(enactmentCanvas);
+        //    disableCanvas(endCanvas);
+        //    disableCanvas(startCanvas);
+        //    disableCanvas(timelineCanvas);
+        //    disableCanvas(videoEnactmentCanvas);
+        //    disableCanvas(videoPlayCanvas);
+        //    whichCanvas = 5;
+        //}
+        //else
+        //{
+            disableCanvas(timelineCanvas);
+            disableCanvas(playCanvas);
+            disableCanvas(enactmentCanvas);
+            disableCanvas(endCanvas);
+            enableCanvas(startCanvas);
+            disableCanvas(videoTimelineCanvas);
+            disableCanvas(videoEnactmentCanvas);
+            disableCanvas(videoPlayCanvas);
+            whichCanvas = 4;
+        //}
+        
     }
 
     public void toEnd()
@@ -295,6 +377,11 @@ public class CanvasManagerBottomUp : MonoBehaviour {
                 break;
         }
 
+    }
+
+    public int getEnactmentCondition()
+    {
+        return enactmentCondition;
     }
 
 }

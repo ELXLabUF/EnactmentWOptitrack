@@ -664,7 +664,7 @@ public class SlideDataNoChara : MonoBehaviour
         //updateCharaPose(false);
         ///updateCharaPos(true);
 
-        updateItem();
+        //updateItem();
 
         //updateCharacter();
 

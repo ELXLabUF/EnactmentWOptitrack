@@ -54,6 +54,7 @@ TagManager:
   - planning_button_NoChara
   - play_screen_NoChara
   - enactment_check_NoChara
+  - video_frame
   layers:
   - Default
   - TransparentFX

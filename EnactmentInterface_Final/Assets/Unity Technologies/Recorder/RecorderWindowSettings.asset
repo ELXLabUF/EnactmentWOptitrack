@@ -12,6 +12,23 @@ MonoBehaviour:
   m_Name: RecorderWindowSettings
   m_EditorClassIdentifier: 
   m_Settings: {fileID: 114256931083073526}
+--- !u!114 &114118842271677526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef190f44e596a94ebfec7c7b888a950, type: 3}
+  m_Name: 95fe3def-b4bc-4b85-92b7-67cff89df6fa
+  m_EditorClassIdentifier: 
+  m_DisplayName: Pixels
+  m_Id: 57fb237f-2e13-41a0-9540-5aaa61c6a983
+  m_OutputSize: 720
+  m_AspectRatio: 0
+  m_ForceEvenSize: 0
+  m_SourceRTxtr: {fileID: 0}
 --- !u!114 &114256931083073526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,7 +58,7 @@ MonoBehaviour:
     m_leaf: Recordings
   m_InputsSettings:
     m_InputsSettingsAssets:
-    - {fileID: 114358486667497554}
+    - {fileID: 114118842271677526}
     ownerRecorderSettingsAssetId: da5f5c30d6ea8f44d88f9c942c51dee3
   m_RecorderTypeName: UTJ.FrameCapturer.Recorders.EXRRecorder, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
@@ -52,24 +69,3 @@ MonoBehaviour:
     width: 0
     height: 0
     channels: 0
---- !u!114 &114358486667497554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d935bf7a4fcf66488738bda5536c1cb, type: 3}
-  m_Name: bf1e512f-2a9d-4243-ab3d-ea954f0a2294
-  m_EditorClassIdentifier: 
-  m_DisplayName: Pixels
-  m_Id: 2b17f900-fd83-4aa6-abdf-fd4ad7ce2597
-  m_OutputSize: 1080
-  m_AspectRatio: 0
-  m_ForceEvenSize: 0
-  source: 4
-  m_CameraTag: 
-  m_FlipFinalOutput: 1
-  m_AllowTransparency: 0
-  m_CaptureUI: 0

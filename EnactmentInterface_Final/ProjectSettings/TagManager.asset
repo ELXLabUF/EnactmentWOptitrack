@@ -55,6 +55,9 @@ TagManager:
   - play_screen_NoChara
   - enactment_check_NoChara
   - video_frame
+  - record_btn_noChara
+  - play_btn_noChara
+  - back_btn_noChara
   layers:
   - Default
   - TransparentFX

@@ -373,9 +373,19 @@ public class SlideDataNoChara : MonoBehaviour
         //if (captureOptitrack)
         //{
         recordOptitrack = true;
-
-        charaOptiPositions = new Vector4[60 * 10 * 60];
-        objectOptiPositions = new Vector4[60 * 10 * 60];
+        DigitalSalmon.OpenBroadcastStudio.ObsConfigInfo configInfo =
+            new DigitalSalmon.OpenBroadcastStudio.ObsConfigInfo
+            {
+                AllowOpenGl = true,
+                MinimizeToTray = true,
+                AlwaysOnTop = false,
+                CollectionName = "Untitled",
+                SceneName = "Scene",
+                Verbose = true
+            };
+        DigitalSalmon.OpenBroadcastStudio.StartRecording(configInfo);
+        //charaOptiPositions = new Vector4[60 * 10 * 60];
+        //objectOptiPositions = new Vector4[60 * 10 * 60];
         //}
     }
 
@@ -392,6 +402,7 @@ public class SlideDataNoChara : MonoBehaviour
     public void endRecord()
     {
         isRecording = false;
+        DigitalSalmon.OpenBroadcastStudio.Stop();
         int timeCut = Microphone.GetPosition(null);
         Microphone.End(null);
 

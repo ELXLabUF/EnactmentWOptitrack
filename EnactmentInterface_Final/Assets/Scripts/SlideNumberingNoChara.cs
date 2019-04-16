@@ -632,9 +632,9 @@ public class SlideNumberingNoChara : MonoBehaviour
     public void recordSelectedSlide()
     {
 
-        GameObject playButton = GameObject.FindGameObjectWithTag("play_slide");
-        GameObject backButton = GameObject.FindGameObjectWithTag("back_button");
-        GameObject recordButton = GameObject.FindGameObjectWithTag("record_button");
+        GameObject playButton = GameObject.FindGameObjectWithTag("play_btn_noChara");
+        GameObject backButton = GameObject.FindGameObjectWithTag("back_btn_noChara");
+        GameObject recordButton = GameObject.FindGameObjectWithTag("record_btn_noChara");
         GameObject[] poseButtons = GameObject.FindGameObjectsWithTag("pose_button");
 
         if (isRecording == false)

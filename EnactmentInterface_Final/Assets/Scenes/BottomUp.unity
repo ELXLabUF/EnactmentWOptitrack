@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3375,8 +3375,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 187438136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 349.5, y: 34, z: -10.75}
-  m_LocalScale: {x: 0.73645836, y: 0.73645836, z: 0.73645836}
+  m_LocalPosition: {x: 470, y: 101.5, z: -10.75}
+  m_LocalScale: {x: 0.9875, y: 0.9875, z: 0.9875}
   m_Children:
   - {fileID: 1095763419}
   - {fileID: 929064586}
@@ -3780,7 +3780,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203809178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 368.00003, y: 172.21216, z: 0}
+  m_LocalPosition: {x: 368, y: 171.87341, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 268038438}
@@ -13134,7 +13134,7 @@ GameObject:
   - component: {fileID: 757573035}
   m_Layer: 5
   m_Name: Play
-  m_TagString: play_btn_noChara
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16144,7 +16144,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1030454045}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -16466,8 +16466,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1037491456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 349.5, y: 34, z: -10.75}
-  m_LocalScale: {x: 0.73645836, y: 0.73645836, z: 0.73645836}
+  m_LocalPosition: {x: 470, y: 101.5, z: -10.75}
+  m_LocalScale: {x: 0.9875, y: 0.9875, z: 0.9875}
   m_Children:
   - {fileID: 982435889}
   - {fileID: 1708345981}
@@ -18351,7 +18351,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169364552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 368.00003, y: 172.21216, z: 0}
+  m_LocalPosition: {x: 368, y: 171.87341, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 734236552}
@@ -20555,7 +20555,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1324816865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000030517578, y: 255.21216, z: 0}
+  m_LocalPosition: {x: 0, y: 254.87341, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1704031021}
@@ -22056,7 +22056,7 @@ GameObject:
   - component: {fileID: 1440560421}
   m_Layer: 5
   m_Name: Back
-  m_TagString: back_btn_noChara
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23565,7 +23565,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597350351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000030517578, y: 255.21216, z: 0}
+  m_LocalPosition: {x: 0, y: 254.87341, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2023358524}
@@ -25087,8 +25087,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704031017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 349.5, y: 34, z: -10.75}
-  m_LocalScale: {x: 0.73645836, y: 0.73645836, z: 0.73645836}
+  m_LocalPosition: {x: 470, y: 101.5, z: -10.75}
+  m_LocalScale: {x: 0.9875, y: 0.9875, z: 0.9875}
   m_Children:
   - {fileID: 1116923049}
   - {fileID: 1324816866}
@@ -27948,7 +27948,7 @@ GameObject:
   - component: {fileID: 1929416704}
   m_Layer: 5
   m_Name: Record
-  m_TagString: record_btn_noChara
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29855,8 +29855,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2023358519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 349.5, y: 34, z: -10.75}
-  m_LocalScale: {x: 0.73645836, y: 0.73645836, z: 0.73645836}
+  m_LocalPosition: {x: 470, y: 101.5, z: -10.75}
+  m_LocalScale: {x: 0.9875, y: 0.9875, z: 0.9875}
   m_Children:
   - {fileID: 239697233}
   - {fileID: 1597350352}

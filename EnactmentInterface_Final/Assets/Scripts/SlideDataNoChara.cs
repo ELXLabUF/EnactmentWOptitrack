@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.IO;
+using System.Linq
 
 public class SlideDataNoChara : MonoBehaviour
 {
@@ -22,6 +24,7 @@ public class SlideDataNoChara : MonoBehaviour
     private int currentFrame = 0;
     private bool recordOptitrack = false;
     private AudioSource slideAudio;
+    private string videoClipName;
     private bool playing = false;
 
 
@@ -50,6 +53,11 @@ public class SlideDataNoChara : MonoBehaviour
     {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
+        DirectoryInfo info = new DirectoryInfo("");
+        FileInfo[] files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray(); foreach (FileInfo file in files)
+        { // DO Something... 
+
+        }
 
     }
 
@@ -505,6 +513,14 @@ public class SlideDataNoChara : MonoBehaviour
             }
 
         }
+    }
+
+    public void playSlideVideo()
+    {
+        var slideClipName = "fillLater";
+        var slideAudioName = "filllater";
+
+
     }
 
     public AudioClip getAudio()

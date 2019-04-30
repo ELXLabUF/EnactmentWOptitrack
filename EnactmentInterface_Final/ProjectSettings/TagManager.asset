@@ -59,6 +59,7 @@ TagManager:
   - play_btn_noChara
   - back_btn_noChara
   - video_single_play
+  - play_singlePlay_btn
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,8 @@ public class CanvasManagerBottomUp : MonoBehaviour {
     public Canvas videoTimelineCanvas;
     public Canvas videoEnactmentCanvas;
     public Canvas videoPlayCanvas;
-    private int whichCanvas = 0; // 0 - timeline, 1 - enactment, 2 - play, 3-end, 4-start, 5- videoTimeline, 6- videoEnactment, 7- videoPlay
+    public Canvas videoSinglePlayCanvas;
+    private int whichCanvas = 0; // 0 - timeline, 1 - enactment, 2 - play, 3-end, 4-start, 5- videoTimeline, 6- videoEnactment, 7- videoPlay 8- SinglePlay
     //canvas 5,6,7 are for non-transformed self codition
 
     public CanvasGroup saveStoryPopUp;
@@ -70,6 +71,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(timelineCanvas);
             enableCanvas(videoEnactmentCanvas);
             disableCanvas(videoPlayCanvas);
+            disableCanvas(videoSinglePlayCanvas);
             whichCanvas = 6;
         }
         else
@@ -101,6 +103,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(timelineCanvas);
             disableCanvas(videoEnactmentCanvas);
             disableCanvas(videoPlayCanvas);
+            disableCanvas(videoSinglePlayCanvas);
             whichCanvas = 5;
         }
         else
@@ -131,8 +134,11 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(startCanvas);
             disableCanvas(timelineCanvas);
             disableCanvas(videoEnactmentCanvas);
-            enableCanvas(videoPlayCanvas);
-            whichCanvas = 7;
+            disableCanvas(videoPlayCanvas);
+            enableCanvas(videoSinglePlayCanvas);
+            whichCanvas = 8;
+
+            GameObject.Find("AVProVideo").GetComponent<video>().playAgain();
         }
         else
         {
@@ -173,6 +179,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(videoTimelineCanvas);
             disableCanvas(videoEnactmentCanvas);
             disableCanvas(videoPlayCanvas);
+            disableCanvas(videoSinglePlayCanvas);
             whichCanvas = 4;
         //}
         

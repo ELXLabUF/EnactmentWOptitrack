@@ -635,7 +635,7 @@ public class SlideNumberingNoChara : MonoBehaviour
         GameObject playButton = GameObject.FindGameObjectWithTag("play_btn_noChara");
         GameObject backButton = GameObject.FindGameObjectWithTag("back_btn_noChara");
         GameObject recordButton = GameObject.FindGameObjectWithTag("record_btn_noChara");
-        GameObject[] poseButtons = GameObject.FindGameObjectsWithTag("pose_button");
+        //GameObject[] poseButtons = GameObject.FindGameObjectsWithTag("pose_button");
 
         if (isRecording == false)
         {
@@ -644,11 +644,11 @@ public class SlideNumberingNoChara : MonoBehaviour
             playButton.GetComponent<Button>().interactable = false;
             backButton.GetComponent<Button>().interactable = false;
             recordButton.GetComponent<Image>().sprite = recordStop;
-            foreach (GameObject button in poseButtons)
-            {
-                button.GetComponent<Button>().interactable = false;
+            //foreach (GameObject button in poseButtons)
+            //{
+            //    button.GetComponent<Button>().interactable = false;
 
-            }
+            //}
         }
         else
         {
@@ -658,11 +658,11 @@ public class SlideNumberingNoChara : MonoBehaviour
             playButton.GetComponent<Button>().interactable = true;
             backButton.GetComponent<Button>().interactable = true;
             recordButton.GetComponent<Image>().sprite = recordStart;
-            foreach (GameObject button in poseButtons)
-            {
-                button.GetComponent<Button>().interactable = true;
+            //foreach (GameObject button in poseButtons)
+            //{
+            //    button.GetComponent<Button>().interactable = true;
 
-            }
+            //}
         }
 
     }

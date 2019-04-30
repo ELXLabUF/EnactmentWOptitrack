@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.IO;
-using System.Linq
+using System.Linq;
 
 public class SlideDataNoChara : MonoBehaviour
 {
@@ -53,11 +53,13 @@ public class SlideDataNoChara : MonoBehaviour
     {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
-        DirectoryInfo info = new DirectoryInfo("");
-        FileInfo[] files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray(); foreach (FileInfo file in files)
-        { // DO Something... 
+        //DirectoryInfo info = new DirectoryInfo("sample");
+        //FileInfo[] files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
 
-        }
+        //foreach (FileInfo file in files)
+        //{ // DO Something... 
+        //    Debug.Log("print");
+        //}
 
     }
 
@@ -389,6 +391,7 @@ public class SlideDataNoChara : MonoBehaviour
                 AlwaysOnTop = false,
                 CollectionName = "Untitled",
                 SceneName = "Scene",
+                SkipMultiInstanceWarning = true,
                 Verbose = true
             };
         DigitalSalmon.OpenBroadcastStudio.StartRecording(configInfo);

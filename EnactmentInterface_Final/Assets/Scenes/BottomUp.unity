@@ -3375,8 +3375,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 187438136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 493, y: 114.5, z: -10.75}
-  m_LocalScale: {x: 1.0354167, y: 1.0354167, z: 1.0354167}
+  m_LocalPosition: {x: 487.5, y: 111.5, z: -10.75}
+  m_LocalScale: {x: 1.0239583, y: 1.0239583, z: 1.0239583}
   m_Children:
   - {fileID: 1095763419}
   - {fileID: 929064586}
@@ -3780,7 +3780,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203809178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 368.00003, y: 171.93964, z: 0}
+  m_LocalPosition: {x: 368, y: 172.03052, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 268038438}
@@ -8006,7 +8006,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 463461962}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -9311,8 +9311,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 167180980}
-        m_MethodName: playSelectedSlide
+      - m_Target: {fileID: 2049488759}
+        m_MethodName: toPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10775,6 +10775,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 624291660}
+  - component: {fileID: 624291662}
   - component: {fileID: 624291661}
   m_Layer: 5
   m_Name: AVProVideo
@@ -10790,7 +10791,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 624291659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 16.100006, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 463461963}
@@ -10798,8 +10799,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.0000009536743}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 16.1, y: -7.5}
+  m_SizeDelta: {x: 702.6, y: 390.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624291661
 MonoBehaviour:
@@ -10812,8 +10813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638c870cac4da414fba921606d504407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_VideoLocation: 2
-  m_VideoPath: AVProVideoSamples/BigBuckBunny_360p30.mp4
+  m_VideoLocation: 0
+  m_VideoPath: 
   m_AutoOpen: 0
   m_AutoStart: 0
   m_Loop: 0
@@ -10933,6 +10934,17 @@ MonoBehaviour:
     overridePath: 0
     pathLocation: 2
     path: 
+--- !u!114 &624291662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624291659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5841e9b5c50b1524186d00f533151bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &629609451
 GameObject:
   m_ObjectHideFlags: 0
@@ -13134,7 +13146,7 @@ GameObject:
   - component: {fileID: 757573035}
   m_Layer: 5
   m_Name: Play
-  m_TagString: Untagged
+  m_TagString: play_singlePlay_btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13196,8 +13208,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 167180980}
-        m_MethodName: playSelectedSlide
+      - m_Target: {fileID: 624291662}
+        m_MethodName: playAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15808,7 +15820,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1017958129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.000030517578, y: 0.000015258789, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472203881}
@@ -15816,8 +15828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000047683716, y: -0.0000009536743}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.000015259, y: 0.000022888}
+  m_SizeDelta: {x: 702.6, y: 390.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017958131
 MonoBehaviour:
@@ -16144,7 +16156,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1030454045}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -16466,8 +16478,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1037491456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 493, y: 114.5, z: -10.75}
-  m_LocalScale: {x: 1.0354167, y: 1.0354167, z: 1.0354167}
+  m_LocalPosition: {x: 487.5, y: 111.5, z: -10.75}
+  m_LocalScale: {x: 1.0239583, y: 1.0239583, z: 1.0239583}
   m_Children:
   - {fileID: 982435889}
   - {fileID: 1708345981}
@@ -18351,7 +18363,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169364552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 368.00003, y: 171.93964, z: 0}
+  m_LocalPosition: {x: 368, y: 172.03052, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 734236552}
@@ -20555,7 +20567,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1324816865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000030517578, y: 254.93964, z: 0}
+  m_LocalPosition: {x: 0, y: 255.03052, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1704031021}
@@ -22119,7 +22131,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2049488759}
-        m_MethodName: toTimeline
+        m_MethodName: toEnactment
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23565,7 +23577,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597350351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000030517578, y: 254.93964, z: 0}
+  m_LocalPosition: {x: 0, y: 255.03052, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2023358524}
@@ -25087,8 +25099,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704031017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 493, y: 114.5, z: -10.75}
-  m_LocalScale: {x: 1.0354167, y: 1.0354167, z: 1.0354167}
+  m_LocalPosition: {x: 487.5, y: 111.5, z: -10.75}
+  m_LocalScale: {x: 1.0239583, y: 1.0239583, z: 1.0239583}
   m_Children:
   - {fileID: 1116923049}
   - {fileID: 1324816866}
@@ -29855,8 +29867,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2023358519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 493, y: 114.5, z: -10.75}
-  m_LocalScale: {x: 1.0354167, y: 1.0354167, z: 1.0354167}
+  m_LocalPosition: {x: 487.5, y: 111.5, z: -10.75}
+  m_LocalScale: {x: 1.0239583, y: 1.0239583, z: 1.0239583}
   m_Children:
   - {fileID: 239697233}
   - {fileID: 1597350352}
@@ -30394,6 +30406,7 @@ MonoBehaviour:
   videoTimelineCanvas: {fileID: 2023358520}
   videoEnactmentCanvas: {fileID: 1030454046}
   videoPlayCanvas: {fileID: 382591053}
+  videoSinglePlayCanvas: {fileID: 463461967}
   saveStoryPopUp: {fileID: 65101918}
   planningPopUp: {fileID: 1272002879}
   playStoryPopUp: {fileID: 2015417250}

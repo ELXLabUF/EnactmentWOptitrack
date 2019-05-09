@@ -24,7 +24,7 @@ public class SlideDataNoChara : MonoBehaviour
     private int currentFrame = 0;
     private bool recordOptitrack = false;
     private AudioSource slideAudio;
-    private string videoClipName;
+    //private string videoClipName;
     private bool playing = false;
 
 
@@ -48,17 +48,29 @@ public class SlideDataNoChara : MonoBehaviour
     public Sprite playSprite;
     //0=default, 1=charaposition, 2=objectposition
 
+    //Filesystem variables
+    private string slideFileName;
+    private DirectoryInfo mediaDirectory;
+
     // Use this for initialization
     void Start()
     {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
-        //DirectoryInfo info = new DirectoryInfo("sample");
-        //FileInfo[] files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
+        //For laptop
+        mediaDirectory = new DirectoryInfo("C:\\Users\\Niloofar Zarei\\Desktop\\captures\\");
+        //Debug.Log(this.gameObject.tag);
+        //for PC
+        //DirectoryInfo info = new DirectoryInfo("C:\\Users\\n.zarei.3001\\Desktop\\captures\\");
+        //FileInfo[] files = mediaDirectory.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
+     
+        //Debug.Log("directory found!");
+        //Debug.Log(files.ToString());
+
 
         //foreach (FileInfo file in files)
         //{ // DO Something... 
-        //    Debug.Log("print");
+        //    Debug.Log(file.Name);
         //}
 
     }
@@ -835,6 +847,31 @@ public class SlideDataNoChara : MonoBehaviour
         //GameObject.Find("PlayCharacter").GetComponent<Image>().sprite = chara;
         GameObject.Find("PlayCharacter").transform.localPosition = itempose.getCharaPos(charaPosition);
 
+    }
+
+    public string setSlideFileName()
+    {
+        string name = "";
+        switch (this.gameObject.tag)
+        {
+            case "green":
+                name = "beg_";
+                break;
+
+            case "yellow":
+                name = "mid_";
+                break;
+
+            case "red":
+
+                break;
+
+            default:
+                Debug.LogError("Can't recognize slide tag!");
+                break;
+        }
+
+        return name;
     }
 
 }

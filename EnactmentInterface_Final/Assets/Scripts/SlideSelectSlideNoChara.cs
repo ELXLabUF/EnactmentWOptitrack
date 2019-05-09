@@ -181,6 +181,7 @@ public class SlideSelectSlideNoChara : MonoBehaviour, IPointerClickHandler, IBeg
     //deletes this slide
     public void deleteMe()
     {
+        Debug.Log("we are deleting");
 
         this.GetComponentInParent<SlideArrayNoChara>().renumberSlidesDelete(listID); //called to reorder slides affected by this slide being deleted
 

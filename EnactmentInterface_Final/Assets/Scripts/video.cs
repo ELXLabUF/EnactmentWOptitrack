@@ -43,7 +43,7 @@ public class video : MonoBehaviour {
 
     public void playAgain()
     {
-        var path = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\video (2).mp4";
+        var path = "C:\\Users\\Niloofar Zarei\\Desktop\\captures\\vid.mov";
         //this.gameObject.GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().m_VideoPath = "C:\\Users\\n.zarei.3001\\Desktop\\captures\video.flv";
         this.gameObject.GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().OpenVideoFromFile(RenderHeads.Media.AVProVideo.MediaPlayer.FileLocation.AbsolutePathOrURL, path, false);
         //this.gameObject.GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Lo

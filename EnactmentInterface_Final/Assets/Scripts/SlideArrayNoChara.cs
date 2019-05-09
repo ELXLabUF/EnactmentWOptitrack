@@ -73,7 +73,7 @@ public class SlideArrayNoChara : MonoBehaviour
 
             }
         }
-        else if (GameObject.Find("SlideSectionsVideoVideo").GetComponent<SlideNumberingNoChara>().getAddReady() == true)
+        else if (GameObject.Find("SlideSectionsVideo").GetComponent<SlideNumberingNoChara>().getAddReady() == true)
         {
 
 

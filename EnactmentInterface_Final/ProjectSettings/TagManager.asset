@@ -60,6 +60,7 @@ TagManager:
   - back_btn_noChara
   - video_single_play
   - play_singlePlay_btn
+  - trash-video
   layers:
   - Default
   - TransparentFX

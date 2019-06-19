@@ -611,7 +611,9 @@ public class SlideNumberingNoChara : MonoBehaviour
 
     //goes through all slides when the delete button is pressed to find which one is selected for deletion
     public void deleteSlide()
+
     {
+        getSelectedData().archiveVideo();
         SlideArrayNoChara[] children = GetComponentsInChildren<SlideArrayNoChara>();
 
         for (int i = 0; i < children.Length; i++)
@@ -669,10 +671,14 @@ public class SlideNumberingNoChara : MonoBehaviour
 
     public void playSelectedSlide()
     {
-        getSelectedData().playAudio();
+        getSelectedData().playVideo();
 
     }
 
+    public void redoEnactment()
+    {
+        getSelectedData().archiveVideo();
+    }
 
     public void poseZero()
     {

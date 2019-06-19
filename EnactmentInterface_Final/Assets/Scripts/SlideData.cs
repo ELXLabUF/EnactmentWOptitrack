@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.IO;
+using System.Linq;
+
+
+
 public class SlideData : MonoBehaviour {
 
     /*IN PROGRESS - this is a script attached to each slide to record which index of each object type it holds, as well as its recording data*/
@@ -20,6 +25,8 @@ public class SlideData : MonoBehaviour {
     private int currentFrame = 0;
     private bool recordOptitrack = false;
     private AudioSource slideAudio;
+    private string videoClipName;
+    private string audioClipName;
     private bool playing = false;
 
 
@@ -41,13 +48,14 @@ public class SlideData : MonoBehaviour {
 
     public Sprite recordStop;
     public Sprite playSprite;
+    private DirectoryInfo mediaDirectory;
     //0=default, 1=charaposition, 2=objectposition
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
-        
+        mediaDirectory = new DirectoryInfo("C:\\Users\\n.zarei.3001\\Desktop\\captures\\");
     }
 
     // Update is called once per frame
@@ -357,16 +365,7 @@ public class SlideData : MonoBehaviour {
     }
 
     public void startRecord()
-    {
-
-        slideAudio.clip = Microphone.Start(null, true, 600, 44100);
-        Debug.Log("We have started");
-        isRecording = true;
-
-        //if (captureOptitrack)
-        //{
-        recordOptitrack = true;
-
+    { 
         charaOptiPositions = new Vector4[60 * 10 * 60];
         objectOptiPositions = new Vector4[60 * 10 * 60];
         DigitalSalmon.OpenBroadcastStudio.ObsConfigInfo configInfo =
@@ -381,8 +380,10 @@ public class SlideData : MonoBehaviour {
                 Verbose = true
             };
         DigitalSalmon.OpenBroadcastStudio.StartRecording(configInfo);
+        slideAudio.clip = Microphone.Start(null, true, 600, 44100);
+        Debug.Log("We have started");
+        isRecording = true;
 
-        //}
     }
 
     public void setPlaying(bool set)
@@ -398,6 +399,8 @@ public class SlideData : MonoBehaviour {
     public void endRecord()
     {
         isRecording = false;
+        DigitalSalmon.OpenBroadcastStudio.Stop();
+
         int timeCut = Microphone.GetPosition(null);
         Microphone.End(null);
 
@@ -410,10 +413,25 @@ public class SlideData : MonoBehaviour {
         slideAudio.clip.SetData(samples, 0);
 
         audioTime = samples.Length / freq;
+        DirectoryInfo info = new DirectoryInfo("C:\\Users\\n.zarei.3001\\Desktop\\captures\\");
+        FileInfo[] files = mediaDirectory.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
+
+        Debug.Log("directory found!");
+        //Debug.Log(files.ToString());
+
+        videoClipName = files.First().Name;
+
+        //WindowsMediaPlayer wmp = new WindowsMediaPlayerClass();
+        //IWMPMedia mediainfo = wmp.newMedia(file);
+        //mediainfo.duration;
+
+        audioClipName = System.IO.Path.GetFileNameWithoutExtension("C:\\Users\\n.zarei.3001\\Desktop\\captures\\" + videoClipName);
+        GameObject.Find("SlideSections").GetComponent<SavWav>().Save("C:\\Users\\n.zarei.3001\\Desktop\\captures\\"+audioClipName, getAudio());
+
         Debug.Log("We have stopped");
 
         isRecord = true;
-        if (slideAudio.clip == null) { }//Debug.Log("uuhm"); }
+        if (slideAudio.clip == null) { Debug.Log("uuhm"); }
 
         //if (captureOptitrack)
         //{
@@ -481,23 +499,44 @@ public class SlideData : MonoBehaviour {
 
     public void playAudio()
     {
-        
+        //GameObject.FindGameObjectWithTag("frame").GetComponent<RawImage>().enabled = true;
+        var videoFile = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\" + videoClipName;
+        var audioFile = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\" + audioClipName + ".wav";
+        //var fileData = File.ReadAllBytes(audioFile);
+        //var aud = new AudioClip();
+        //aud.LoadAudioData()
+          
 
-        if (slideAudio.clip != null) {
-            //Debug.Log("well something is playing");
-
-            if (slideAudio.isPlaying==false) {
-                slideAudio.Play();
-
-                
-            }
-            else
-            {
-                slideAudio.Stop();
-                
-            }
-           
+        if (videoFile == null || audioFile == null)
+        {
+            // Handle the file not being found
+            Debug.LogError("video or audio file not found");
         }
+        else
+        {
+
+            GameObject.FindGameObjectWithTag("videoplayer").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().OpenVideoFromFile(RenderHeads.Media.AVProVideo.MediaPlayer.FileLocation.AbsolutePathOrURL, videoFile, false);
+            GameObject.FindGameObjectWithTag("videoplayer").GetComponent<AudioSource>().clip = slideAudio.clip;
+            GameObject.FindGameObjectWithTag("videoplayer").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.Play();
+        }
+
+
+        //if (slideAudio.clip != null) {
+        //    //Debug.Log("well something is playing");
+
+        //    if (slideAudio.isPlaying==false) {
+        //        slideAudio.Play();
+
+
+        //    }
+        //    else
+        //    {
+        //        slideAudio.Stop();
+
+        //    }
+
+        //}
+        //GameObject.FindGameObjectWithTag("frame").GetComponent<RawImage>().enabled = false;
     }
 
     public AudioClip getAudio()

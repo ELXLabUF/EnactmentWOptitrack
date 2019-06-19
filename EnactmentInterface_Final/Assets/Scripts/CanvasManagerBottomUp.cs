@@ -85,6 +85,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(videoEnactmentCanvas);
             disableCanvas(videoPlayCanvas);
             whichCanvas = 1;
+            //GameObject.FindGameObjectWithTag("frame").GetComponent<RawImage>().enabled = false; 
         }
 
     }

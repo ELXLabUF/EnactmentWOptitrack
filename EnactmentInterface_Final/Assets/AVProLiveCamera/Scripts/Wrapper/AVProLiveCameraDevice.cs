@@ -420,7 +420,22 @@ namespace RenderHeads.Media.AVProLiveCamera
 			}
 		}
 
-		private void Update_HotSwap()
+        public void pauseBetweenScenes()
+        {
+            if (!IsRunning)
+            {
+                Debug.Log("[AVProLiveCamera] device #" + _deviceIndex + " '" + Name + "' paused");
+                Stop();
+            }
+            else
+            {
+                Debug.Log("[AVProLiveCamera] device #" + _deviceIndex + " '" + Name + "' unpaused");
+                Start();
+            }
+
+        }
+
+        private void Update_HotSwap()
 		{
 			bool isConnected = AVProLiveCameraPlugin.IsDeviceConnected(_deviceIndex);
 			// If there is a change in the connection

@@ -152,6 +152,12 @@ namespace RenderHeads.Media.AVProLiveCamera
 			}
 		}
 
+        public void pauseBroadcast()
+        {
+            Debug.Log("we are pausing");
+            _device.pauseBetweenScenes();
+        }
+
 		private void Update()
 		{
 			if (_device != null)

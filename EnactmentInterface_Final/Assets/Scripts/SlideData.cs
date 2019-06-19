@@ -369,6 +369,19 @@ public class SlideData : MonoBehaviour {
 
         charaOptiPositions = new Vector4[60 * 10 * 60];
         objectOptiPositions = new Vector4[60 * 10 * 60];
+        DigitalSalmon.OpenBroadcastStudio.ObsConfigInfo configInfo =
+            new DigitalSalmon.OpenBroadcastStudio.ObsConfigInfo
+            {
+                AllowOpenGl = true,
+                MinimizeToTray = true,
+                AlwaysOnTop = false,
+                CollectionName = "Untitled",
+                SceneName = "Scene",
+                SkipMultiInstanceWarning = true,
+                Verbose = true
+            };
+        DigitalSalmon.OpenBroadcastStudio.StartRecording(configInfo);
+
         //}
     }
 

@@ -138,7 +138,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             enableCanvas(videoSinglePlayCanvas);
             whichCanvas = 8;
 
-            GameObject.Find("AVProVideo").GetComponent<video>().playAgain();
+            //GameObject.Find("AVProVideo").GetComponent<video>().playAgain();
         }
         else
         {

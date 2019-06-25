@@ -1567,8 +1567,8 @@ public class SlideNumbering : MonoBehaviour
     {
         if (playReady)
         {
-            GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().toPlay();
-            setTitle();
+            GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().toPlayAll();
+            //setTitle();
         }
         else
         {

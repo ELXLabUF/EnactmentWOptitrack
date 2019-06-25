@@ -568,6 +568,7 @@ public class SlideData : MonoBehaviour {
             }
             GameObject.FindGameObjectWithTag("play_singlePlay_btn").GetComponent<Image>().sprite = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordStop;
             playing = true;
+            //while (GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().)
         }
 
         else

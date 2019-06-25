@@ -166,6 +166,42 @@ public class CanvasManagerBottomUp : MonoBehaviour {
   
     }
 
+
+    public void toPlayAll()
+    {
+        if (enactmentCondition != 0)
+        {
+            disableCanvas(videoTimelineCanvas);
+            enableCanvas(playCanvas);
+            disableCanvas(enactmentCanvas);
+            disableCanvas(endCanvas);
+            disableCanvas(startCanvas);
+            disableCanvas(timelineCanvas);
+            disableCanvas(videoEnactmentCanvas);
+            disableCanvas(videoPlayCanvas);
+            disableCanvas(videoSinglePlayCanvas);
+            //whichCanvas = 8;
+
+            //GameObject.Find("AVProVideo").GetComponent<video>().playAgain();
+        }
+        else
+        {
+            disableCanvas(timelineCanvas);
+            enableCanvas(playCanvas);
+            disableCanvas(enactmentCanvas);
+            disableCanvas(endCanvas);
+            disableCanvas(startCanvas);
+            disableCanvas(videoTimelineCanvas);
+            disableCanvas(videoEnactmentCanvas);
+            disableCanvas(videoPlayCanvas);
+            disableCanvas(cartoonSinglePlayCanvas);
+            //whichCanvas = 9;
+        }
+
+    }
+
+
+
     public void toStart()
     {
         //if (enactmentCondition != 0)

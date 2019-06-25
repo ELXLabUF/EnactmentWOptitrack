@@ -1315,6 +1315,7 @@ public class SlideNumberingNoChara : MonoBehaviour
             for (int k = 0; k < grandchildrenData.Length; k++)
             {
                 grandchildrenData[k].playVideo();
+                grandchildrenData[k].setPlaying(false);
              
             }
         }

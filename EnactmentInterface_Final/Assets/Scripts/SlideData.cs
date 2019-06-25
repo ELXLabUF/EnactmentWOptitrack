@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Threading;
 using System.IO;
 using System.Linq;
 
@@ -17,6 +18,9 @@ public class SlideData : MonoBehaviour {
     private int backdropIndex=0;
     private int itemIndex=0;
     private string sceneInfo = "";
+    private GameObject currentObject;
+    private GameObject currentChara;
+    
 
     //recording variables
     //private bool captureOptitrack;
@@ -79,7 +83,7 @@ public class SlideData : MonoBehaviour {
         }
         else if (!playing && GameObject.Find("CanvasManager").GetComponent<CanvasManagerBottomUp>().getWhichCanvas() == 1 && !recordOptitrack && this.GetComponent<SlideSelectSlide>().getSelected() && isFilled())
         {
-            Debug.Log("we are not recording");
+           // Debug.Log("we are not recording");
         }
     }
 
@@ -380,6 +384,7 @@ public class SlideData : MonoBehaviour {
                 Verbose = true
             };
         DigitalSalmon.OpenBroadcastStudio.StartRecording(configInfo);
+        Thread.Sleep(2500);
         slideAudio.clip = Microphone.Start(null, true, 600, 44100);
         Debug.Log("We have started");
         isRecording = true;
@@ -413,6 +418,7 @@ public class SlideData : MonoBehaviour {
         slideAudio.clip.SetData(samples, 0);
 
         audioTime = samples.Length / freq;
+        
         DirectoryInfo info = new DirectoryInfo("C:\\Users\\n.zarei.3001\\Desktop\\captures\\");
         FileInfo[] files = mediaDirectory.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
 
@@ -515,10 +521,12 @@ public class SlideData : MonoBehaviour {
         else
         {
 
-            GameObject.FindGameObjectWithTag("videoplayer").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().OpenVideoFromFile(RenderHeads.Media.AVProVideo.MediaPlayer.FileLocation.AbsolutePathOrURL, videoFile, false);
-            GameObject.FindGameObjectWithTag("videoplayer").GetComponent<AudioSource>().clip = slideAudio.clip;
-            GameObject.FindGameObjectWithTag("videoplayer").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.Play();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().OpenVideoFromFile(RenderHeads.Media.AVProVideo.MediaPlayer.FileLocation.AbsolutePathOrURL, videoFile, false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = slideAudio.clip;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.Play();
         }
+
+        
 
 
         //if (slideAudio.clip != null) {
@@ -537,6 +545,40 @@ public class SlideData : MonoBehaviour {
 
         //}
         //GameObject.FindGameObjectWithTag("frame").GetComponent<RawImage>().enabled = false;
+    }
+
+    public void playVideo()
+    {
+        //DirectoryInfo info = new DirectoryInfo("C:\\Users\\n.zarei.3001\\Desktop\\captures\\");
+        if (!playing)
+        {
+            var file = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\" + videoClipName;
+            if (file == null)
+            {
+                // Handle the file not being found
+                Debug.LogError("video file not found");
+            }
+            else
+            {
+                GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().OpenVideoFromFile(RenderHeads.Media.AVProVideo.MediaPlayer.FileLocation.AbsolutePathOrURL, file, false);
+                //this.gameObject.GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().OpenVideoFromFile(RenderHeads.Media.AVProVideo.MediaPlayer.FileLocation.AbsolutePathOrURL, path, false);
+                //this.gameObject.GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Lo
+                GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = slideAudio.clip;
+                GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.Play();
+            }
+            GameObject.FindGameObjectWithTag("play_singlePlay_btn").GetComponent<Image>().sprite = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordStop;
+            playing = true;
+        }
+
+        else
+        {
+            GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.Stop();
+            playing = false;
+            GameObject.FindGameObjectWithTag("play_singlePlay_btn").GetComponent<Image>().sprite = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().play;
+
+        }
+
+        
     }
 
     public AudioClip getAudio()
@@ -711,6 +753,23 @@ public class SlideData : MonoBehaviour {
         updateCharacter();
 
         GameObject.Find("SceneInfo").GetComponent<Text>().text = sceneInfo;
+        GameObject.Find("SceneInfoCartoonPlay").GetComponent<Text>().text = sceneInfo;
+    }
+
+    public void deactiveElements()
+    {
+        currentObject = GameObject.FindGameObjectWithTag("current_item");
+        currentChara = GameObject.FindGameObjectWithTag("current_chara");
+        currentObject.SetActive(false);
+        currentChara.SetActive(false);
+
+    }
+
+    public void activateElements()
+    {
+        currentObject.SetActive(true);
+        currentChara.SetActive(true);
+
     }
 
     public void updateCharacter()

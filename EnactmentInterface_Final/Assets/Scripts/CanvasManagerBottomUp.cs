@@ -15,7 +15,8 @@ public class CanvasManagerBottomUp : MonoBehaviour {
     public Canvas videoEnactmentCanvas;
     public Canvas videoPlayCanvas;
     public Canvas videoSinglePlayCanvas;
-    private int whichCanvas = 0; // 0 - timeline, 1 - enactment, 2 - play, 3-end, 4-start, 5- videoTimeline, 6- videoEnactment, 7- videoPlay 8- SinglePlay
+    public Canvas cartoonSinglePlayCanvas;
+    private int whichCanvas = 0; // 0 - timeline, 1 - enactment, 2 - play, 3-end, 4-start, 5- videoTimeline, 6- videoEnactment, 7- videoPlay 8- SinglePlayVid 9 - Single play cartoon 
     //canvas 5,6,7 are for non-transformed self codition
 
     public CanvasGroup saveStoryPopUp;
@@ -32,6 +33,13 @@ public class CanvasManagerBottomUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //foreach (var device in Microphone.devices)
+        //{
+        //    Debug.Log("Name: " + device);
+        //}
+
+        Debug.Log("Name: " + Microphone.devices[0]);
+
         toStart();
 
         disableCanvasGroup(saveStoryPopUp);
@@ -84,6 +92,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(timelineCanvas);
             disableCanvas(videoEnactmentCanvas);
             disableCanvas(videoPlayCanvas);
+            disableCanvas(cartoonSinglePlayCanvas);
             whichCanvas = 1;
             //GameObject.FindGameObjectWithTag("frame").GetComponent<RawImage>().enabled = false; 
         }
@@ -144,14 +153,15 @@ public class CanvasManagerBottomUp : MonoBehaviour {
         else
         {
             disableCanvas(timelineCanvas);
-            enableCanvas(playCanvas);
+            disableCanvas(playCanvas);
             disableCanvas(enactmentCanvas);
             disableCanvas(endCanvas);
             disableCanvas(startCanvas);
             disableCanvas(videoTimelineCanvas);
             disableCanvas(videoEnactmentCanvas);
             disableCanvas(videoPlayCanvas);
-            whichCanvas = 2;
+            enableCanvas(cartoonSinglePlayCanvas);
+            whichCanvas = 9;
         }
   
     }

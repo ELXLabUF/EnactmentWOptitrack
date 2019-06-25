@@ -104,8 +104,8 @@ namespace RenderHeads.Media.AVProVideo
 				bool isMuted = player.Control.IsMuted();
 				float rate = player.Control.GetPlaybackRate();
 				audioSource.volume = volume;
-				audioSource.mute = isMuted;
-				audioSource.pitch = rate;
+				//audioSource.mute = isMuted;
+				//audioSource.pitch = rate;
 			}
 		}
 

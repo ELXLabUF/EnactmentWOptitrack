@@ -1307,8 +1307,17 @@ public class SlideNumberingNoChara : MonoBehaviour
 
     public void PlayThrough()
     {
-        StopAllCoroutines();
-        StartCoroutine(SequenceTiming(false));
+        SlideArrayNoChara[] children = GetComponentsInChildren<SlideArrayNoChara>();
+        for (int i = 0; i < children.Length; i++)
+        {
+            SlideDataNoChara[] grandchildrenData = children[i].GetComponentsInChildren<SlideDataNoChara>();
+
+            for (int k = 0; k < grandchildrenData.Length; k++)
+            {
+                grandchildrenData[k].playVideo();
+             
+            }
+        }
     }
 
     public void SaveThrough()

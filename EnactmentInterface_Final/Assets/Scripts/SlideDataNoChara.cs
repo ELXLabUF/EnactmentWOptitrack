@@ -97,7 +97,7 @@ public class SlideDataNoChara : MonoBehaviour
         }
         else if (!playing && GameObject.Find("CanvasManager").GetComponent<CanvasManagerBottomUp>().getWhichCanvas() == 1 && !recordOptitrack && this.GetComponent<SlideSelectSlideNoChara>().getSelected() && isFilled())
         {
-            Debug.Log("we are not recording");
+            //Debug.Log("we are not recording");
         }
     }
 
@@ -755,7 +755,8 @@ public class SlideDataNoChara : MonoBehaviour
 
         //updateCharacter();
 
-        GameObject.Find("SceneInfo").GetComponent<Text>().text = sceneInfo;
+        GameObject.Find("SceneInfoNoChara").GetComponent<Text>().text = sceneInfo;
+        GameObject.Find("SceneInfoVidPlay").GetComponent<Text>().text = sceneInfo;
     }
 
     public void updateCharacter()

@@ -59,6 +59,8 @@ public class SlideNumbering : MonoBehaviour
     private bool playReady = false;
     //Bottom Up
     //private bool emptySlide = false;
+    public Sprite play;
+    //public Sprite stop;
 
 
     //Top Down
@@ -139,11 +141,11 @@ public class SlideNumbering : MonoBehaviour
                 Destroy(GameObject.Find("LastSlide"));
                 //GameObject.FindGameObjectWithTag("record_screen").GetComponent<Button>().interactable = false;
                 GameObject.FindGameObjectWithTag("record_screen").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
-                //GameObject.FindGameObjectWithTag("play_screen").GetComponent<Button>().interactable = false;
+                GameObject.FindGameObjectWithTag("play_screen").GetComponent<Button>().interactable = false;
                 GameObject.FindGameObjectWithTag("play_screen").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
-                GameObject.FindGameObjectWithTag("planning_button").GetComponent<Button>().interactable = false;
-                GameObject.FindGameObjectWithTag("planning_button").GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                GameObject.FindGameObjectWithTag("planning_button").transform.SetAsFirstSibling();
+                //GameObject.FindGameObjectWithTag("planning_button").GetComponent<Button>().interactable = false;
+                //GameObject.FindGameObjectWithTag("planning_button").GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                //GameObject.FindGameObjectWithTag("planning_button").transform.SetAsFirstSibling();
                 GameObject.FindGameObjectWithTag("instructions").GetComponent<Text>().text = "Create Your Story";
 
                 break;
@@ -390,9 +392,9 @@ public class SlideNumbering : MonoBehaviour
                 }
 
 
-                if (begSlides.Length > 0 && midSlides.Length > 0 && endSlides.Length > 0 && !EmptySlide() && titlesFilled())
+                if (begSlides.Length > 0 && midSlides.Length > 0 && endSlides.Length > 0 && !EmptySlide()) //&& titlesFilled()
                 {
-                    //GameObject.FindGameObjectWithTag("play_screen").GetComponent<Button>().interactable = true;
+                    GameObject.FindGameObjectWithTag("play_screen").GetComponent<Button>().interactable = true;
                     GameObject.FindGameObjectWithTag("play_screen").GetComponent<Image>().color = new Color(.235f, .788f, .4f, 1);
                     playReady = true;
                 }
@@ -670,7 +672,7 @@ public class SlideNumbering : MonoBehaviour
 
     public void playSelectedSlide()
     {
-        getSelectedData().playAudio();
+        getSelectedData().playVideo();
 
     }
 
@@ -1301,8 +1303,17 @@ public class SlideNumbering : MonoBehaviour
 
     public void PlayThrough()
     {
-        StopAllCoroutines();
-        StartCoroutine(SequenceTiming(false));
+        SlideArray[] children = GetComponentsInChildren<SlideArray>();
+        for (int i = 0; i < children.Length; i++)
+        {
+            SlideData[] grandchildrenData = children[i].GetComponentsInChildren<SlideData>();
+
+            for (int k = 0; k < grandchildrenData.Length; k++)
+            {
+                grandchildrenData[k].playVideo();
+
+            }
+        }
     }
 
     public void SaveThrough()
@@ -1569,6 +1580,16 @@ public class SlideNumbering : MonoBehaviour
     public bool getOptitrackCapture()
     {
         return OptitrackCaptureOn;
+    }
+
+    public void activateElements()
+    {
+        getSelectedData().activateElements();
+    }
+
+    public void deactiveElements()
+    {
+        getSelectedData().deactiveElements();
     }
 }
 

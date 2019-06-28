@@ -15,6 +15,7 @@ public class SlideNumbering : MonoBehaviour
     /*For this reason, it's important to keep the slides in order in the heirarchy by their id in each array*/
 
     private string participantName;
+    private string saveAddress;
 
 
     private bool isRecording = false;
@@ -510,6 +511,26 @@ public class SlideNumbering : MonoBehaviour
 
 
         
+    }
+
+    public void setParticipantName()
+    {
+        string condString = "";
+        var cond = GameObject.Find("canvasManager").GetComponent<CanvasManagerBottomUp>().getEnactmentCondition();
+        if (cond == 0) { condString = "Cartoon"; }
+        else { condString = "Video"; }
+        participantName = "Participant" + GameObject.Find("InputParticipantID").GetComponent<InputField>().text + "_" + condString + "mode"; 
+
+    }
+
+    public string getParticipantName()
+    {
+        return participantName;
+    }
+
+    public void setSavingAddress()
+    {
+        saveAddress = 
     }
 
     //This is the function that checks for titles.

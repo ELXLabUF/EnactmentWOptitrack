@@ -60,6 +60,7 @@ public class SlideData : MonoBehaviour {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
         mediaDirectory = new DirectoryInfo("C:\\Users\\n.zarei.3001\\Desktop\\captures\\");
+        Debug.Log(Application.persistentDataPath);
     }
 
     // Update is called once per frame

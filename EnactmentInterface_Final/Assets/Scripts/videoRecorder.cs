@@ -9,7 +9,7 @@ public class videoRecorder : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        this.gameObject.GetComponent<ObsExample>().StartRecording();
+        this.gameObject.GetComponent<ObsWrapper>().StartRecording();
     }
 
     // Update is called once per frame
@@ -27,6 +27,6 @@ public class videoRecorder : MonoBehaviour {
 
     void timerEnded()
     {
-        this.gameObject.GetComponent<ObsExample>().StopRecording();
+        this.gameObject.GetComponent<ObsWrapper>().StopRecording();
     }
 }

@@ -27,6 +27,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
     public CanvasGroup planningIncompletePopUp;
     public CanvasGroup addSlidePopUp;
     public CanvasGroup addingIncompletePopUp;
+    public GameObject MSKBrdg;
 
     private int whichPopUp = 0; // 0 - saveStory, 1 - planning, 2 - playStory, 3- recordScene, 4- slideInput 5- planningIncomplete 6-addSlide 7-addingIncomplete
 
@@ -38,7 +39,13 @@ public class CanvasManagerBottomUp : MonoBehaviour {
         //    Debug.Log("Name: " + device);
         //}
 
-        Debug.Log("Name: " + Microphone.devices[0]);
+        //Debug.Log("Name: " + Microphone.devices[0]);
+        MSKBrdg = GameObject.Find("MSKBridge");
+
+        if (enactmentCondition == 0)
+        {
+            MSKBrdg.SetActive(false);
+        }
 
         toStart();
 

@@ -2,20 +2,30 @@
 using DigitalSalmon;
 using UnityEngine;
 
-public class ObsExample : MonoBehaviour {
+public class ObsWrapper : MonoBehaviour {
 
 	/// <summary>
 	/// Start recording to a custom collection/scene
 	/// </summary>
+    /// 
+
+    public bool isRunning()
+    {
+        return OpenBroadcastStudio.IsRunning;
+    }
+
 	public void StartRecording() {
 		// You can record with a custom config by creating an ObsConfigInfo.
 		OpenBroadcastStudio.ObsConfigInfo configInfo =
 			new OpenBroadcastStudio.ObsConfigInfo {
-				AllowOpenGl = true,
-				AlwaysOnTop = true,
-				CollectionName = "My Collection Name",
-				SceneName = "My Scene Name", Verbose = true
-			};
+                AllowOpenGl = true,
+                MinimizeToTray = true,
+                AlwaysOnTop = false,
+                CollectionName = "Untitled",
+                SceneName = "Scene",
+                SkipMultiInstanceWarning = true,
+                Verbose = true
+            };
 
 		OpenBroadcastStudio.StartRecording(configInfo);
 	}

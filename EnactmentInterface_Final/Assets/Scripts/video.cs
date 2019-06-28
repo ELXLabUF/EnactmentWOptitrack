@@ -33,10 +33,10 @@ public class video : MonoBehaviour {
         //    GameObject.FindGameObjectWithTag("play_singlePlay_btn").GetComponent<Button>().interactable = false;
             
         //}
-        if (this.gameObject.GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.IsFinished())
-        {
-            GameObject.FindGameObjectWithTag("play_singlePlay_btn").GetComponent<Button>().interactable = true;
-        }
+        //if (this.gameObject.GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.IsFinished())
+        //{
+        //    GameObject.FindGameObjectWithTag("play_singlePlay_btn").GetComponent<Button>().interactable = true;
+        //}
 		
 	}
 

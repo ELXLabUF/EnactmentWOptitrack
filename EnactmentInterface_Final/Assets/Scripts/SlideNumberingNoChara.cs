@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System;
 
 public class SlideNumberingNoChara : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class SlideNumberingNoChara : MonoBehaviour
     /*For this reason, it's important to keep the slides in order in the heirarchy by their id in each array*/
 
     private string participantName;
+    private string saveAddress;
+    private string archivePath;
 
 
     private bool isRecording = false;
@@ -507,6 +510,75 @@ public class SlideNumberingNoChara : MonoBehaviour
 
 
 
+    }
+
+    public void setParticipantName()
+    {
+        string condString = "";
+        var cond = GameObject.Find("CanvasManager").GetComponent<CanvasManagerBottomUp>().getEnactmentCondition();
+        if (cond == 0) { condString = "Cartoon"; }
+        else { condString = "Video"; }
+        participantName = "Participant" + GameObject.Find("InputParticipantID").GetComponent<InputField>().text + "_" + condString + "mode";
+
+    }
+
+    public string getParticipantName()
+    {
+        return participantName;
+    }
+
+    public bool setSavingAddress()
+    {
+        string append = participantName;
+        string append2 = participantName + "/archive";
+        saveAddress = Path.Combine(Application.persistentDataPath, append);
+        archivePath = Path.Combine(Application.persistentDataPath, append2);
+        Debug.Log(saveAddress);
+        Debug.Log(archivePath);
+
+        try
+        {
+            // Determine whether the directory exists.
+            if (!Directory.Exists(saveAddress))
+            {
+                DirectoryInfo di1 = Directory.CreateDirectory(saveAddress);
+                Debug.Log("The directory was created successfully at " + saveAddress);
+            }
+            else
+            {
+                Debug.Log("The directory exists at " + saveAddress);
+            }
+
+            if (!Directory.Exists(archivePath))
+            {
+                DirectoryInfo di2 = Directory.CreateDirectory(archivePath);
+                Debug.Log("The directory was created successfully at " + archivePath);
+            }
+            else
+            {
+                Debug.Log("The directory exists at " + archivePath);
+            }
+
+            return true;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("The process of setting save address failed: " + e.ToString());
+            return false;
+        }
+    }
+
+    public string getSavingAddress()
+    {
+        return saveAddress;
+    }
+
+    public void createDirectories()
+    {
+        setParticipantName();
+        setSavingAddress();
+
+        Debug.Log("we are all set to save videos!");
     }
 
     //This is the function that checks for titles.

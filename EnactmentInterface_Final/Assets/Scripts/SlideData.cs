@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Threading;
 using System.IO;
 using System.Linq;
+using System;
 
 
 
@@ -20,6 +21,7 @@ public class SlideData : MonoBehaviour {
     private string sceneInfo = "";
     private GameObject currentObject;
     private GameObject currentChara;
+    private int vidCounter = 1;
     
 
     //recording variables
@@ -59,8 +61,8 @@ public class SlideData : MonoBehaviour {
     void Start () {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
-        mediaDirectory = new DirectoryInfo("C:\\Users\\n.zarei.3001\\Desktop\\captures\\");
-        Debug.Log(Application.persistentDataPath);
+        mediaDirectory = new DirectoryInfo(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress());
+        
     }
 
     // Update is called once per frame
@@ -369,27 +371,53 @@ public class SlideData : MonoBehaviour {
         }
     }
 
-    public void startRecord()
-    { 
-        charaOptiPositions = new Vector4[60 * 10 * 60];
-        objectOptiPositions = new Vector4[60 * 10 * 60];
-        DigitalSalmon.OpenBroadcastStudio.ObsConfigInfo configInfo =
-            new DigitalSalmon.OpenBroadcastStudio.ObsConfigInfo
+    private bool myCheck()
+    {
+        //string OBSTempPath = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\";
+        //var OBSVideos = new DirectoryInfo(OBSTempPath);
+        //FileInfo[] files = OBSVideos.GetFiles().OrderByDescending(p => p.Length).ToArray();
+        //while (files.First().Length != 0)
+        //{
+        //    Thread.Sleep(500);
+        //    OBSVideos = new DirectoryInfo(OBSTempPath);
+        //    files = OBSVideos.GetFiles().OrderByDescending(p => p.Length).ToArray();
+
+        //}
+        //return true;
+        const string filename = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\video.mp4";
+
+        // Set timeout to the time you want to quit (one minute from now)
+        var timeout = DateTime.Now.Add(TimeSpan.FromSeconds(10));
+
+        while (!File.Exists(filename))
+        {
+            if (DateTime.Now > timeout)
             {
-                AllowOpenGl = true,
-                MinimizeToTray = true,
-                AlwaysOnTop = false,
-                CollectionName = "Untitled",
-                SceneName = "Scene",
-                SkipMultiInstanceWarning = true,
-                Verbose = true
-            };
-        DigitalSalmon.OpenBroadcastStudio.StartRecording(configInfo);
-        Thread.Sleep(2500);
+                Debug.Log("Application timeout; app_boxed could not be created; try again");
+                Environment.Exit(0);
+            }
+
+            Thread.Sleep(TimeSpan.FromMilliseconds(100));
+        }
+
+        return true;
+    }
+
+    public IEnumerator StartRecordCoroutine()
+    {
+        var t1 = new Func<bool>(() => myCheck());
+        GameObject.Find("SlideSections").GetComponent<ObsWrapper>().StartRecording();
+        yield return new WaitUntil(t1);
         slideAudio.clip = Microphone.Start(null, true, 600, 44100);
         Debug.Log("We have started");
         isRecording = true;
+    }
 
+    public void startRecord()
+    {
+        GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordingFunctionRunning = true;
+        StartCoroutine(StartRecordCoroutine());
+        GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordingFunctionRunning = false;
     }
 
     public void setPlaying(bool set)
@@ -402,7 +430,7 @@ public class SlideData : MonoBehaviour {
         return playing;
     }
 
-    public void endRecord()
+    public IEnumerator EndRecordCoroutine()
     {
         isRecording = false;
         DigitalSalmon.OpenBroadcastStudio.Stop();
@@ -412,76 +440,43 @@ public class SlideData : MonoBehaviour {
 
         float[] samples = new float[timeCut];
         slideAudio.clip.GetData(samples, 0);
-
-
         int freq = slideAudio.clip.frequency;
         slideAudio.clip = AudioClip.Create("SlideSound", samples.Length, 1, freq, false);
         slideAudio.clip.SetData(samples, 0);
-
         audioTime = samples.Length / freq;
-        
-        DirectoryInfo info = new DirectoryInfo("C:\\Users\\n.zarei.3001\\Desktop\\captures\\");
-        FileInfo[] files = mediaDirectory.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
+        string OBSTempPath = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\";
+        string savingAddress = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress();
 
-        Debug.Log("directory found!");
-        //Debug.Log(files.ToString());
+        var OBSVideos = new DirectoryInfo(OBSTempPath);
+        FileInfo[] files = OBSVideos.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
+        var obsVideoClipName = files.First().Name;
+        videoClipName = "video_" + vidCounter.ToString() + ".mp4";
+        Debug.Log(videoClipName);
 
-        videoClipName = files.First().Name;
-
-        //WindowsMediaPlayer wmp = new WindowsMediaPlayerClass();
-        //IWMPMedia mediainfo = wmp.newMedia(file);
-        //mediainfo.duration;
-
-        audioClipName = System.IO.Path.GetFileNameWithoutExtension("C:\\Users\\n.zarei.3001\\Desktop\\captures\\" + videoClipName);
-        GameObject.Find("SlideSections").GetComponent<SavWav>().Save("C:\\Users\\n.zarei.3001\\Desktop\\captures\\"+audioClipName, getAudio());
-
+        //audioClipName = Path.GetFileNameWithoutExtension("C:\\Users\\n.zarei.3001\\Desktop\\captures\\" + videoClipName);
+        audioClipName = "video_" + vidCounter.ToString();
+        Debug.Log(audioClipName);
         Debug.Log("We have stopped");
 
         isRecord = true;
-        if (slideAudio.clip == null) { Debug.Log("uuhm"); }
+        if (slideAudio.clip == null) { Debug.Log("No Audio Saved :("); }
 
-        //if (captureOptitrack)
-        //{
-        //    recordLeap = false;
-        //    Vector4[] newRecord = new Vector4[currentFrame];
+        var t2 = new Func<bool>(() => !IsFileLocked(files.First()));
+        yield return new WaitUntil(t2);
 
-        //    for (int i = 0; i < currentFrame; i++)
-        //    {
-        //        newRecord[i] = charaOptiPositions[i];
-        //    }
-
-        //    charaOptiPositions = newRecord;
-
-        //    for (int z = 0; z < currentFrame; z++)
-        //    {
-        //        newRecord[z] = objectOptiPositions[z];
-        //    }
-
-        //    objectOptiPositions = newRecord;
-        //}
+        File.Move(Path.Combine(OBSTempPath, obsVideoClipName), Path.Combine(savingAddress, videoClipName));
+        GameObject.Find("SlideSections").GetComponent<SavWav>().Save(Path.Combine(savingAddress, audioClipName), getAudio());
+        vidCounter++;
     }
 
-    //public void endRecord()
-    //{
-    //    isRecording = false;
-    //    int timeCut = Microphone.GetPosition(null);
-    //    Microphone.End(null);
 
-    //    float[] samples = new float[timeCut];
-    //    slideAudio.clip.GetData(samples, 0);
+    public void endRecord()
+    {
+        GameObject.Find("SlideSections").GetComponent<SlideNumbering>().savingFunctionRunning = true;
+        StartCoroutine(EndRecordCoroutine());
+        GameObject.Find("SlideSections").GetComponent<SlideNumbering>().savingFunctionRunning = false;
+    }
 
-
-    //    int freq = slideAudio.clip.frequency;
-    //    slideAudio.clip = AudioClip.Create("SlideSound", samples.Length, 1, freq, false);
-    //    slideAudio.clip.SetData(samples, 0);
-
-    //    audioTime = samples.Length / freq;
-    //    //Debug.Log("We have stopped");
-
-    //    isRecord = true;
-    //    if (slideAudio.clip == null) { }//Debug.Log("uuhm"); }
-
-    //}
 
     //This is where to change 
     public bool isSlideEmpty()
@@ -908,6 +903,32 @@ public class SlideData : MonoBehaviour {
         GameObject.Find("PlayCharacter").GetComponent<Image>().sprite = chara;
         GameObject.Find("PlayCharacter").transform.localPosition = itempose.getCharaPos(charaPosition);
 
+    }
+
+    protected virtual bool IsFileLocked(FileInfo file)
+    {
+        FileStream stream = null;
+
+        try
+        {
+            stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None);
+        }
+        catch (IOException)
+        {
+            //the file is unavailable because it is:
+            //still being written to
+            //or being processed by another thread
+            //or does not exist (has already been processed)
+            return true;
+        }
+        finally
+        {
+            if (stream != null)
+                stream.Close();
+        }
+
+        //file is not locked
+        return false;
     }
 
 }

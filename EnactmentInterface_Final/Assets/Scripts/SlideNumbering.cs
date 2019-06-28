@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -16,9 +17,12 @@ public class SlideNumbering : MonoBehaviour
 
     private string participantName;
     private string saveAddress;
+    private string archivePath;
 
 
     private bool isRecording = false;
+    public bool recordingFunctionRunning = false;
+    public bool savingFunctionRunning = false;
     private bool donePlanning = false;
     private bool ready = false;
 
@@ -69,9 +73,7 @@ public class SlideNumbering : MonoBehaviour
     void Start()
     {
 
-        //* Set up Instructions*//
-
-
+        //* Set up Instructions*/
         switch (condition)
         {
             case 0:
@@ -516,7 +518,7 @@ public class SlideNumbering : MonoBehaviour
     public void setParticipantName()
     {
         string condString = "";
-        var cond = GameObject.Find("canvasManager").GetComponent<CanvasManagerBottomUp>().getEnactmentCondition();
+        var cond = GameObject.Find("CanvasManager").GetComponent<CanvasManagerBottomUp>().getEnactmentCondition();
         if (cond == 0) { condString = "Cartoon"; }
         else { condString = "Video"; }
         participantName = "Participant" + GameObject.Find("InputParticipantID").GetComponent<InputField>().text + "_" + condString + "mode"; 
@@ -528,9 +530,58 @@ public class SlideNumbering : MonoBehaviour
         return participantName;
     }
 
-    public void setSavingAddress()
+    public bool setSavingAddress()
     {
-        saveAddress = 
+        string append = participantName;
+        string append2 = participantName + "/archive";
+        saveAddress = Path.Combine(Application.persistentDataPath, append);
+        archivePath = Path.Combine(Application.persistentDataPath, append2);
+        Debug.Log(saveAddress);
+        Debug.Log(archivePath);
+
+        try
+        {
+            // Determine whether the directory exists.
+            if (!Directory.Exists(saveAddress))
+            {
+                DirectoryInfo di1 = Directory.CreateDirectory(saveAddress);
+                Debug.Log("The directory was created successfully at " + saveAddress);
+            }
+            else
+            {
+                Debug.Log("The directory exists at " + saveAddress);
+            }
+
+            if (!Directory.Exists(archivePath))
+            {
+                DirectoryInfo di2 = Directory.CreateDirectory(archivePath);
+                Debug.Log("The directory was created successfully at " + archivePath);
+            }
+            else
+            {
+                Debug.Log("The directory exists at " + archivePath);
+            }
+
+            return true;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("The process of setting save address failed: " + e.ToString());
+            return false;
+        }
+    }
+
+    public string getSavingAddress()
+    {
+        return saveAddress;
+    }
+
+    public void createDirectories()
+    {
+        setParticipantName();
+        setSavingAddress();
+
+        Debug.Log("we are all set to save videos!");
     }
 
     //This is the function that checks for titles.
@@ -659,22 +710,18 @@ public class SlideNumbering : MonoBehaviour
         GameObject playButton = GameObject.FindGameObjectWithTag("play_slide_button");
         GameObject backButton = GameObject.FindGameObjectWithTag("back_button");
         GameObject recordButton = GameObject.FindGameObjectWithTag("record_button");
-        GameObject[] poseButtons = GameObject.FindGameObjectsWithTag("pose_button");
+        //GameObject[] poseButtons = GameObject.FindGameObjectsWithTag("pose_button");
 
-        if (isRecording == false)
+        if (isRecording == false && recordingFunctionRunning == false)
         {
             getSelectedData().startRecord();
             isRecording = true;
             playButton.GetComponent<Button>().interactable = false;
             backButton.GetComponent<Button>().interactable = false;
             recordButton.GetComponent<Image>().sprite = recordStop;
-            foreach (GameObject button in poseButtons)
-            {
-                button.GetComponent<Button>().interactable = false;
-
-            }
+            
         }
-        else
+        else if (isRecording == true && savingFunctionRunning == false)
         {
             getSelectedData().endRecord();
             getSelectedSlide().showRecordedStatus();
@@ -682,11 +729,7 @@ public class SlideNumbering : MonoBehaviour
             playButton.GetComponent<Button>().interactable = true;
             backButton.GetComponent<Button>().interactable = true;
             recordButton.GetComponent<Image>().sprite = recordStart;
-            foreach (GameObject button in poseButtons)
-            {
-                button.GetComponent<Button>().interactable = true;
-
-            }
+            
         }
 
     }

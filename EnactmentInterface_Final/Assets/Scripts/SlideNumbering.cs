@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using RenderHeads.Media.AVProVideo;
 
 
 
@@ -18,7 +19,7 @@ public class SlideNumbering : MonoBehaviour
     private string participantName;
     private string saveAddress;
     private string archivePath;
-
+    //public MediaPlayer mp4;
 
     private bool isRecording = false;
     public bool recordingFunctionRunning = false;

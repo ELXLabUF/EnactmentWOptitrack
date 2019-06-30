@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System;
 using RenderHeads.Media.AVProVideo;
-
+//using WMPLib;
 
 
 public class SlideData : MonoBehaviour {
@@ -57,13 +57,16 @@ public class SlideData : MonoBehaviour {
     public Sprite playSprite;
     private DirectoryInfo mediaDirectory;
     //0=default, 1=charaposition, 2=objectposition
+    public MediaPlayer mp4;
 
     // Use this for initialization
     void Start () {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
         mediaDirectory = new DirectoryInfo(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress());
-        
+        mp4 = GameObject.Find("AVProVideo").GetComponent<MediaPlayer>();
+
+
     }
 
     // Update is called once per frame
@@ -438,24 +441,28 @@ public class SlideData : MonoBehaviour {
         FileInfo[] files = OBSVideos.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
         var obsVideoClipName = files.First().Name;
 
-        var myDur = GameObject.Find("AVProVideo").GetComponent<MediaPlayer>().Info.GetDurationMs();
-        myDur = myDur + 500;
+        //var myDur = GameObject.Find("AVProVideo").GetComponent<MediaPlayer>().Info.GetDurationMs();
+        //myDur = myDur + 500;
         float[] samples = new float[timeCut];
         slideAudio.clip.GetData(samples, 0);
         int freq = slideAudio.clip.frequency;
         audioTime = samples.Length / freq;
-        var mySampLength = Math.Floor((myDur * 0.001f) * freq); 
+        //float mySampLength = myDur * 0.001f * freq;
+
+        Debug.Log(audioTime);
+        Debug.Log(samples.Length);
+        //Debug.Log(mySampLength);
 
 
         slideAudio.clip = AudioClip.Create("SlideSound", samples.Length, 1, freq, false);
         slideAudio.clip.SetData(samples, 0);
         
         videoClipName = "video_" + vidCounter.ToString() + ".mp4";
-        Debug.Log(videoClipName);
+        //Debug.Log(videoClipName);
        
         audioClipName = "video_" + vidCounter.ToString();
-        Debug.Log(audioClipName);
-        Debug.Log("We have stopped");
+        //Debug.Log(audioClipName);
+        //Debug.Log("We have stopped");
 
         isRecord = true;
         if (slideAudio.clip == null) { Debug.Log("No Audio Saved :("); }
@@ -463,9 +470,13 @@ public class SlideData : MonoBehaviour {
         var t2 = new Func<bool>(() => !IsFileLocked(files.First()));
         yield return new WaitUntil(t2);
 
-        File.Move(Path.Combine(OBSTempPath, obsVideoClipName), Path.Combine(savingAddress, videoClipName));
+        File.Copy(Path.Combine(OBSTempPath, obsVideoClipName), Path.Combine(savingAddress, videoClipName));
         GameObject.Find("SlideSections").GetComponent<SavWav>().Save(Path.Combine(savingAddress, audioClipName), getAudio());
         vidCounter++;
+        //var player = new WindowsMediaPlayer();
+        //var clip = player.newMedia(Path.Combine(savingAddress, videoClipName));
+        //Debug.Log(TimeSpan.FromSeconds(clip.duration));
+
     }
 
 

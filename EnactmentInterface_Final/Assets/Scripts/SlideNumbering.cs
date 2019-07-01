@@ -5,10 +5,8 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
-
-
-
+using RenderHeads.Media.AVProVideo;
+using UnityEngine.Events;
 
 public class SlideNumbering : MonoBehaviour
 {
@@ -26,6 +24,7 @@ public class SlideNumbering : MonoBehaviour
     public bool savingFunctionRunning = false;
     private bool donePlanning = false;
     private bool ready = false;
+    public int vidCounter = 1;
 
     private int condition = 1; //0-bottom up, 1-hybrid, 2-top down
     private bool sceneNotesOn = false; //whether we want to use scene notes
@@ -1365,20 +1364,63 @@ public class SlideNumbering : MonoBehaviour
          Debug.Log("Done");
 
      }*/
+     public bool onEnd(MediaPlayer mp, MediaPlayerEvent.EventType et)
+    {
+        switch (et)
+        {
+            case MediaPlayerEvent.EventType.FinishedPlaying:
+                return true;
+
+            default:
+                return false;
+        }
+  
+    }
 
     public void PlayThrough()
     {
+
+        var player = GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
+        player.Events.AddListener(onEnd());
+        MediaPlaylist.MediaItem mi = new MediaPlaylist.MediaItem();
         SlideArray[] children = GetComponentsInChildren<SlideArray>();
         for (int i = 0; i < children.Length; i++)
         {
             SlideData[] grandchildrenData = children[i].GetComponentsInChildren<SlideData>();
+                for (int m = 0; m < grandchildrenData.Length; m++)
+                    {
+                getSelectedData().deactiveElements();}
 
-            for (int k = 0; k < grandchildrenData.Length; k++)
+                for (int k = 0; k < grandchildrenData.Length; k++)
             {
-                grandchildrenData[k].playVideo();
-
+                player.Playlist.Items.Clear();
+                
+                mi.filePath = Path.Combine(getSavingAddress(), getSelectedData().getVideoClipName());
+                GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = getSelectedData().getSlideAudio();
+                mi.loop = false;
+                mi.autoPlay = true;
+                player.Playlist.Items.Add(mi);
+                player.JumpToItem(0);
+                player.Play();
+                StartCoroutine(PlayerCoroutine());
             }
         }
+
+        
+    }
+
+    private UnityAction<MediaPlayer, MediaPlayerEvent.EventType, ErrorCode> onEnd()
+    {
+        throw new NotImplementedException();
+    }
+
+    IEnumerator PlayerCoroutine()
+    {
+        //var player = GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
+        //var t3 = new Func<bool>(() => onEnd(player, MediaPlayerEvent.EventType));
+        //yield return new WaitUntil(t3);
+        // yield return new WaitUntil onEnd();
+        yield return null;
     }
 
     public void SaveThrough()

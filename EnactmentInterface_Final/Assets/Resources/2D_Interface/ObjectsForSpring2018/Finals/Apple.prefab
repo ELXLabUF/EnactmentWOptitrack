@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StreamingClient: {fileID: 0}
-  RigidBodyId: 1
+  RigidBodyId: 6
 --- !u!114 &114250806118067514
 MonoBehaviour:
   m_ObjectHideFlags: 1

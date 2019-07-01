@@ -22,7 +22,7 @@ public class SlideData : MonoBehaviour {
     private string sceneInfo = "";
     private GameObject currentObject;
     private GameObject currentChara;
-    private int vidCounter = 1;
+  
     
 
     //recording variables
@@ -428,6 +428,16 @@ public class SlideData : MonoBehaviour {
         return playing;
     }
 
+    public string getVideoClipName()
+    {
+        return videoClipName;
+    }
+
+    public string getAudioClipName()
+    {
+        return audioClipName;
+    }
+
     public IEnumerator EndRecordCoroutine()
     {
         isRecording = false;
@@ -455,6 +465,7 @@ public class SlideData : MonoBehaviour {
         Debug.Log(audioTime);
         Debug.Log(samples.Length);
         //Debug.Log(mySampLength);
+        var vidCounter = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().vidCounter;
 
 
         slideAudio.clip = AudioClip.Create("SlideSound", samples.Length, 1, freq, false);
@@ -464,8 +475,7 @@ public class SlideData : MonoBehaviour {
         //Debug.Log(videoClipName);
        
         audioClipName = "video_" + vidCounter.ToString();
-        //Debug.Log(audioClipName);
-        //Debug.Log("We have stopped");
+        GameObject.Find("SlideSections").GetComponent<SlideNumbering>().vidCounter = vidCounter + 1;
 
         isRecord = true;
         if (slideAudio.clip == null) { Debug.Log("No Audio Saved :("); }
@@ -475,7 +485,7 @@ public class SlideData : MonoBehaviour {
 
         File.Copy(Path.Combine(OBSTempPath, obsVideoClipName), Path.Combine(savingAddress, videoClipName));
         GameObject.Find("SlideSections").GetComponent<SavWav>().Save(Path.Combine(savingAddress, audioClipName), getAudio());
-        vidCounter++;
+        
         //var player = new WMPLib.WindowsMediaPlayer();
         //var clip = player.newMedia(Path.Combine(savingAddress, videoClipName));
         //Debug.Log(TimeSpan.FromSeconds(clip.duration));
@@ -535,6 +545,11 @@ public class SlideData : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Player").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.Play();
         }
 
+    }
+
+    public AudioClip getSlideAudio()
+    {
+        return slideAudio.clip;
     }
 
     public void playVideo()
@@ -921,6 +936,22 @@ public class SlideData : MonoBehaviour {
 
         //file is not locked
         return false;
+    }
+
+    public void archiveVideo()
+    {
+
+        string sourceFile = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(),videoClipName);
+        string destinationFile = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(), "archive", videoClipName);
+
+        if (sourceFile != null)
+        {
+            // To move a file or folder to a new location:
+            File.Move(sourceFile, destinationFile);
+
+            videoClipName = "";
+            isRecord = false;
+        }
     }
 
 }

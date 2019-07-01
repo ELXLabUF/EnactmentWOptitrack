@@ -2753,7 +2753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691378649f708d14792c3beaa37f7326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: 68b937bd40f30e74c8eded3f8e79ebd2, type: 3}
+  iconSprite: {fileID: 21300000, guid: 7cd819af7be24bd458349f447338472b, type: 3}
 --- !u!114 &114920067055734452
 MonoBehaviour:
   m_ObjectHideFlags: 1

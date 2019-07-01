@@ -3212,7 +3212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691378649f708d14792c3beaa37f7326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: c2f7c853af00c0f479bc7ce01c9a9724, type: 3}
+  iconSprite: {fileID: 21300000, guid: 24f8c5c9db315654cac0eb7015f07e12, type: 3}
 --- !u!137 &137362163369434658
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

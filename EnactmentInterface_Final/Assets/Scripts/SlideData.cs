@@ -57,14 +57,17 @@ public class SlideData : MonoBehaviour {
     public Sprite playSprite;
     private DirectoryInfo mediaDirectory;
     //0=default, 1=charaposition, 2=objectposition
-    public MediaPlayer mp4;
+    //public MediaPlayer mp4;
 
     // Use this for initialization
     void Start () {
         slideAudio = gameObject.AddComponent<AudioSource>();
         slideClip = new AudioClip();
         mediaDirectory = new DirectoryInfo(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress());
-        mp4 = GameObject.Find("AVProVideo").GetComponent<MediaPlayer>();
+        foreach (var device in Microphone.devices)
+        {
+            Debug.Log("Name: " + device);
+        }
 
 
     }
@@ -403,7 +406,7 @@ public class SlideData : MonoBehaviour {
         GameObject.Find("SlideSections").GetComponent<ObsWrapper>().StartRecording();
         //yield return new WaitUntil(t1);
         yield return null;
-        slideAudio.clip = Microphone.Start(null, true, 600, 44100);
+        slideAudio.clip = Microphone.Start(null, true, 1200, 44100);
         Debug.Log("We have started");
         isRecording = true;
     }
@@ -473,7 +476,7 @@ public class SlideData : MonoBehaviour {
         File.Copy(Path.Combine(OBSTempPath, obsVideoClipName), Path.Combine(savingAddress, videoClipName));
         GameObject.Find("SlideSections").GetComponent<SavWav>().Save(Path.Combine(savingAddress, audioClipName), getAudio());
         vidCounter++;
-        //var player = new WindowsMediaPlayer();
+        //var player = new WMPLib.WindowsMediaPlayer();
         //var clip = player.newMedia(Path.Combine(savingAddress, videoClipName));
         //Debug.Log(TimeSpan.FromSeconds(clip.duration));
 

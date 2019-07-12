@@ -63,6 +63,7 @@ TagManager:
   - trash-video
   - videoplayer
   - frame
+  - instructions_vid
   layers:
   - Default
   - TransparentFX

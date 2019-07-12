@@ -150,6 +150,7 @@ public class SlideNumbering : MonoBehaviour
                 //GameObject.FindGameObjectWithTag("planning_button").GetComponent<Image>().color = new Color(1, 1, 1, 0);
                 //GameObject.FindGameObjectWithTag("planning_button").transform.SetAsFirstSibling();
                 GameObject.FindGameObjectWithTag("instructions").GetComponent<Text>().text = "Create Your Story";
+                GameObject.FindGameObjectWithTag("instructions_vid").GetComponent<Text>().text = "Create Your Story";
 
                 break;
             case 2:

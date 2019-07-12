@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System;
 using RenderHeads.Media.AVProVideo;
+
 //using WMPLib;
 
 
@@ -942,8 +943,8 @@ public class SlideData : MonoBehaviour {
     {
 
         string sourceFile = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(),videoClipName);
-        string destinationFile = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(), "archive", videoClipName);
-
+        string destinationFile = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(), "archive");
+        destinationFile = Path.Combine(destinationFile, videoClipName);
         if (sourceFile != null)
         {
             // To move a file or folder to a new location:

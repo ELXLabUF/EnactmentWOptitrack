@@ -1365,46 +1365,46 @@ public class SlideNumbering : MonoBehaviour
          Debug.Log("Done");
 
      }*/
-     public bool onEnd(MediaPlayer mp, MediaPlayerEvent.EventType et)
-    {
-        switch (et)
-        {
-            case MediaPlayerEvent.EventType.FinishedPlaying:
-                return true;
+    // public bool onEnd(MediaPlayer mp, MediaPlayerEvent.EventType et)
+    //{
+    //    switch (et)
+    //    {
+    //        case MediaPlayerEvent.EventType.FinishedPlaying:
+    //            return true;
 
-            default:
-                return false;
-        }
+    //        default:
+    //            return false;
+    //    }
   
-    }
+    //}
 
     public void PlayThrough()
     {
 
-        var player = GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
-        player.Events.AddListener(onEnd());
+        var player = GameObject.Find("PlaylistPlayer").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
+        player.Playlist.Items.Clear();
+        //player.Events.AddListener(onEnd());
         MediaPlaylist.MediaItem mi = new MediaPlaylist.MediaItem();
         SlideArray[] children = GetComponentsInChildren<SlideArray>();
         for (int i = 0; i < children.Length; i++)
         {
             SlideData[] grandchildrenData = children[i].GetComponentsInChildren<SlideData>();
                 for (int m = 0; m < grandchildrenData.Length; m++)
-                    {
-                getSelectedData().deactiveElements();}
+                {
+                   getSelectedData().deactiveElements();
+                }
 
                 for (int k = 0; k < grandchildrenData.Length; k++)
-            {
-                player.Playlist.Items.Clear();
-                
-                mi.filePath = Path.Combine(getSavingAddress(), getSelectedData().getVideoClipName());
-                GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = getSelectedData().getSlideAudio();
-                mi.loop = false;
-                mi.autoPlay = true;
-                player.Playlist.Items.Add(mi);
-                player.JumpToItem(0);
-                player.Play();
-                StartCoroutine(PlayerCoroutine());
-            }
+                {
+                    mi.filePath = Path.Combine(getSavingAddress(), getSelectedData().getVideoClipName());
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = getSelectedData().getSlideAudio();
+                    mi.loop = false;
+                    mi.autoPlay = true;
+                    player.Playlist.Items.Add(mi);
+                    player.JumpToItem(0);
+                    player.Play();
+                    StartCoroutine(PlayerCoroutine());
+                }
         }
 
         

@@ -83,7 +83,7 @@ public class SlideNumberingNoChara : MonoBehaviour
 
         //**********************//
 
-        playSprite = GameObject.FindGameObjectWithTag("play_slide_button").GetComponent<Image>().sprite;
+        playSprite = GameObject.FindGameObjectWithTag("play_btn_noChara").GetComponent<Image>().sprite;
 
         playButton = GameObject.FindGameObjectWithTag("play_screen_NoChara");
         playPosition = playButton.transform.position;

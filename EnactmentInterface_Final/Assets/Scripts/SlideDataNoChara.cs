@@ -128,9 +128,9 @@ public class SlideDataNoChara : MonoBehaviour
         GameObject[] charaPosButtons = GameObject.FindGameObjectsWithTag("chara_position");
         GameObject[] objPosButtons = GameObject.FindGameObjectsWithTag("obj_position");
 
-        GameObject playButton = GameObject.FindGameObjectWithTag("play_slide_button");
-        GameObject backButton = GameObject.FindGameObjectWithTag("back_button");
-        GameObject recordButton = GameObject.FindGameObjectWithTag("record_button");
+        GameObject playButton = GameObject.FindGameObjectWithTag("play_btn_noChara");
+        GameObject backButton = GameObject.FindGameObjectWithTag("back_btn_noChara");
+        GameObject recordButton = GameObject.FindGameObjectWithTag("record_btn_noChara");
 
         int trueID = 100;
 
@@ -222,9 +222,9 @@ public class SlideDataNoChara : MonoBehaviour
                     button.GetComponent<Image>().color = new Color(1, 1, 1, 0);
 
                 }
-                GameObject.FindGameObjectWithTag("enactment_check").GetComponent<Button>().interactable = true;
-                GameObject.FindGameObjectWithTag("enactment_check").GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                GameObject.FindGameObjectWithTag("back_button").GetComponent<Button>().interactable = false;
+                GameObject.FindGameObjectWithTag("enactment_check_NoChara").GetComponent<Button>().interactable = true;
+                GameObject.FindGameObjectWithTag("enactment_check_NoChara").GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                GameObject.FindGameObjectWithTag("back_btn_noChara").GetComponent<Button>().interactable = false;
 
                 //setCharaPos(charaPosition);
                 break;
@@ -290,7 +290,7 @@ public class SlideDataNoChara : MonoBehaviour
                         button.GetComponent<Button>().interactable = true;
                     }
 
-                    GameObject.FindGameObjectWithTag("back_button").GetComponent<Button>().interactable = true;
+                    GameObject.FindGameObjectWithTag("back_btn_noChara").GetComponent<Button>().interactable = true;
 
                     recordButton.GetComponent<Button>().interactable = true;
 
@@ -305,7 +305,7 @@ public class SlideDataNoChara : MonoBehaviour
                     {
                         button.GetComponent<Button>().interactable = false;
                     }
-                    GameObject.FindGameObjectWithTag("back_button").GetComponent<Button>().interactable = false;
+                    GameObject.FindGameObjectWithTag("back_btn_noChara").GetComponent<Button>().interactable = false;
                     playButton.GetComponent<Button>().interactable = false;
                     recordButton.GetComponent<Button>().interactable = true;
                     playButton.GetComponent<Image>().sprite = playSprite;
@@ -343,7 +343,7 @@ public class SlideDataNoChara : MonoBehaviour
                     {
                         button.GetComponent<Button>().interactable = false;
                     }
-                    GameObject.FindGameObjectWithTag("back_button").GetComponent<Button>().interactable = false;
+                    GameObject.FindGameObjectWithTag("back_btn_noChara").GetComponent<Button>().interactable = false;
                     playButton.GetComponent<Button>().interactable = true;
                     recordButton.GetComponent<Button>().interactable = false;
                     playButton.GetComponent<Image>().sprite = recordStop;

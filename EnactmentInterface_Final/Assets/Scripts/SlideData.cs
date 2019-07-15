@@ -414,9 +414,13 @@ public class SlideData : MonoBehaviour {
 
     public void startRecord()
     {
-        GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordingFunctionRunning = true;
-        StartCoroutine(StartRecordCoroutine());
-        GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordingFunctionRunning = false;
+        //GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordingFunctionRunning = true;
+        //StartCoroutine(StartRecordCoroutine());
+        //GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordingFunctionRunning = false;
+
+        GameObject.Find("SlideSections").GetComponent<ObsWrapper>().StartRecording();
+        Debug.Log("We have started");
+        isRecording = true;
     }
 
     public void setPlaying(bool set)
@@ -439,57 +443,79 @@ public class SlideData : MonoBehaviour {
         return audioClipName;
     }
 
+    //public IEnumerator EditVideoVoice()
+    //{
+    //    string ffmpeg = Path.Combine()
+    //}
+
+
     public IEnumerator EndRecordCoroutine()
     {
-        isRecording = false;
+        //isRecording = false;
+        //DigitalSalmon.OpenBroadcastStudio.Stop();
+
+        //int timeCut = Microphone.GetPosition(null);
+        //Microphone.End(null);
+
+
+        //string OBSTempPath = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\";
+        //string savingAddress = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress();
+
+        //var OBSVideos = new DirectoryInfo(OBSTempPath);
+        //FileInfo[] files = OBSVideos.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
+        //var obsVideoClipName = files.First().Name;
+
+        ////var myDur = GameObject.Find("AVProVideo").GetComponent<MediaPlayer>().Info.GetDurationMs();
+        ////myDur = myDur + 500;
+        //float[] samples = new float[timeCut];
+        //slideAudio.clip.GetData(samples, 0);
+        //int freq = slideAudio.clip.frequency;
+        //audioTime = samples.Length / freq;
+        ////float mySampLength = myDur * 0.001f * freq;
+
+        //Debug.Log(audioTime);
+        //Debug.Log(samples.Length);
+        ////Debug.Log(mySampLength);
+        //var vidCounter = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().vidCounter;
+
+
+        //slideAudio.clip = AudioClip.Create("SlideSound", samples.Length, 1, freq, false);
+        //slideAudio.clip.SetData(samples, 0);
+
+        //videoClipName = "video_" + vidCounter.ToString() + ".mp4";
+        ////Debug.Log(videoClipName);
+
+        //audioClipName = "video_" + vidCounter.ToString();
+        //GameObject.Find("SlideSections").GetComponent<SlideNumbering>().vidCounter = vidCounter + 1;
+
+        //isRecord = true;
+        //if (slideAudio.clip == null) { Debug.Log("No Audio Saved :("); }
+
+        //var t2 = new Func<bool>(() => !IsFileLocked(files.First()));
+        //yield return new WaitUntil(t2);
+
+        //File.Copy(Path.Combine(OBSTempPath, obsVideoClipName), Path.Combine(savingAddress, videoClipName));
+        //GameObject.Find("SlideSections").GetComponent<SavWav>().Save(Path.Combine(savingAddress, audioClipName), getAudio());
+
         DigitalSalmon.OpenBroadcastStudio.Stop();
+        isRecording = false;
 
-        int timeCut = Microphone.GetPosition(null);
-        Microphone.End(null);
-
-        
         string OBSTempPath = "C:\\Users\\n.zarei.3001\\Desktop\\captures\\";
         string savingAddress = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress();
 
         var OBSVideos = new DirectoryInfo(OBSTempPath);
         FileInfo[] files = OBSVideos.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
         var obsVideoClipName = files.First().Name;
-
-        //var myDur = GameObject.Find("AVProVideo").GetComponent<MediaPlayer>().Info.GetDurationMs();
-        //myDur = myDur + 500;
-        float[] samples = new float[timeCut];
-        slideAudio.clip.GetData(samples, 0);
-        int freq = slideAudio.clip.frequency;
-        audioTime = samples.Length / freq;
-        //float mySampLength = myDur * 0.001f * freq;
-
-        Debug.Log(audioTime);
-        Debug.Log(samples.Length);
-        //Debug.Log(mySampLength);
         var vidCounter = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().vidCounter;
-
-
-        slideAudio.clip = AudioClip.Create("SlideSound", samples.Length, 1, freq, false);
-        slideAudio.clip.SetData(samples, 0);
-        
         videoClipName = "video_" + vidCounter.ToString() + ".mp4";
-        //Debug.Log(videoClipName);
-       
-        audioClipName = "video_" + vidCounter.ToString();
         GameObject.Find("SlideSections").GetComponent<SlideNumbering>().vidCounter = vidCounter + 1;
 
         isRecord = true;
-        if (slideAudio.clip == null) { Debug.Log("No Audio Saved :("); }
-
         var t2 = new Func<bool>(() => !IsFileLocked(files.First()));
         yield return new WaitUntil(t2);
 
         File.Copy(Path.Combine(OBSTempPath, obsVideoClipName), Path.Combine(savingAddress, videoClipName));
-        GameObject.Find("SlideSections").GetComponent<SavWav>().Save(Path.Combine(savingAddress, audioClipName), getAudio());
-        
-        //var player = new WMPLib.WindowsMediaPlayer();
-        //var clip = player.newMedia(Path.Combine(savingAddress, videoClipName));
-        //Debug.Log(TimeSpan.FromSeconds(clip.duration));
+
 
     }
 
@@ -499,6 +525,7 @@ public class SlideData : MonoBehaviour {
         GameObject.Find("SlideSections").GetComponent<SlideNumbering>().savingFunctionRunning = true;
         StartCoroutine(EndRecordCoroutine());
         GameObject.Find("SlideSections").GetComponent<SlideNumbering>().savingFunctionRunning = false;
+
     }
 
 

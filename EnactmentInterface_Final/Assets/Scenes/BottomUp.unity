@@ -3211,7 +3211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VideoLocation: 2
-  m_VideoPath: 
+  m_VideoPath: AVProVideoSamples/BigBuckBunny_720p30.mp4
   m_AutoOpen: 1
   m_AutoStart: 1
   m_Loop: 0
@@ -3814,8 +3814,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 187438136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 312.5, y: 13, z: -10.75}
-  m_LocalScale: {x: 0.659375, y: 0.659375, z: 0.659375}
+  m_LocalPosition: {x: 482, y: 108.5, z: -10.75}
+  m_LocalScale: {x: 1.0125, y: 1.0125, z: 1.0125}
   m_Children:
   - {fileID: 1095763419}
   - {fileID: 929064586}
@@ -4219,7 +4219,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203809178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 368, y: 171.9526, z: 0}
+  m_LocalPosition: {x: 368.00003, y: 172.12344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 268038438}
@@ -18724,8 +18724,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1037491456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 312.5, y: 13, z: -10.75}
-  m_LocalScale: {x: 0.659375, y: 0.659375, z: 0.659375}
+  m_LocalPosition: {x: 482, y: 108.5, z: -10.75}
+  m_LocalScale: {x: 1.0125, y: 1.0125, z: 1.0125}
   m_Children:
   - {fileID: 982435889}
   - {fileID: 1708345981}
@@ -20609,7 +20609,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169364552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 368, y: 171.9526, z: 0}
+  m_LocalPosition: {x: 368.00003, y: 172.12344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 734236552}
@@ -22714,7 +22714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VideoLocation: 2
-  m_VideoPath: 
+  m_VideoPath: AVProVideoSamples/BigBuckBunny_720p30.mp4
   m_AutoOpen: 1
   m_AutoStart: 1
   m_Loop: 0
@@ -22979,7 +22979,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1324816865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 254.9526, z: 0}
+  m_LocalPosition: {x: 0.000030517578, y: 255.12344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1704031021}
@@ -23473,6 +23473,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 98860533}
         m_MethodName: PlayThrough
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 98860533}
+        m_MethodName: deactiveElements
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26634,7 +26645,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597350351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 254.9526, z: 0}
+  m_LocalPosition: {x: 0.000030517578, y: 255.12344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2023358524}
@@ -28189,8 +28200,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704031017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 312.5, y: 13, z: -10.75}
-  m_LocalScale: {x: 0.659375, y: 0.659375, z: 0.659375}
+  m_LocalPosition: {x: 482, y: 108.5, z: -10.75}
+  m_LocalScale: {x: 1.0125, y: 1.0125, z: 1.0125}
   m_Children:
   - {fileID: 1116923049}
   - {fileID: 1324816866}
@@ -33237,8 +33248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638c870cac4da414fba921606d504407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_VideoLocation: 0
-  m_VideoPath: C:/Users/Niloofar Zarei/Desktop/Captures/vid.mov
+  m_VideoLocation: 2
+  m_VideoPath: AVProVideoSamples/SampleSphere.mp4
   m_AutoOpen: 0
   m_AutoStart: 0
   m_Loop: 0
@@ -33881,8 +33892,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2023358519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 312.5, y: 13, z: -10.75}
-  m_LocalScale: {x: 0.659375, y: 0.659375, z: 0.659375}
+  m_LocalPosition: {x: 482, y: 108.5, z: -10.75}
+  m_LocalScale: {x: 1.0125, y: 1.0125, z: 1.0125}
   m_Children:
   - {fileID: 239697233}
   - {fileID: 1597350352}
@@ -34431,7 +34442,7 @@ MonoBehaviour:
   planningIncompletePopUp: {fileID: 534433464}
   addSlidePopUp: {fileID: 1964206050}
   addingIncompletePopUp: {fileID: 1214465323}
-  MSKBrdg: {fileID: 0}
+  MSKBrdg: {fileID: 781918059}
 --- !u!1 &2050000042
 GameObject:
   m_ObjectHideFlags: 0

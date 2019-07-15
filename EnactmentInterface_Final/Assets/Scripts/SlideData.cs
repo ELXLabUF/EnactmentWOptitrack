@@ -567,7 +567,9 @@ public class SlideData : MonoBehaviour {
             else
             {
                 GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().OpenVideoFromFile(RenderHeads.Media.AVProVideo.MediaPlayer.FileLocation.AbsolutePathOrURL, file, false);
+                //slideAudio.time = 2.5f;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = slideAudio.clip;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().time = 2.5f;
                 GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.MediaPlayer>().Control.Play();
             }
             GameObject.FindGameObjectWithTag("play_singlePlay_btn").GetComponent<Image>().sprite = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().recordStop;

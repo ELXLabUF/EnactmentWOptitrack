@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System;
+using RenderHeads.Media.AVProVideo;
+using UnityEngine.Events;
+
 
 public class SlideNumberingNoChara : MonoBehaviour
 {
@@ -15,9 +18,15 @@ public class SlideNumberingNoChara : MonoBehaviour
     private string participantName;
     private string saveAddress;
     private string archivePath;
-
+    //public MediaPlayer mp4;
 
     private bool isRecording = false;
+    public bool recordingFunctionRunning = false;
+    public bool savingFunctionRunning = false;
+    public int vidCounter = 1;
+
+
+
     private bool donePlanning = false;
     private bool ready = false;
 
@@ -32,6 +41,7 @@ public class SlideNumberingNoChara : MonoBehaviour
     //public Sprite playStop;
 
     private Sprite playSprite;
+    public Sprite play;
 
     private GameObject playButton;
     private Vector3 playPosition;
@@ -141,9 +151,9 @@ public class SlideNumberingNoChara : MonoBehaviour
                 GameObject.FindGameObjectWithTag("record_screen_NoChara").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
                 GameObject.FindGameObjectWithTag("play_screen_NoChara").GetComponent<Button>().interactable = false;
                 GameObject.FindGameObjectWithTag("play_screen_NoChara").GetComponent<Image>().color = new Color(.784f, .784f, .784f, .314f);
-                GameObject.FindGameObjectWithTag("planning_button_NoChara").GetComponent<Button>().interactable = false;
-                GameObject.FindGameObjectWithTag("planning_button_NoChara").GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                GameObject.FindGameObjectWithTag("planning_button_NoChara").transform.SetAsFirstSibling();
+                //GameObject.FindGameObjectWithTag("planning_button_NoChara").GetComponent<Button>().interactable = false;
+                //GameObject.FindGameObjectWithTag("planning_button_NoChara").GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                //GameObject.FindGameObjectWithTag("planning_button_NoChara").transform.SetAsFirstSibling();
                 GameObject.FindGameObjectWithTag("instructions").GetComponent<Text>().text = "Create Your Story";
 
                 break;
@@ -392,7 +402,7 @@ public class SlideNumberingNoChara : MonoBehaviour
 
                 if (begSlides.Length > 0 && midSlides.Length > 0 && endSlides.Length > 0 && !EmptySlide() && titlesFilled())
                 {
-                    //GameObject.FindGameObjectWithTag("play_screen").GetComponent<Button>().interactable = true;
+                    GameObject.FindGameObjectWithTag("play_screen_NoChara").GetComponent<Button>().interactable = true;
                     GameObject.FindGameObjectWithTag("play_screen_NoChara").GetComponent<Image>().color = new Color(.235f, .788f, .4f, 1);
                     playReady = true;
                 }
@@ -586,12 +596,12 @@ public class SlideNumberingNoChara : MonoBehaviour
     //2- removed the gameobjects from scene.
     public bool titlesFilled()
     {
-        GameObject[] allTitles = GameObject.FindGameObjectsWithTag("title");
+        //GameObject[] allTitles = GameObject.FindGameObjectsWithTag("title");
 
-        foreach (GameObject title in allTitles)
-        {
-            if (title.GetComponent<InputField>().text == "") { return false; }
-        }
+        //foreach (GameObject title in allTitles)
+        //{
+        //    if (title.GetComponent<InputField>().text == "") { return false; }
+        //}
 
         return true;
     }
@@ -685,7 +695,11 @@ public class SlideNumberingNoChara : MonoBehaviour
     public void deleteSlide()
 
     {
-        getSelectedData().archiveVideo();
+        if (getSelectedData().getIsRecord())
+        {
+            getSelectedData().archiveVideo();
+        }
+        
         SlideArrayNoChara[] children = GetComponentsInChildren<SlideArrayNoChara>();
 
         for (int i = 0; i < children.Length; i++)
@@ -749,7 +763,12 @@ public class SlideNumberingNoChara : MonoBehaviour
 
     public void redoEnactment()
     {
-        getSelectedData().archiveVideo();
+        if (getSelectedData().getIsRecord())
+        {
+            getSelectedData().archiveVideo();
+            getSelectedSlide().hideRecordedStatus();
+        }
+        
     }
 
     public void poseZero()
@@ -1379,18 +1398,30 @@ public class SlideNumberingNoChara : MonoBehaviour
 
     public void PlayThrough()
     {
-        SlideArrayNoChara[] children = GetComponentsInChildren<SlideArrayNoChara>();
-        for (int i = 0; i < children.Length; i++)
-        {
-            SlideDataNoChara[] grandchildrenData = children[i].GetComponentsInChildren<SlideDataNoChara>();
-
-            for (int k = 0; k < grandchildrenData.Length; k++)
+            var player = GameObject.Find("PlaylistPlayer").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
+            player.Playlist.Items.Clear();
+            //player.Events.AddListener(onEnd());
+            
+            SlideArrayNoChara[] children = GetComponentsInChildren<SlideArrayNoChara>();
+            for (int i = 0; i < children.Length; i++)
             {
-                grandchildrenData[k].playVideo();
-                grandchildrenData[k].setPlaying(false);
-             
+                SlideDataNoChara[] grandchildrenData = children[i].GetComponentsInChildren<SlideDataNoChara>();
+                for (int k = 0; k < grandchildrenData.Length; k++)
+                {
+                    MediaPlaylist.MediaItem mi = new MediaPlaylist.MediaItem();
+                    mi.filePath = Path.Combine(getSavingAddress(), grandchildrenData[k].getVideoClipName());
+                    Debug.Log("adding file " + grandchildrenData[k].getVideoClipName());
+                   // GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = getSelectedData().getSlideAudio();
+                    mi.loop = false;
+                    mi.autoPlay = true;
+                    player.Playlist.Items.Add(mi);
+                    
             }
         }
+
+        player.JumpToItem(0);
+        player.Play();
+
     }
 
     public void SaveThrough()
@@ -1644,8 +1675,8 @@ public class SlideNumberingNoChara : MonoBehaviour
     {
         if (playReady)
         {
-            GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().toPlay();
-            setTitle();
+            GameObject.FindGameObjectWithTag("all_canvases").GetComponent<CanvasManagerBottomUp>().toPlayAll();
+            //setTitle();
         }
         else
         {

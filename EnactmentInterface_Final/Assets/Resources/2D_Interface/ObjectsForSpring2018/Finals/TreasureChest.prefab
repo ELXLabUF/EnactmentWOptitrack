@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4242722161667680}
   - component: {fileID: 114272691535317084}
   - component: {fileID: 114557366127053478}
+  - component: {fileID: 114413014783365758}
   m_Layer: 0
   m_Name: TreasureChest
   m_TagString: Untagged
@@ -125,6 +126,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconSprite: {fileID: 21300000, guid: 10adcc343efe5f34489fbfc7eebe813c, type: 3}
+--- !u!114 &114413014783365758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521892622537360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77bc200897df4f4483b478b598b0c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreamingClient: {fileID: 0}
+  RigidBodyId: 9
 --- !u!114 &114557366127053478
 MonoBehaviour:
   m_ObjectHideFlags: 1

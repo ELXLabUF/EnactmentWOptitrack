@@ -179,7 +179,6 @@ public class CanvasManagerBottomUp : MonoBehaviour {
         if (enactmentCondition != 0)
         {
             disableCanvas(videoTimelineCanvas);
-            enableCanvas(playCanvas);
             disableCanvas(enactmentCanvas);
             disableCanvas(endCanvas);
             disableCanvas(startCanvas);
@@ -187,14 +186,13 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(videoEnactmentCanvas);
             disableCanvas(videoPlayCanvas);
             disableCanvas(videoSinglePlayCanvas);
-            //whichCanvas = 8;
 
-            //GameObject.Find("AVProVideo").GetComponent<video>().playAgain();
+            enableCanvas(playCanvas);
+
         }
         else
         {
             disableCanvas(timelineCanvas);
-            enableCanvas(playCanvas);
             disableCanvas(enactmentCanvas);
             disableCanvas(endCanvas);
             disableCanvas(startCanvas);
@@ -202,7 +200,9 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(videoEnactmentCanvas);
             disableCanvas(videoPlayCanvas);
             disableCanvas(cartoonSinglePlayCanvas);
-            //whichCanvas = 9;
+
+            enableCanvas(playCanvas);
+
         }
 
     }
@@ -211,20 +211,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
 
     public void toStart()
     {
-        //if (enactmentCondition != 0)
-        //{
-        //    enableCanvas(videoTimelineCanvas);
-        //    disableCanvas(playCanvas);
-        //    disableCanvas(enactmentCanvas);
-        //    disableCanvas(endCanvas);
-        //    disableCanvas(startCanvas);
-        //    disableCanvas(timelineCanvas);
-        //    disableCanvas(videoEnactmentCanvas);
-        //    disableCanvas(videoPlayCanvas);
-        //    whichCanvas = 5;
-        //}
-        //else
-        //{
+        
             disableCanvas(timelineCanvas);
             disableCanvas(playCanvas);
             disableCanvas(enactmentCanvas);
@@ -235,8 +222,7 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(videoPlayCanvas);
             disableCanvas(videoSinglePlayCanvas);
             whichCanvas = 4;
-        //}
-        
+      
     }
 
     public void toEnd()

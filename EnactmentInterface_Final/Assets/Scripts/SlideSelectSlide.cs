@@ -381,4 +381,10 @@ public class SlideSelectSlide : MonoBehaviour, IPointerClickHandler, IBeginDragH
     {
         this.transform.Find("SlideRecorded(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 1);
     }
+
+
+    public void hideRecordedStatus()
+    {
+        this.transform.Find("SlideRecorded(Clone)").GetComponent<Image>().color = new Color(1, 1, 1, 0);
+    }
 }

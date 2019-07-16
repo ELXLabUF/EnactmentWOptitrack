@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 64841586612248126}
   - component: {fileID: 114073501481504600}
   - component: {fileID: 114313455028858642}
+  - component: {fileID: 114914242941901600}
   m_Layer: 0
   m_Name: Basket2 1
   m_TagString: Untagged
@@ -123,4 +124,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade598fe2d1001445b242d863818d9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 1000
+  scale: 10
+--- !u!114 &114914242941901600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061205934133980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77bc200897df4f4483b478b598b0c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreamingClient: {fileID: 0}
+  RigidBodyId: 6

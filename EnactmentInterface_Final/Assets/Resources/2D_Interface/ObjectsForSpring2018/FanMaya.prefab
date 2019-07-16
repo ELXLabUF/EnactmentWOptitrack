@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 95687555386325326}
   - component: {fileID: 114203349217222502}
   - component: {fileID: 114264573230461070}
+  - component: {fileID: 114772404317666054}
   m_Layer: 0
   m_Name: FanMaya
   m_TagString: Untagged
@@ -1257,4 +1258,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade598fe2d1001445b242d863818d9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 200
+  scale: 10
+--- !u!114 &114772404317666054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276148952354454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77bc200897df4f4483b478b598b0c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreamingClient: {fileID: 0}
+  RigidBodyId: 9

@@ -17,7 +17,8 @@ public class SlideNumbering : MonoBehaviour
     private string participantName;
     private string saveAddress;
     private string archivePath;
-    //public MediaPlayer mp4;
+    private bool isPlayingAll = false;
+    private PlaylistMediaPlayer player; 
 
     private bool isRecording = false;
     public bool recordingFunctionRunning = false;
@@ -69,10 +70,13 @@ public class SlideNumbering : MonoBehaviour
 
 
     //Top Down
+    
 
     void Start()
     {
 
+        player = GameObject.Find("PlaylistPlayer").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
+        
         //* Set up Instructions*/
         switch (condition)
         {
@@ -413,6 +417,19 @@ public class SlideNumbering : MonoBehaviour
                 if (midSlideCount >= 5) { GameObject.Find("AddMid").GetComponent<Button>().interactable = false; }
                 if (endSlideCount >= 5) { GameObject.Find("AddEnd").GetComponent<Button>().interactable = false; }
 
+                //if (isPlayingAll || player.Control.IsPlaying())
+                //{
+                //    GameObject.FindGameObjectWithTag("play_story_button").GetComponent<Image>().color = Color.red;
+                //    GameObject.FindGameObjectWithTag("play_story_button").GetComponentInChildren<Text>().text = "Stop";
+
+                //}
+                
+                //if (!isPlayingAll && !player.Control.IsPlaying())
+                //{
+                //    GameObject.FindGameObjectWithTag("play_story_button").GetComponent<Image>().color = new Color(.06f,.201f,.102f);
+                //    GameObject.FindGameObjectWithTag("play_story_button").GetComponentInChildren<Text>().text = "Play Your Story!";
+                //}
+
 
                 break;
                 case 2:
@@ -516,8 +533,39 @@ public class SlideNumbering : MonoBehaviour
         
     }
 
+    public void OnVideoEvent(MediaPlayer mp, MediaPlayerEvent.EventType et, ErrorCode er)
+    {
+        switch (et)
+        {
+            case MediaPlayerEvent.EventType.ReadyToPlay:
+                mp.Control.Play();
+                break;
+            case MediaPlayerEvent.EventType.FirstFrameReady:
+                Debug.Log("First frame ready");
+                break;
+            case MediaPlayerEvent.EventType.FinishedPlaying:
+                mp.Control.Rewind();
+                break;
+        }
+
+        Debug.Log("Event: " + et.ToString());
+    }
+
+
+    public void redoEnactment()
+    {
+        if (getSelectedData().getIsRecord())
+        {
+            getSelectedData().archiveVideo();
+            getSelectedSlide().hideRecordedStatus();
+        }
+
+    }
+
     public void setParticipantName()
     {
+
+        //player.Events.AddListener(OnVideoEvent);
         string condString = "";
         var cond = GameObject.Find("CanvasManager").GetComponent<CanvasManagerBottomUp>().getEnactmentCondition();
         if (cond == 0) { condString = "Cartoon"; }
@@ -808,21 +856,14 @@ public class SlideNumbering : MonoBehaviour
             }
         }
 
-       // getSelectedData().updateEnactmentScreen();
-
+      
     }
 
     public void enactmentCheck()
     {
         getSelectedData().updatePoseMode();
     }
-
- /*   public void handheldObjects()
-    {
-        getSelectedData().setPose(getSelectedData().getPose(), false);
-        
-    }
-    */
+    
 
     public void charaLeft()
     {
@@ -1281,7 +1322,6 @@ public class SlideNumbering : MonoBehaviour
         }
 
         GameObject.Find("EnactmentBackdrop").GetComponent<SpriteRenderer>().sprite = endCard;
-        //GameObject.Find("EnactmentBackdrop").GetComponent<SpriteRenderer>().color = new Color(.596f, .824f, .894f, 1);
 
         GameObject.Find("PlayCharacter").GetComponent<Image>().color = new Color(1, 1, 1, 0);
         GameObject.Find("PlayTitle").GetComponent<Text>().text = "The End";
@@ -1297,11 +1337,7 @@ public class SlideNumbering : MonoBehaviour
         fileNum += 1;
         yield return new WaitForSeconds(3.0f);
 
-
-        //Stop Recording
-        //GameObject.Find("Recorder").GetComponent<Animator>().StopRecording();
-
-
+        
         GameObject.Find("PlayWindow").GetComponent<Image>().color = new Color(1, 1, 1, .7098f);
         setTitle();
 
@@ -1357,56 +1393,46 @@ public class SlideNumbering : MonoBehaviour
     }
 
 
-    /* public IEnumerator TestingCoRoutine()
-     {
-         yield return new WaitForSeconds(3.0f);
-         Debug.Log("3 have passed");
-         yield return new WaitForSeconds(4.0f);
-         Debug.Log("Done");
-
-     }*/
-    // public bool onEnd(MediaPlayer mp, MediaPlayerEvent.EventType et)
-    //{
-    //    switch (et)
-    //    {
-    //        case MediaPlayerEvent.EventType.FinishedPlaying:
-    //            return true;
-
-    //        default:
-    //            return false;
-    //    }
-  
-    //}
 
     public void PlayThrough()
     {
 
-        var player = GameObject.Find("PlaylistPlayer").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
-        player.Playlist.Items.Clear();
-        //player.Events.AddListener(onEnd());
-        MediaPlaylist.MediaItem mi = new MediaPlaylist.MediaItem();
-        SlideArray[] children = GetComponentsInChildren<SlideArray>();
-        for (int i = 0; i < children.Length; i++)
+        //player = GameObject.Find("PlaylistPlayer").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
+
+        if (!isPlayingAll)
         {
-            SlideData[] grandchildrenData = children[i].GetComponentsInChildren<SlideData>();
+            isPlayingAll = true;
+            player.Playlist.Items.Clear();
+
+            SlideArray[] children = GetComponentsInChildren<SlideArray>();
+            for (int i = 0; i < children.Length; i++)
+            {
+                SlideData[] grandchildrenData = children[i].GetComponentsInChildren<SlideData>();
                 for (int m = 0; m < grandchildrenData.Length; m++)
                 {
-                   getSelectedData().deactiveElements();
+                    getSelectedData().deactiveElements();
                 }
 
                 for (int k = 0; k < grandchildrenData.Length; k++)
                 {
-                    mi.filePath = Path.Combine(getSavingAddress(), getSelectedData().getVideoClipName());
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = getSelectedData().getSlideAudio();
+                    MediaPlaylist.MediaItem mi = new MediaPlaylist.MediaItem();
+                    mi.filePath = Path.Combine(getSavingAddress(), grandchildrenData[k].getVideoClipName());
+                    Debug.Log("adding file " + grandchildrenData[k].getVideoClipName());
                     mi.loop = false;
                     mi.autoPlay = true;
                     player.Playlist.Items.Add(mi);
-                    player.JumpToItem(0);
-                    player.Play();
-                    StartCoroutine(PlayerCoroutine());
                 }
+            }
+
+            player.JumpToItem(0);
+            player.Play();
         }
 
+        else
+        {
+            isPlayingAll = false;
+            player.Stop();
+        }
         
     }
 
@@ -1415,14 +1441,6 @@ public class SlideNumbering : MonoBehaviour
         throw new NotImplementedException();
     }
 
-    IEnumerator PlayerCoroutine()
-    {
-        //var player = GameObject.Find("AVProVideo").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
-        //var t3 = new Func<bool>(() => onEnd(player, MediaPlayerEvent.EventType));
-        //yield return new WaitUntil(t3);
-        // yield return new WaitUntil onEnd();
-        yield return null;
-    }
 
     public void SaveThrough()
     {

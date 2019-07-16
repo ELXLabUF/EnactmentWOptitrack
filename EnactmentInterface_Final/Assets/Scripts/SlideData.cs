@@ -7,10 +7,12 @@ using System.Threading;
 using System.IO;
 using System.Linq;
 using System;
+using System.Diagnostics;
 using RenderHeads.Media.AVProVideo;
-
-//using WMPLib;
-
+using System.ComponentModel;
+//using System.Process
+using System.Text;
+using Debug = UnityEngine.Debug;
 
 public class SlideData : MonoBehaviour {
 
@@ -443,10 +445,75 @@ public class SlideData : MonoBehaviour {
         return audioClipName;
     }
 
-    //public IEnumerator EditVideoVoice()
-    //{
-    //    string ffmpeg = Path.Combine()
-    //}
+    public void editVideoVoice(string videoClipName)
+    {
+        Debug.Log("we are here");
+        string assetDir = Application.persistentDataPath;
+        Debug.Log(assetDir);
+        string pathtoVid = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(), videoClipName);
+        Debug.Log(pathtoVid);
+        string pathtoMuteVid = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(), "m_"+ videoClipName);
+        string pathToRawAud = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(), "a1.wav");
+        string pathToEditAud = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(), "a2.wav");
+        string pathToFinalVid = Path.Combine(GameObject.Find("SlideSections").GetComponent<SlideNumbering>().getSavingAddress(), "f_" + videoClipName);
+        string ffmpeg = Path.Combine(assetDir, "ffmpeg.exe");
+        string rubberband = Path.Combine(assetDir, "rubberband.exe");
+
+        string argumentForFirstCmd = @" -i " + pathtoVid + " -vcodec copy -an " + pathtoMuteVid;
+        Debug.Log(argumentForFirstCmd);
+        string argumentForSecondCmd = @" -i " + pathtoVid + " " + pathToRawAud;
+        string argumentForThirdCmd = @" -p 8 " + pathToRawAud + " " + pathToEditAud;
+        string argumentForFourthCmd = @" -i " + pathtoMuteVid + " -i " + pathToEditAud + " -vcodec copy " + pathToFinalVid;
+
+        ProcessStartInfo ffmpegProc1 = new ProcessStartInfo(ffmpeg);
+        ffmpegProc1.WindowStyle = ProcessWindowStyle.Hidden;
+        ffmpegProc1.CreateNoWindow = true;
+        ffmpegProc1.WorkingDirectory = ffmpeg;
+        ffmpegProc1.Arguments = argumentForFirstCmd;
+
+        ProcessStartInfo ffmpegProc2 = new ProcessStartInfo(ffmpeg);
+        ffmpegProc2.WindowStyle = ProcessWindowStyle.Hidden;
+        ffmpegProc2.CreateNoWindow = true;
+        ffmpegProc2.WorkingDirectory = ffmpeg;
+        ffmpegProc2.Arguments = argumentForSecondCmd;
+
+        ProcessStartInfo rubberbandProc = new ProcessStartInfo(rubberband);
+        rubberbandProc.WindowStyle = ProcessWindowStyle.Hidden;
+        rubberbandProc.CreateNoWindow = true;
+        rubberbandProc.WorkingDirectory = rubberband;
+        rubberbandProc.Arguments = argumentForThirdCmd;
+
+        ProcessStartInfo ffmpegProc3 = new ProcessStartInfo(ffmpeg);
+        ffmpegProc3.WindowStyle = ProcessWindowStyle.Hidden;
+        ffmpegProc3.CreateNoWindow = true;
+        ffmpegProc3.WorkingDirectory = ffmpeg;
+        ffmpegProc3.Arguments = argumentForFourthCmd;
+
+        Process One = new Process();
+        One.StartInfo = ffmpegProc1;
+
+        Process Two = new Process();
+        Two.StartInfo = ffmpegProc2;
+
+        Process Three = new Process();
+        Three.StartInfo = rubberbandProc;
+
+        Process Four = new Process();
+        Four.StartInfo = ffmpegProc3;
+
+        One.Start();
+        One.WaitForExit();
+
+        Two.Start();
+        Two.WaitForExit();
+        Three.Start();
+        Three.WaitForExit();
+        Four.Start();
+        Four.WaitForExit();
+
+        File.Delete(pathToRawAud);
+        File.Delete(pathToEditAud);
+    }
 
 
     public IEnumerator EndRecordCoroutine()
@@ -508,6 +575,7 @@ public class SlideData : MonoBehaviour {
         var obsVideoClipName = files.First().Name;
         var vidCounter = GameObject.Find("SlideSections").GetComponent<SlideNumbering>().vidCounter;
         videoClipName = "video_" + vidCounter.ToString() + ".mp4";
+        //audioClipName = "audio_" + vidCounter.ToString() ;
         GameObject.Find("SlideSections").GetComponent<SlideNumbering>().vidCounter = vidCounter + 1;
 
         isRecord = true;
@@ -516,7 +584,8 @@ public class SlideData : MonoBehaviour {
 
         File.Copy(Path.Combine(OBSTempPath, obsVideoClipName), Path.Combine(savingAddress, videoClipName));
 
-
+        editVideoVoice(videoClipName);
+        videoClipName = "f_" + videoClipName;
     }
 
 
@@ -794,8 +863,10 @@ public class SlideData : MonoBehaviour {
     {
         currentObject = GameObject.FindGameObjectWithTag("current_item");
         currentChara = GameObject.FindGameObjectWithTag("current_chara");
-        currentObject.SetActive(false);
-        currentChara.SetActive(false);
+       
+        
+        if (currentObject) { currentObject.SetActive(false); }
+        if (currentChara) { currentChara.SetActive(false); }
 
     }
 

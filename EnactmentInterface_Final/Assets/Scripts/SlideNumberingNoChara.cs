@@ -1387,20 +1387,11 @@ public class SlideNumberingNoChara : MonoBehaviour
     }
 
 
-    /* public IEnumerator TestingCoRoutine()
-     {
-         yield return new WaitForSeconds(3.0f);
-         Debug.Log("3 have passed");
-         yield return new WaitForSeconds(4.0f);
-         Debug.Log("Done");
-
-     }*/
 
     public void PlayThrough()
     {
             var player = GameObject.Find("PlaylistPlayer").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
             player.Playlist.Items.Clear();
-            //player.Events.AddListener(onEnd());
             
             SlideArrayNoChara[] children = GetComponentsInChildren<SlideArrayNoChara>();
             for (int i = 0; i < children.Length; i++)
@@ -1411,7 +1402,6 @@ public class SlideNumberingNoChara : MonoBehaviour
                     MediaPlaylist.MediaItem mi = new MediaPlaylist.MediaItem();
                     mi.filePath = Path.Combine(getSavingAddress(), grandchildrenData[k].getVideoClipName());
                     Debug.Log("adding file " + grandchildrenData[k].getVideoClipName());
-                   // GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().clip = getSelectedData().getSlideAudio();
                     mi.loop = false;
                     mi.autoPlay = true;
                     player.Playlist.Items.Add(mi);

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 95256874546107348}
   - component: {fileID: 114543176055313164}
   - component: {fileID: 114634688852586812}
+  - component: {fileID: 114549611951469754}
   m_Layer: 0
   m_Name: Bowl
   m_TagString: Untagged
@@ -114,6 +115,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconSprite: {fileID: 21300000, guid: d0a6fb0f473b8e249b4803bd16437d37, type: 3}
+--- !u!114 &114549611951469754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025452296750852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77bc200897df4f4483b478b598b0c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreamingClient: {fileID: 0}
+  RigidBodyId: 7
 --- !u!114 &114634688852586812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,4 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade598fe2d1001445b242d863818d9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.1
+  scale: 0.001

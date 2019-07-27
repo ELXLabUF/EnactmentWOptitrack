@@ -24,6 +24,8 @@ public class SlideNumberingNoChara : MonoBehaviour
     public bool recordingFunctionRunning = false;
     public bool savingFunctionRunning = false;
     public int vidCounter = 1;
+    private bool isPlayingAll = false;
+    private PlaylistMediaPlayer player;
 
 
 
@@ -75,6 +77,8 @@ public class SlideNumberingNoChara : MonoBehaviour
 
     void Start()
     {
+
+        player = GameObject.Find("PlaylistPlayer").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
 
         //* Set up Instructions*//
 
@@ -1386,18 +1390,24 @@ public class SlideNumberingNoChara : MonoBehaviour
         }
     }
 
-
+    public void stopPlayer()
+    {
+        isPlayingAll = false;
+        player.Stop();
+    }
 
     public void PlayThrough()
     {
-            var player = GameObject.Find("PlaylistPlayer").GetComponent<RenderHeads.Media.AVProVideo.PlaylistMediaPlayer>();
+        if (!isPlayingAll)
+        {
+            isPlayingAll = true;
             player.Playlist.Items.Clear();
-            
+
             SlideArrayNoChara[] children = GetComponentsInChildren<SlideArrayNoChara>();
             for (int i = 0; i < children.Length; i++)
             {
                 SlideDataNoChara[] grandchildrenData = children[i].GetComponentsInChildren<SlideDataNoChara>();
-                for (int k = 0; k < grandchildrenData.Length; k++)
+               for (int k = 0; k < grandchildrenData.Length; k++)
                 {
                     MediaPlaylist.MediaItem mi = new MediaPlaylist.MediaItem();
                     mi.filePath = Path.Combine(getSavingAddress(), grandchildrenData[k].getVideoClipName());
@@ -1405,12 +1415,18 @@ public class SlideNumberingNoChara : MonoBehaviour
                     mi.loop = false;
                     mi.autoPlay = true;
                     player.Playlist.Items.Add(mi);
-                    
+                }
             }
+
+            player.JumpToItem(0);
+            player.Play();
         }
 
-        player.JumpToItem(0);
-        player.Play();
+        else
+        {
+            isPlayingAll = false;
+            player.Stop();
+        }
 
     }
 

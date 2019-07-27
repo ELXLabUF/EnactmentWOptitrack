@@ -1436,6 +1436,12 @@ public class SlideNumbering : MonoBehaviour
         
     }
 
+    public void stopPlayer()
+    {
+        isPlayingAll = false;
+        player.Stop();
+    }
+
     private UnityAction<MediaPlayer, MediaPlayerEvent.EventType, ErrorCode> onEnd()
     {
         throw new NotImplementedException();

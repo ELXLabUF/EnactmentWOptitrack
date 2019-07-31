@@ -3213,6 +3213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconSprite: {fileID: 21300000, guid: 30c0ba45e493ae34ebdaa3cfe4283bfd, type: 3}
+  iconLarge: {fileID: 21300000, guid: cbc5da6df565d0e47a3ece779111af0e, type: 3}
 --- !u!137 &137587243143341292
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

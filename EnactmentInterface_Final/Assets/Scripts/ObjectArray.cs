@@ -132,6 +132,7 @@ public class ObjectArray : MonoBehaviour
 
             newObj.GetComponent<DragMe>().assignID(i);
             newObj.GetComponent<Image>().sprite = objectArray[i].GetComponent<Icon>().iconSprite;
+            newObj.GetComponent<ItemPreview>().PhysPreview = objectArray[i].GetComponent<Icon>().iconLarge;
             newObj.tag = objTag;
             newObj.transform.SetParent(this.transform);
 

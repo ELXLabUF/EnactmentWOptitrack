@@ -2753,7 +2753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691378649f708d14792c3beaa37f7326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: af60e72a0565c51469698afc8ef05a1e, type: 3}
+  iconSprite: {fileID: 21300000, guid: 6ba9113ab9bcee94683b38016bde9bc5, type: 3}
+  iconLarge: {fileID: 21300000, guid: 289d8d1adad09a743a4c8be988b47d69, type: 3}
 --- !u!114 &114920067055734452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3227,7 +3228,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0f1bf7a5b00dae14c8d94cc9fc5bb4de, type: 2}
+  - {fileID: 2100000, guid: e2ee48a80762e864a83d669539873a92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

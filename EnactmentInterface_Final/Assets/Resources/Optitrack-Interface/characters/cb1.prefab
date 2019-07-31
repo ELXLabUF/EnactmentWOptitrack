@@ -1432,7 +1432,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1933534851100282}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1061.6384, y: 453.75534, z: -1590.1307}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4082652180772958}
@@ -3213,6 +3213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconSprite: {fileID: 21300000, guid: 0cef852c93bf83145a166794c8f6714d, type: 3}
+  iconLarge: {fileID: 21300000, guid: 3598b7888e13d204f9e072fdc1d0972a, type: 3}
 --- !u!137 &137938688432645110
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

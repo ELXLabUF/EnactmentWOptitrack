@@ -184,10 +184,10 @@ public class CanvasManagerBottomUp : MonoBehaviour {
             disableCanvas(startCanvas);
             disableCanvas(timelineCanvas);
             disableCanvas(videoEnactmentCanvas);
-            disableCanvas(videoPlayCanvas);
+            disableCanvas(playCanvas);
             disableCanvas(videoSinglePlayCanvas);
 
-            enableCanvas(playCanvas);
+            enableCanvas(videoPlayCanvas);
 
         }
         else

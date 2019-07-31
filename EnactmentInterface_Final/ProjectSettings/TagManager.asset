@@ -64,6 +64,7 @@ TagManager:
   - videoplayer
   - frame
   - instructions_vid
+  - play_story_NoChara
   layers:
   - Default
   - TransparentFX

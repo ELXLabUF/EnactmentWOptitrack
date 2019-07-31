@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconSprite: {fileID: 21300000, guid: 7af571f60ba776e4b8bb117354a4ceb4, type: 3}
+  iconLarge: {fileID: 21300000, guid: 2d148ff5861af534687039ba0f127cc3, type: 3}
 --- !u!114 &114886022446406098
 MonoBehaviour:
   m_ObjectHideFlags: 1

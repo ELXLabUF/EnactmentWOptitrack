@@ -7,10 +7,11 @@ public class Icon : MonoBehaviour {
 
     //This script currently just stores the icon sprite for each object
     public Sprite iconSprite;
+    public Sprite iconLarge;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

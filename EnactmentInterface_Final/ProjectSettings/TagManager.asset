@@ -65,6 +65,8 @@ TagManager:
   - frame
   - instructions_vid
   - play_story_NoChara
+  - done_cartoon
+  - done_video
   layers:
   - Default
   - TransparentFX

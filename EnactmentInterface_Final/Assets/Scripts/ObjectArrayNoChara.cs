@@ -120,8 +120,12 @@ public class ObjectArrayNoChara : MonoBehaviour {
 
             newObj.transform.SetParent(this.transform);
 
-            newX = 60 * (i % 3) - 60;
-            newY = -(i / 3) * 60 - 100;
+            //newX = 60 * (i % 3) - 60;
+            //newY = -(i / 3) * 60 - 100;
+
+            newX = 50 * (i % 3) - 50;
+            newY = -(i / 3) * 50 - 90;
+
             newObj.transform.localPosition = new Vector3(newX, newY, 0);
 
             /*Place the object that will be dragged on top of the holder*/
@@ -132,8 +136,12 @@ public class ObjectArrayNoChara : MonoBehaviour {
             newObj.tag = objTag;
             newObj.transform.SetParent(this.transform);
 
-            newX = 60 * (i % 3) - 60;
-            newY = -(i / 3) * 60 - 100;
+            //newX = 60 * (i % 3) - 60;
+            //newY = -(i / 3) * 60 - 100;
+
+            newX = 50 * (i % 3) - 50;
+            newY = -(i / 3) * 50 - 90;
+
             newObj.transform.localPosition = new Vector3(newX, newY, 0);
 
         }

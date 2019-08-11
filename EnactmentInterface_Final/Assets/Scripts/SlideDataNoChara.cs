@@ -137,6 +137,7 @@ public class SlideDataNoChara : MonoBehaviour
         GameObject playButton = GameObject.FindGameObjectWithTag("play_btn_noChara");
         GameObject backButton = GameObject.FindGameObjectWithTag("back_btn_noChara");
         GameObject recordButton = GameObject.FindGameObjectWithTag("record_btn_noChara");
+        //GameObject doneButton = GameObject.FindGameObjectWithTag("done_video");
 
         int trueID = 100;
 
